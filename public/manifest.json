@@ -1,0 +1,23 @@
+{
+  "name": "Ovulation Calculator",
+  "short_name": "OvulationCalc",
+  "description": "Free ovulation calculator to estimate your fertile window and ovulation date.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFF7FA",
+  "theme_color": "#C2185B",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
