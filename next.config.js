@@ -47,6 +47,8 @@ const nextConfig = {
 
   async rewrites() {
     return [
+      // Common sitemap paths → our sitemap routes
+      { source: "/sitemap.xml", destination: "/sitemap-index.xml" },
       { source: "/sitemap_index.xml", destination: "/sitemap-index.xml" },
       { source: "/post-sitemap.xml", destination: "/index.xml" },
       { source: "/page-sitemap.xml", destination: "/index.xml" },
