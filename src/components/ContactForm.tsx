@@ -10,6 +10,9 @@ type FormData = {
   message: string;
 };
 
+const fieldClass =
+  "w-full rounded-xl border border-white/15 bg-[#02060D] px-4 py-3 text-white placeholder:text-ink-mute focus:border-navy-500 focus:outline-none focus:ring-2 focus:ring-brand/30";
+
 export default function ContactForm() {
   const [formSubmitted, setFormSubmitted] = useState(false);
 
@@ -32,56 +35,56 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft md:p-8">
-      <h2 className="font-display text-2xl font-bold text-ink text-center mb-6">Send Us a Message</h2>
+    <div className="rounded-2xl border border-white/10 bg-[#0B1F3A] p-6 shadow-soft md:p-8">
+      <h2 className="mb-6 text-center font-display text-2xl font-bold text-white">Send Us a Message</h2>
 
       {formSubmitted ? (
-        <div className="mb-6 rounded-xl border border-green-200 bg-green-50 p-4 text-center text-green-800">
+        <div className="mb-6 rounded-xl border border-brand/35 bg-brand/15 p-4 text-center text-navy-200">
           Thanks! Your email client should open shortly. We typically reply within 24–48 hours.
         </div>
       ) : null}
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
         <div>
-          <label htmlFor="name" className="mb-1.5 block text-sm font-semibold text-ink">
+          <label htmlFor="name" className="mb-1.5 block text-sm font-semibold text-white">
             Name
           </label>
           <input
             id="name"
             type="text"
-            className="w-full rounded-xl border border-slate-200 px-4 py-3 text-ink focus:border-navy-500 focus:outline-none focus:ring-2 focus:ring-navy-500/20"
+            className={fieldClass}
             {...register('name', { required: 'Name is required' })}
           />
-          {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>}
+          {errors.name && <p className="mt-1 text-sm text-red-400">{errors.name.message}</p>}
         </div>
 
         <div>
-          <label htmlFor="email" className="mb-1.5 block text-sm font-semibold text-ink">
+          <label htmlFor="email" className="mb-1.5 block text-sm font-semibold text-white">
             Email*
           </label>
           <input
             id="email"
             type="email"
-            className="w-full rounded-xl border border-slate-200 px-4 py-3 text-ink focus:border-navy-500 focus:outline-none focus:ring-2 focus:ring-navy-500/20"
+            className={fieldClass}
             {...register('email', {
               required: 'Email is required',
               pattern: { value: /^\S+@\S+$/i, message: 'Invalid email' },
             })}
           />
-          {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>}
+          {errors.email && <p className="mt-1 text-sm text-red-400">{errors.email.message}</p>}
         </div>
 
         <div>
-          <label htmlFor="message" className="mb-1.5 block text-sm font-semibold text-ink">
+          <label htmlFor="message" className="mb-1.5 block text-sm font-semibold text-white">
             Message*
           </label>
           <textarea
             id="message"
             rows={5}
-            className="w-full rounded-xl border border-slate-200 px-4 py-3 text-ink focus:border-navy-500 focus:outline-none focus:ring-2 focus:ring-navy-500/20"
+            className={fieldClass}
             {...register('message', { required: 'Message is required' })}
           />
-          {errors.message && <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>}
+          {errors.message && <p className="mt-1 text-sm text-red-400">{errors.message.message}</p>}
         </div>
 
         <button

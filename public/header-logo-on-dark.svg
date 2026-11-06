@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="200" viewBox="0 0 980 200" fill="none">
+  <!-- Dark-surface logo: white wordmark -->
+  <g transform="translate(24, 40)">
+    <rect x="0" y="0" width="34" height="34" rx="6" fill="#D3D6DA"/>
+    <rect x="42" y="0" width="34" height="34" rx="6" fill="#D3D6DA"/>
+    <rect x="84" y="0" width="34" height="34" rx="6" fill="#D3D6DA"/>
+    <rect x="0" y="42" width="34" height="34" rx="6" fill="#D3D6DA"/>
+    <rect x="42" y="42" width="34" height="34" rx="6" fill="#C9B458"/>
+    <rect x="84" y="42" width="34" height="34" rx="6" fill="#6AAA64"/>
+    <rect x="0" y="84" width="34" height="34" rx="6" fill="#6AAA64"/>
+    <rect x="42" y="84" width="34" height="34" rx="6" fill="#6AAA64"/>
+    <rect x="84" y="84" width="34" height="34" rx="6" fill="#6AAA64"/>
+  </g>
+  <text x="170" y="128" font-family="Georgia, 'Times New Roman', Times, serif" font-size="84" font-weight="700" fill="#FFFFFF">WordleWord</text>
+</svg>

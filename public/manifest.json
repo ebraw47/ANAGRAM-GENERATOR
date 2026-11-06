@@ -1,14 +1,14 @@
 {
-  "name": "Ovulation Calculator",
-  "short_name": "OvulationCalc",
-  "description": "Free ovulation calculator to estimate your fertile window and ovulation date.",
+  "name": "Wordle Word Finder",
+  "short_name": "WordFinder",
+  "description": "Free Wordle word finder and solver. Enter green, yellow, and gray clues to see matching 5-letter words.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#FFF7FA",
-  "theme_color": "#C2185B",
+  "background_color": "#F4F8FF",
+  "theme_color": "#1E6FFF",
   "icons": [
     {
-      "src": "/logo.png",
+      "src": "/favicon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
@@ -16,6 +16,12 @@
     {
       "src": "/icon.png",
       "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "48x48",
       "type": "image/png",
       "purpose": "any"
     }

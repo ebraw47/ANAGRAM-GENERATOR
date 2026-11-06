@@ -1,28 +1,30 @@
 # Privacy Policy
 
-**Last updated:** November 4, 2026
+**Last updated:** November 6, 2026
 
-OvulationCalculator.io (“we”, “us”) respects your privacy. This policy explains what information we may collect and how we use it.
+WordleWordFinder.net (“we,” “us”) respects your privacy. This policy explains what information we collect and how we use it.
 
-## Calculator data
+## Summary
 
-Cycle dates and cycle length you enter into the ovulation calculator are processed in your browser to show estimates. We do not require an account to use the calculator.
+- The Wordle word finder runs in your browser. Your green, yellow, and gray clues are **not** sent to our servers to compute matches.
+- We may collect basic analytics and advertising data if those scripts are enabled on the site.
+- We do not sell personal information.
 
 ## Information we may collect
 
-- **Contact form submissions** — name, email, and message content you choose to send.  
-- **Technical data** — standard server or analytics logs such as IP address, browser type, and pages visited, if analytics tools are enabled.  
-- **Cookies** — may be used for basic site function, preferences, or analytics/advertising when configured.
+- **Usage data** such as pages visited, approximate location derived from IP, device/browser type, and referral URLs (via analytics tools when configured)
+- **Contact information** you voluntarily send by email
+- **Cookies / local storage** used for analytics, ads, or basic site preferences
 
 ## How we use information
 
-- To operate and improve the website  
-- To respond to contact messages  
-- To measure traffic and performance (if analytics are enabled)
+- To operate and improve WordleWordFinder.net
+- To respond to messages you send us
+- To measure traffic and, when enabled, display ads
 
 ## Third parties
 
-We may use hosting, analytics, or advertising partners. Those providers process data under their own policies. We do not sell your personal information.
+We may use providers such as Google Analytics or Google AdSense when environment keys are configured. Those services have their own privacy policies.
 
 ## Children’s privacy
 
@@ -30,16 +32,8 @@ This site is not directed at children under 13. We do not knowingly collect pers
 
 ## Your choices
 
-You can limit cookies via browser settings. To request deletion of contact-form data you sent us, email [contact@ovulationcalculator.io](mailto:contact@ovulationcalculator.io).
-
-## Medical disclaimer
-
-Health content is educational only. See our [Disclaimer](/disclaimer).
-
-## Changes
-
-We may update this policy. Continued use of the site after changes means you accept the revised policy.
+You can block cookies in your browser settings and stop using the site at any time. Email us to request deletion of correspondence you previously sent.
 
 ## Contact
 
-Email: [contact@ovulationcalculator.io](mailto:contact@ovulationcalculator.io)
+[contact@wordlewordfinder.net](mailto:contact@wordlewordfinder.net)

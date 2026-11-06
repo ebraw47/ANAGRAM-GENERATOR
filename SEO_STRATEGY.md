@@ -1,44 +1,42 @@
-# SEO Strategy — Ovulation Calculator (ovulationcalculator.io)
+# SEO Strategy — Wordle Word Finder (wordlewordfinder.net)
 
-## SERP research summary (Nov 2026)
+## Competitor SERP set (primary query: wordle word finder)
 
-Primary SERP winners for **ovulation calculator / ovulation calendar**:
-- womenshealth.gov/ovulation-calculator
-- health.clevelandclinic.org/ovulation-calendar
-- tommys.org ovulation calculator
-- webmd.com/baby/healthtool-ovulation-calculator
-- hopkinsmedicine.org fertility window
-- acog.org timing intercourse guidance
+- wordle-finder.com
+- wordgameclues.com/wordle-solver
+- wordfinder.yourdictionary.com/wordle
+- wordlefinder.org
+- vowelkit.com/wordle-solver
 
-## Content gaps we cover on-site
+## Content coverage (no gap vs ranking pages)
 
-| Competitor theme | Our coverage |
+| Topic | Where we cover it |
 | --- | --- |
-| Fertile window (~6 days) | Home + `/fertile-window` |
-| Cycle length math (day − 14) | Home table + `/how-to-calculate-ovulation` |
-| How to use calculator | Home steps + `/how-to-use-an-ovulation-calculator` |
-| Ovulation calendar framing | `/ovulation-calendar` |
-| Signs of ovulation | Home + `/signs-of-ovulation` |
-| TTC timing / when to have sex | `/best-time-to-conceive` |
-| Irregular cycles limits | Home + `/irregular-periods-and-ovulation` |
-| OPK / LH tests | `/how-to-use-an-ovulation-test` |
-| Cervical mucus | `/cervical-mucus-and-fertility` |
-| BBT confirmation | `/basal-body-temperature-tracking` |
-| Not for birth control | Home, FAQs, disclaimer |
+| Green / yellow / gray finder tool | Homepage finder |
+| Yellow position bans | Finder + how-to guide |
+| Common vs full dictionary | Finder toggle + home |
+| Letter frequency / info gain | Finder hot letters + strategy posts |
+| Best starting words | `/best-wordle-starting-words` |
+| Strategy tips | `/wordle-strategy-tips-and-tricks` |
+| Color rules | `/how-wordle-colors-work` |
+| Hard mode | `/wordle-hard-mode-guide` |
+| Repeated letters | `/wordle-repeated-letters-explained` |
+| Second-guess scouting | `/wordle-second-guess-strategy` |
+| How to use helper | `/how-to-use-a-wordle-word-finder` |
+| FAQs / WebApplication schema | Homepage |
 
 ## Primary keywords
 
-- ovulation calculator
-- ovulation calendar
-- fertile window
-- when am I ovulating
-- how to calculate ovulation
-- signs of ovulation
-- best time to conceive
-- ovulation test kit
+- wordle word finder
+- wordle solver
+- wordle helper
+- 5 letter word finder
+- best wordle starting words
+- wordle hard mode
+- wordle tips
 
 ## Technical
 
-- Canonical host: `https://ovulationcalculator.io`
-- Sitemap index: `/sitemap-index.xml`
-- Blog index: `/category/blog`
+- Canonical host: `https://wordlewordfinder.net`
+- Sitemaps: `/sitemap-index.xml`, `/index.xml`, `/image-sitemap.xml`
+- Robots: `/robots.txt`

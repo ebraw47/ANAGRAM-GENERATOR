@@ -1,13 +1,14 @@
-# Ovulation Calculator
+# Wordle Word Finder
 
-Next.js site for **[ovulationcalculator.io](https://ovulationcalculator.io)** — free fertile window and ovulation date estimates, plus SERP-focused cycle guides.
+Next.js site for **[wordlewordfinder.net](https://wordlewordfinder.net)** — free Wordle solver / 5-letter word finder, plus SERP-focused strategy guides.
 
 ## Features
 
-- Tablet-style Cycle Studio ovulation calculator
-- Fertile window, ovulation day, and next-period estimates
-- 10 SEO guides aligned to real search demand (calculator, calendar, OPKs, BBT, mucus, and more)
-- Sitemap, robots, and structured data for search
+- Live Wordle word finder (green, yellow, gray constraints)
+- Common-answer vs full-guess dictionary toggle
+- Letter-frequency hints for smarter next guesses
+- 7 SEO guides aligned to real search demand (openers, colors, hard mode, duplicates, scouting)
+- Sitemap index, image sitemap, robots, and structured data
 
 ## Develop
 
@@ -20,4 +21,4 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Disclaimer
 
-Educational estimates only — not medical advice or birth control.
+Independent helper — not affiliated with the New York Times or Wordle.

@@ -1,16 +1,16 @@
-/** Central brand / domain config for Ovulation Calculator */
-export const SITE_ORIGIN = "https://ovulationcalculator.io";
+/** Central brand / domain config for Wordle Word Finder */
+export const SITE_ORIGIN = "https://wordlewordfinder.net";
 
 export const BRAND = {
-  name: "Ovulation Calculator",
-  shortName: "OvulationCalc",
-  keyword: "ovulation calculator",
-  domain: "ovulationcalculator.io",
-  email: "contact@ovulationcalculator.io",
-  twitter: "@ovulationcalc",
-  tagline: "Find Your Fertile Window & Ovulation Date",
+  name: "Wordle Word Finder",
+  shortName: "WordFinder",
+  keyword: "wordle word finder",
+  domain: "wordlewordfinder.net",
+  email: "contact@wordlewordfinder.net",
+  twitter: "@wordlewordfind",
+  tagline: "Wordle Solver, Helper & 5-Letter Word Finder",
   description:
-    "Free ovulation calculator to estimate your fertile window and ovulation date. Enter your last period and cycle length for personalized fertility timing.",
+    "Free Wordle word finder and solver. Enter green, yellow, and gray clues to see every 5-letter word that still fits — instantly in your browser.",
 } as const;
 
 export const ROUTES = {
@@ -24,155 +24,133 @@ export const ROUTES = {
 
 export const IMAGES = {
   logo: "/logo.png",
-  favicon: "/logo.png",
-  brandLogo: "/logo.png",
-  banner: "/ovalution-calculator-cover.webp",
-  og: "/feature/og-image-1200x630.png",
-  ogSquare: "/feature/og-square-1200x1200.png",
-  twitter: "/feature/twitter-card-1200x600.png",
-  website: "/ovalution-calculator-cover.webp",
-  tool: "/ovalution-calculator-cover.webp",
-  heroAlt: "/ovalution-calculator-cover.webp",
+  /** Blue W mark — transparent background (browser favicon only) */
+  icon: "/favicon.png",
+  favicon: "/favicon.ico",
+  brandLogo: "/hero-logo.svg",
+  banner: "/wordle-word-finder-banner.webp",
+  /** Wordle tiles + WordleWord wordmark for dark surfaces */
+  headerLogo: "/header-logo-on-dark.svg",
+  /** Wordle tiles + dark WordleWord wordmark for light surfaces */
+  headerLogoLight: "/header-logo-light.svg",
+  og: "/feature/og-image-1200x630.webp",
+  ogSquare: "/feature/og-square-1200x1200.webp",
+  twitter: "/feature/twitter-card-1200x600.webp",
+  website: "/wordle-word-finder-banner.webp",
+  tool: "/wordle-word-finder-banner.webp",
+  heroAlt: "/hero-logo.svg",
 } as const;
 
 /**
  * SERP-validated blog pillars only (competitor + query research):
- * ovulation calculator, ovulation calendar, fertile window, calculate ovulation,
- * signs of ovulation, best time to conceive, irregular periods, ovulation test kits,
- * cervical mucus, basal body temperature.
+ * wordle word finder, wordle solver, best starting words, strategy tips,
+ * green/yellow/gray rules, hard mode, repeated letters, second-guess scouting.
  */
 export const ARTICLES = [
   {
-    slug: "how-to-use-an-ovulation-calculator",
-    title: "How to Use an Ovulation Calculator: Step-by-Step Guide",
-    metaTitle: "How to Use an Ovulation Calculator | Step-by-Step",
+    slug: "how-to-use-a-wordle-word-finder",
+    title: "How to Use a Wordle Word Finder: Green, Yellow & Gray Clues",
+    metaTitle: "How to Use a Wordle Word Finder | Step-by-Step",
     description:
-      "Enter your last period date and average cycle length to estimate ovulation and your fertile window. A clear walkthrough of how ovulation calculators work.",
+      "Enter green letters by position, yellow letters with wrong spots, and gray exclusions. Learn how a Wordle word finder filters candidates in real time.",
+    date: "2026-11-06",
+    image: "/blog/how-to-use-wordle-word-finder.svg",
+  },
+  {
+    slug: "best-wordle-starting-words",
+    title: "Best Wordle Starting Words (Ranked by Letter Coverage)",
+    metaTitle: "Best Wordle Starting Words | Ranked Openers",
+    description:
+      "Compare strong Wordle openers like IRATE, SLATE, CRANE, and TRACE. See why five distinct high-frequency letters beat vowel-only starters.",
+    date: "2026-11-05",
+    image: "/blog/best-wordle-starting-words.svg",
+  },
+  {
+    slug: "wordle-strategy-tips-and-tricks",
+    title: "Wordle Strategy: Tips and Tricks That Shrink the List Faster",
+    metaTitle: "Wordle Strategy Tips & Tricks",
+    description:
+      "Use a fixed opener, a scout second guess, and information-gain thinking. Practical Wordle tips for fewer wasted guesses and stronger streaks.",
     date: "2026-11-04",
-    image: "/blog/how-to-use-ovulation-calculator.svg",
+    image: "/blog/wordle-strategy-tips.svg",
   },
   {
-    slug: "ovulation-calendar",
-    title: "Ovulation Calendar: Track Your Most Fertile Days",
-    metaTitle: "Ovulation Calendar | Track Fertile Days",
+    slug: "how-wordle-colors-work",
+    title: "How Wordle Colors Work: Green, Yellow, and Gray Explained",
+    metaTitle: "How Wordle Colors Work | Green Yellow Gray",
     description:
-      "Use an ovulation calendar to map fertile days from your cycle length. Learn how calendar tracking works and when estimates are less reliable.",
+      "Green locks a letter in place, yellow means present but wrong spot, gray removes a copy. Master the color rules before you trust any Wordle helper.",
     date: "2026-11-03",
-    image: "/blog/ovulation-calendar.svg",
+    image: "/blog/how-wordle-colors-work.svg",
   },
   {
-    slug: "fertile-window",
-    title: "Fertile Window Explained: When Are You Most Fertile?",
-    metaTitle: "Fertile Window Explained | Most Fertile Days",
+    slug: "wordle-hard-mode-guide",
+    title: "Wordle Hard Mode Guide: Rules, Tradeoffs, and Finder Tips",
+    metaTitle: "Wordle Hard Mode Guide | Rules & Tips",
     description:
-      "Your fertile window is about six days each cycle. See why the days before ovulation matter most and how to time intercourse.",
+      "Hard mode forces you to reuse greens and yellows. Learn how that kills scout guesses — and how a Wordle word finder still helps you finish.",
     date: "2026-11-02",
-    image: "/blog/fertile-window.svg",
+    image: "/blog/wordle-hard-mode-guide.svg",
   },
   {
-    slug: "how-to-calculate-ovulation",
-    title: "How to Calculate Ovulation From Your Cycle Length",
-    metaTitle: "How to Calculate Ovulation | Cycle Length Guide",
+    slug: "wordle-repeated-letters-explained",
+    title: "Wordle Repeated Letters: Why a Letter Can Still Turn Gray",
+    metaTitle: "Wordle Repeated Letters Explained",
     description:
-      "Ovulation usually happens about 14 days before your next period. Learn the math for 21-, 28-, and 35-day cycles with clear examples.",
+      "Duplicate letters confuse most solvers. See why SPEED vs SPEND can show one yellow and one gray E — and how to filter correctly.",
     date: "2026-11-01",
-    image: "/blog/how-to-calculate-ovulation.svg",
+    image: "/blog/wordle-repeated-letters.svg",
   },
   {
-    slug: "signs-of-ovulation",
-    title: "Signs of Ovulation: Body Clues You Can Track",
-    metaTitle: "Signs of Ovulation | Body Clues & Tracking",
+    slug: "wordle-second-guess-strategy",
+    title: "Best Wordle Second Guess Strategy: Scout Before You Commit",
+    metaTitle: "Wordle Second Guess Strategy | Scout Words",
     description:
-      "Recognize common ovulation signs: egg-white cervical mucus, LH surge, BBT rise, mild cramps, breast tenderness, and spotting.",
+      "Guess two should test fresh letters, not just chase early greens. Learn scout-word thinking and when to switch to committing answers.",
     date: "2026-10-30",
-    image: "/blog/signs-of-ovulation.svg",
-  },
-  {
-    slug: "best-time-to-conceive",
-    title: "Best Time to Conceive: When to Have Sex Around Ovulation",
-    metaTitle: "Best Time to Conceive Around Ovulation",
-    description:
-      "Pregnancy odds peak in the days before ovulation. Practical timing tips from fertile-window research for couples trying to conceive.",
-    date: "2026-10-28",
-    image: "/blog/best-time-to-conceive.svg",
-  },
-  {
-    slug: "irregular-periods-and-ovulation",
-    title: "Irregular Periods and Ovulation: What Calculators Miss",
-    metaTitle: "Irregular Periods & Ovulation Tracking",
-    description:
-      "Irregular cycles make calendar estimates less accurate. Learn backup methods like OPKs, mucus tracking, and when to see a clinician.",
-    date: "2026-10-26",
-    image: "/blog/irregular-periods.svg",
-  },
-  {
-    slug: "how-to-use-an-ovulation-test",
-    title: "How to Use an Ovulation Test Kit (OPK) Correctly",
-    metaTitle: "How to Use an Ovulation Test Kit | OPK Guide",
-    description:
-      "Learn when to start LH ovulation tests, how to read a positive surge, and how to combine kits with an ovulation calculator.",
-    date: "2026-10-24",
-    image: "/blog/ovulation-test-kits.svg",
-  },
-  {
-    slug: "cervical-mucus-and-fertility",
-    title: "Cervical Mucus and Fertility: Reading Peak Fertility Clues",
-    metaTitle: "Cervical Mucus Changes & Fertility",
-    description:
-      "Clear, stretchy, egg-white cervical mucus often signals peak fertility. Pair mucus observation with your ovulation calendar results.",
-    date: "2026-10-22",
-    image: "/blog/cervical-mucus.svg",
-  },
-  {
-    slug: "basal-body-temperature-tracking",
-    title: "Basal Body Temperature Tracking for Ovulation",
-    metaTitle: "Basal Body Temperature (BBT) Ovulation Guide",
-    description:
-      "A small rise in waking temperature can confirm ovulation after it happens. Learn how to chart BBT with fertile-window estimates.",
-    date: "2026-10-20",
-    image: "/blog/bbt-tracking.svg",
+    image: "/blog/wordle-second-guess-strategy.svg",
   },
 ] as const;
 
 export const HOME_FAQS = [
   {
-    q: "How does an ovulation calculator work?",
-    a: "You enter the first day of your last period and your average cycle length. The calculator estimates ovulation about 14 days before your next period and highlights a roughly six-day fertile window when pregnancy is most likely.",
+    q: "What is a Wordle word finder?",
+    a: "A Wordle word finder (also called a Wordle solver or helper) filters five-letter words using the green, yellow, and gray clues from your guesses. It shows every candidate that still fits so you can pick a smarter next word.",
   },
   {
-    q: "How accurate is an ovulation calculator?",
-    a: "Results are estimates. Cycles vary month to month, and irregular periods reduce calendar accuracy. Combine the calculator with cervical mucus changes, ovulation tests, or clinician guidance for better timing.",
+    q: "How do I use this Wordle solver?",
+    a: "Type green letters in their exact positions, add yellow letters (present but wrong spot), and list gray letters that are absent. Matching words update instantly in your browser — nothing is sent to a server.",
   },
   {
-    q: "What is a fertile window?",
-    a: "Your fertile window is about six days each cycle — typically the five days before ovulation plus ovulation day — when unprotected sex is most likely to lead to pregnancy.",
+    q: "Is using a Wordle helper cheating?",
+    a: "That’s a personal call. Some players only open a finder when they’re one guess from losing; others use it to learn high-value words. The official game does not track helpers. If it keeps the puzzle fun, you’re fine.",
   },
   {
-    q: "When should I have sex to get pregnant?",
-    a: "Odds are often highest one to two days before ovulation. Many people start trying a few days before the estimated ovulation date and continue through ovulation day.",
+    q: "What’s the best Wordle starting word?",
+    a: "Strong openers use five distinct, high-frequency letters. IRATE, LATER, SLATE, CRANE, TRACE, and SOARE are common data-backed picks. Pick one and stick with it so your muscle memory stays consistent.",
   },
   {
-    q: "Can I use an ovulation calculator as birth control?",
-    a: "No. Do not use this tool alone to prevent pregnancy. Estimates can miss early or late ovulation. Talk with a clinician about reliable contraception.",
+    q: "Does this show today’s Wordle answer?",
+    a: "No. We never leak the daily answer. The tool only narrows options from the clues you enter, so you still choose the next guess yourself.",
   },
   {
-    q: "What if my cycle is not 28 days?",
-    a: "Enter your average cycle length. Ovulation is estimated relative to the next period (luteal phase ≈ 14 days), so longer or shorter cycles shift the predicted ovulation date.",
+    q: "What’s the difference between common words and all valid guesses?",
+    a: "Common words are everyday answers you’re most likely to see. The full list also includes rarer accepted guesses — useful as scout words that burn obscure letters even if they’re unlikely answers.",
   },
   {
-    q: "What if I have irregular periods?",
-    a: "Calendar estimates are less reliable when cycles vary widely. Track several cycles, use ovulation predictor kits or mucus changes, and consult a healthcare professional if cycles stay unpredictable.",
+    q: "How do yellow letters work in this finder?",
+    a: "Yellow means the letter is in the word but not in the position you tried. Our finder requires the letter somewhere and excludes the ruled-out slots — the same constraint that separates a 30-word list from a 4-word list.",
   },
   {
-    q: "What are common signs of ovulation?",
-    a: "Common signs include clearer stretchy cervical mucus, a positive LH test, mild one-sided cramping, breast tenderness, bloating, light spotting, and a slight rise in basal body temperature after ovulation.",
+    q: "Why can a letter be both colored and gray?",
+    a: "With repeats, Wordle awards greens first, then yellows, and never more colored tiles than the answer contains. An extra copy can turn gray even when the letter is still in the word. See our repeated-letters guide.",
   },
   {
-    q: "How long does the egg live after ovulation?",
-    a: "An egg is typically viable for about 12 to 24 hours after release. Sperm can live up to about five days in the reproductive tract, which is why the days before ovulation matter so much.",
+    q: "Does Wordle hard mode change how the finder works?",
+    a: "The filtering rules are the same. Hard mode only restricts which guesses the official game accepts next. In hard mode, lean on remaining candidates instead of pure scout words.",
   },
   {
-    q: "When should I see a doctor about fertility?",
-    a: "If you are under 35 and have tried for a year without pregnancy — or 35+ and have tried for six months — talk with a clinician. Seek care sooner for very irregular cycles, known PCOS, or other medical concerns.",
+    q: "Is Wordle Word Finder free?",
+    a: "Yes. The finder on wordlewordfinder.net is free, runs locally in your browser, and does not require an account or email gate.",
   },
 ] as const;

@@ -1,27 +1,25 @@
 # Disclaimer
 
-**OvulationCalculator.io** provides educational information and calendar-based fertility estimates only.
+WordleWordFinder.net provides an independent Wordle helper and educational word-game content.
 
-## Not medical advice
+## Not affiliated
 
-Nothing on this website is medical advice, diagnosis, or treatment. Always seek the guidance of a qualified healthcare professional with questions about pregnancy, fertility, contraception, or menstrual health.
+This site is **not affiliated with**, endorsed by, or sponsored by the New York Times, Wordle, or NYT Games. Wordle is a trademark of its respective owners.
 
-## Estimates only
+## No official answers
 
-Ovulation and fertile-window results are **estimates**. Cycles vary between people and from month to month. Irregular periods, illness, stress, medications, and other factors can change ovulation timing.
+Our finder does **not** reveal today’s official Wordle answer. It only filters candidate words from the clues you enter. You remain responsible for the guesses you submit in the official game.
 
-## Not birth control
+## Educational use
 
-**Do not use this calculator alone to prevent pregnancy.** Calendar estimates can miss early or late ovulation. Talk with a clinician about reliable contraception.
+Strategy guides, starter-word lists, and examples are for entertainment and education. Word lists can change over time and are not guaranteed to match any official dictionary snapshot.
 
-## No pregnancy guarantee
+## Accuracy
 
-Using this tool does not guarantee pregnancy. Conception depends on many factors beyond timing.
+We work to keep filtering logic accurate, including yellow position bans and repeated-letter edge cases. Software can still contain errors. Double-check critical guesses before you play them.
 
 ## Limitation of liability
 
-To the fullest extent permitted by law, OvulationCalculator.io and its operators are not liable for decisions made based on site content or calculator results.
+To the fullest extent permitted by law, WordleWordFinder.net is provided “as is” without warranties of any kind. We are not liable for losses related to gameplay, streaks, or reliance on site content.
 
-## Emergency care
-
-If you have a medical emergency, call your local emergency number or go to the nearest emergency facility.
+Questions? [contact@wordlewordfinder.net](mailto:contact@wordlewordfinder.net)

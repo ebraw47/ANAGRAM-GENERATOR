@@ -14,7 +14,7 @@ export type SitemapImage = {
   caption: string;
 };
 
-const TODAY = "2026-11-04";
+const TODAY = "2026-11-06";
 
 export const SITEMAP_PAGES: SitemapPage[] = [
   { path: ROUTES.home, lastmod: TODAY, changefreq: "daily", priority: 1.0 },
@@ -36,13 +36,13 @@ export const SITEMAP_IMAGES: SitemapImage[] = [
     path: IMAGES.logo,
     pagePath: "/",
     title: `${BRAND.name} logo`,
-    caption: "Ovulation Calculator — fertile window and ovulation estimates",
+    caption: "Wordle Word Finder — free Wordle solver and 5-letter helper",
   },
   {
     path: IMAGES.website,
     pagePath: "/",
-    title: `${BRAND.name} homepage cover`,
-    caption: "Free ovulation calculator and cycle education",
+    title: `${BRAND.name} banner`,
+    caption: "Find matching Wordle words from green, yellow, and gray clues",
   },
   {
     path: IMAGES.og,

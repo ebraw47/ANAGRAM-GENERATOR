@@ -5,9 +5,9 @@ import { getMarkdown, stripLeadingH1 } from "@/lib/content";
 import { BRAND, ROUTES, SITE_ORIGIN } from "@/lib/siteConfig";
 
 const PAGE_URL = `${SITE_ORIGIN}${ROUTES.about}`;
-const PAGE_TITLE = "About Us | Ovulation Calculator";
+const PAGE_TITLE = "About Us | Wordle Word Finder";
 const PAGE_DESCRIPTION =
-  "Learn about OvulationCalculator.io — free fertile window estimates, ovulation timing education, and cycle guides.";
+  "Learn about WordleWordFinder.net — free Wordle solver, 5-letter word finder, and strategy guides.";
 
 export const metadata: Metadata = {
   title: { absolute: PAGE_TITLE },

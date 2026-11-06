@@ -11,27 +11,58 @@ export default function FaqAccordion({ faqs }: { faqs: readonly Faq[] }) {
   const reduce = useReducedMotion();
 
   return (
-    <div className="divide-y divide-slate-200 rounded-2xl border border-slate-200 bg-white shadow-soft">
+    <div className="space-y-3">
       {faqs.map((faq, i) => {
         const isOpen = open === i;
+        const num = String(i + 1).padStart(2, "0");
+
         return (
-          <div key={faq.q}>
+          <motion.div
+            key={faq.q}
+            layout={!reduce}
+            className={`overflow-hidden rounded-2xl border transition duration-300 ${
+              isOpen
+                ? "border-brand/45 bg-gradient-to-br from-[#0B1F3A] via-[#0B1F3A] to-[#123056] shadow-[0_12px_40px_-16px_rgba(30,111,255,0.55)]"
+                : "border-white/10 bg-[#0B1F3A]/80 hover:border-white/20 hover:bg-[#0F2744]"
+            }`}
+          >
             <button
               type="button"
-              className="flex w-full items-start justify-between gap-4 px-5 py-4 text-left focus-ring"
+              className="flex w-full items-start gap-3.5 px-4 py-4 text-left focus-ring sm:gap-4 sm:px-5 sm:py-5"
               aria-expanded={isOpen}
               onClick={() => setOpen(isOpen ? null : i)}
             >
-              <span className="font-display text-base font-semibold text-ink md:text-lg">{faq.q}</span>
+              <span
+                className={`mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl font-display text-xs font-bold tracking-wide transition sm:h-10 sm:w-10 sm:text-sm ${
+                  isOpen
+                    ? "bg-brand text-white shadow-[0_0_20px_rgba(30,111,255,0.45)]"
+                    : "bg-white/5 text-navy-500 ring-1 ring-white/10"
+                }`}
+                aria-hidden
+              >
+                {num}
+              </span>
+
+              <span className="min-w-0 flex-1 pt-1.5 font-display text-base font-semibold leading-snug text-white sm:pt-2 sm:text-lg">
+                {faq.q}
+              </span>
+
               <motion.span
-                className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teal-100 text-teal-800"
+                className={`mt-1.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition sm:mt-2 ${
+                  isOpen
+                    ? "border-brand/50 bg-brand/20 text-white"
+                    : "border-white/15 bg-white/5 text-navy-500"
+                }`}
                 aria-hidden
                 animate={{ rotate: isOpen ? 45 : 0 }}
-                transition={{ duration: 0.2, ease: EASE }}
+                transition={{ duration: 0.22, ease: EASE }}
               >
-                +
+                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
+                  <path strokeLinecap="round" d="M12 5v14M5 12h14" />
+                </svg>
               </motion.span>
             </button>
+
             <AnimatePresence initial={false}>
               {isOpen ? (
                 <motion.div
@@ -39,14 +70,18 @@ export default function FaqAccordion({ faqs }: { faqs: readonly Faq[] }) {
                   initial={reduce ? false : { height: 0, opacity: 0 }}
                   animate={{ height: "auto", opacity: 1 }}
                   exit={reduce ? undefined : { height: 0, opacity: 0 }}
-                  transition={{ duration: 0.28, ease: EASE }}
+                  transition={{ duration: 0.3, ease: EASE }}
                   className="overflow-hidden"
                 >
-                  <div className="px-5 pb-5 text-[1.05rem] leading-relaxed text-ink-soft">{faq.a}</div>
+                  <div className="border-t border-white/10 px-4 pb-5 pt-0 sm:px-5">
+                    <div className="ml-0 border-l-2 border-brand/50 pl-4 pt-4 text-[1.05rem] leading-relaxed text-[#C5D4EC] sm:ml-[3.25rem] sm:pl-5">
+                      {faq.a}
+                    </div>
+                  </div>
                 </motion.div>
               ) : null}
             </AnimatePresence>
-          </div>
+          </motion.div>
         );
       })}
     </div>

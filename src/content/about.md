@@ -1,21 +1,21 @@
 # About Us
 
-**OvulationCalculator.io** is an independent educational site that helps people estimate their fertile window and ovulation date with a clear, modern calculator.
+**WordleWordFinder.net** is an independent Wordle helper that turns green, yellow, and gray clues into a live list of matching five-letter words.
 
 ## Our mission
 
-We believe cycle timing should be easy to understand. Our Cycle Studio tool turns two simple inputs — your last period start and average cycle length — into a visual map of fertile days, ovulation, and your next expected period.
+We believe a good Wordle tool should respect how the game actually scores tiles — especially yellow positions and repeated letters — instead of offering a vague “includes letters” box. Our finder is built for that constraint logic, with clear strategy guides around the searches people already make.
 
 ## What we offer
 
-- A free, browser-based **ovulation calculator**
-- Guides built around real search demand: ovulation calendars, fertile windows, signs of ovulation, OPKs, BBT, and cervical mucus
-- Plain-language FAQs and disclaimers so expectations stay realistic
+- A free, browser-based **Wordle word finder** and solver
+- Guides built around real search demand: starting words, strategy tips, color rules, hard mode, duplicate letters, and second-guess scouting
+- Plain-language FAQs and a clear disclaimer that we are not the official game
 
 ## What we are not
 
-We are not a medical provider, clinic, or emergency service. Content and estimates on this site are for **education only** and are not a substitute for professional medical advice, diagnosis, or treatment. Do not use this tool alone to prevent pregnancy.
+We are not affiliated with the New York Times, Wordle, or NYT Games. We do not publish today’s official answer. The finder only filters words from the clues **you** enter.
 
 ## Contact
 
-Questions or feedback? Reach us at [contact@ovulationcalculator.io](mailto:contact@ovulationcalculator.io) or visit our [Contact](/contact-us) page.
+Questions or feedback? Reach us at [contact@wordlewordfinder.net](mailto:contact@wordlewordfinder.net) or visit our [Contact](/contact-us) page.

@@ -17,7 +17,7 @@ export default function ContentPageShell({
   wide = false,
 }: Props) {
   return (
-    <div className="bg-paper">
+    <div className="bg-[#050B16] text-[#F2F6FF]">
       <header className="page-banner relative overflow-hidden border-b border-white/10 text-white">
         <PageBannerPattern opacity={0.35} />
         <div className={`relative mx-auto px-4 py-12 md:px-6 md:py-16 ${wide ? "max-w-6xl" : "max-w-3xl"}`}>

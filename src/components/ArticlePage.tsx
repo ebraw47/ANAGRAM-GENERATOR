@@ -37,12 +37,12 @@ export function articleMetadata(article: ArticleMeta): Metadata {
 
 function GuideCardThumb({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className="relative aspect-[16/9] overflow-hidden bg-navy-100">
+    <div className="relative aspect-[16/9] overflow-hidden bg-navy-950">
       <Image
         src={src}
         alt={alt}
         fill
-        className="object-cover transition duration-500 group-hover:scale-[1.03]"
+        className="object-cover object-left transition duration-500 group-hover:scale-[1.02]"
         sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
       />
     </div>
@@ -93,7 +93,7 @@ export default function ArticlePage({
       <Script id={`article-schema-${article.slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <Script id={`breadcrumb-${article.slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
 
-      <article className="bg-paper">
+      <article className="bg-[#050B16] text-[#F2F6FF]">
         <header className="page-banner relative overflow-hidden border-b border-white/10 text-white">
           <PageBannerPattern opacity={0.35} />
           <div className="relative mx-auto max-w-3xl px-4 py-10 md:px-6 md:py-14">
@@ -115,7 +115,7 @@ export default function ArticlePage({
               </ol>
             </nav>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-white/65">
-              Tracking guide
+              Wordle guide
             </p>
             <h1 className="font-display text-3xl font-extrabold tracking-tight md:text-4xl md:leading-tight">
               {article.title}
@@ -135,14 +135,14 @@ export default function ArticlePage({
         </header>
 
         <div className="mx-auto max-w-3xl px-4 py-10 md:px-6 md:py-14">
-          <figure className="mb-10 overflow-hidden rounded-2xl border border-slate-200 bg-navy-50 shadow-sm">
+          <figure className="mb-10 overflow-hidden rounded-2xl border border-white/10 bg-[#0B1F3A] shadow-sm">
             <span className="relative block aspect-[16/9] w-full">
               <Image
                 src={article.image}
                 alt={article.title}
                 fill
                 priority
-                className="object-cover"
+                className="object-cover object-left"
                 sizes="(max-width:768px) 100vw, 760px"
               />
             </span>
@@ -151,22 +151,22 @@ export default function ArticlePage({
         </div>
 
         {related.length > 0 && (
-          <aside className="border-t border-slate-200 bg-white py-12 md:py-14">
+          <aside className="border-t border-white/10 bg-[#02060D] py-12 md:py-14">
             <div className="mx-auto max-w-6xl px-4 md:px-6">
               <FadeIn>
                 <p className="section-kicker">Keep reading</p>
-                <h2 className="font-display text-2xl font-bold text-ink">Related guides</h2>
+                <h2 className="font-display text-2xl font-bold text-white">Related guides</h2>
               </FadeIn>
               <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {related.map((a, i) => (
                   <FadeIn key={a.slug} delay={0.05 * i}>
                     <Link
                       href={`/${a.slug}`}
-                      className="group block overflow-hidden rounded-2xl border border-slate-200 bg-paper transition hover:border-navy-200 hover:shadow-soft"
+                      className="group block overflow-hidden rounded-2xl border border-white/10 bg-[#0B1F3A] transition hover:border-brand/50 hover:shadow-soft"
                     >
                       <GuideCardThumb src={a.image} alt={a.title} />
                       <div className="p-4">
-                        <h3 className="font-display text-base font-semibold text-ink group-hover:text-navy-800 line-clamp-2">
+                        <h3 className="font-display text-base font-semibold text-white group-hover:text-navy-500 line-clamp-2">
                           {a.title}
                         </h3>
                       </div>

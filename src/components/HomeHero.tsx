@@ -1,53 +1,51 @@
 "use client";
 
 import Image from "next/image";
-import OvulationCalculator from "@/components/OvulationCalculator";
+import WordleWordFinder from "@/components/WordleWordFinder";
 import { FadeIn } from "@/components/motion/Motion";
 import { BRAND, IMAGES } from "@/lib/siteConfig";
 
 export default function HomeHero() {
   return (
-    <section className="relative -mt-16 overflow-hidden pt-16 text-white">
-      <Image
-        src={IMAGES.banner}
-        alt=""
-        fill
-        priority
-        className="scale-105 object-cover object-center blur-[3px]"
-        sizes="100vw"
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#2a1520]/88 via-[#4a0e2e]/82 to-[#2a1520]/92" />
+    <section className="relative -mt-[3.75rem] overflow-hidden pt-[3.75rem] text-white sm:-mt-16 sm:pt-16 md:-mt-20 md:pt-20 lg:-mt-[5.5rem] lg:pt-[5.5rem]">
+      <div className="absolute inset-0 bg-[#02060D]" />
       <div
-        className="pointer-events-none absolute inset-0 opacity-30"
+        className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 60% 50% at 20% 15%, rgba(244,143,177,0.45), transparent 55%), radial-gradient(ellipse 50% 40% at 85% 20%, rgba(194,24,91,0.35), transparent 50%)",
+            "radial-gradient(ellipse 70% 50% at 12% 8%, rgba(30,111,255,0.45), transparent 55%), radial-gradient(ellipse 55% 42% at 92% 18%, rgba(77,163,255,0.22), transparent 52%), linear-gradient(165deg, #000000 0%, #050B16 38%, #0B1F3A 72%, #02060D 100%)",
+        }}
+      />
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.07]"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(77,163,255,0.35) 1px, transparent 1px), linear-gradient(90deg, rgba(77,163,255,0.35) 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
         }}
       />
 
-      <div className="relative z-10 mx-auto max-w-6xl px-4 pb-16 pt-12 md:px-6 md:pb-20 md:pt-16">
+      <div className="relative z-10 mx-auto max-w-6xl px-4 pb-8 pt-5 sm:pb-10 sm:pt-6 md:px-6 md:pb-12 md:pt-7">
         <FadeIn className="mx-auto max-w-3xl text-center">
           <Image
             src={IMAGES.brandLogo}
             alt={`${BRAND.name} logo`}
-            width={80}
-            height={80}
+            width={640}
+            height={220}
             priority
-            className="mx-auto mb-5 rounded-2xl shadow-lift ring-1 ring-white/25"
+            sizes="(max-width: 640px) 280px, (max-width: 768px) 380px, 480px"
+            className="mx-auto mb-3 h-auto w-[280px] object-contain sm:mb-3.5 sm:w-[380px] md:w-[480px]"
           />
-          <h1 className="font-display text-4xl font-extrabold tracking-tight text-white drop-shadow-sm sm:text-5xl md:text-6xl">
-            Ovulation Calculator
+          <h1 className="font-display text-xl font-bold tracking-tight text-white/95 drop-shadow-sm sm:text-2xl md:text-[1.65rem]">
+            Wordle Word Finder 2026
           </h1>
-          <p className="mx-auto mt-3 max-w-xl text-lg text-white/90 md:text-xl">
-            Estimate your fertile window and ovulation date in a clear cycle map.
-          </p>
-          <p className="mt-2 text-sm font-medium tracking-wide text-white/60">
-            {BRAND.domain}
+          <p className="mx-auto mt-1.5 max-w-xl text-sm text-sky-200/70 sm:text-base">
+            Enter green, yellow, and gray clues. See every 5-letter word that still fits.
           </p>
         </FadeIn>
 
-        <FadeIn delay={0.12} className="mt-10 md:mt-12">
-          <OvulationCalculator />
+        <FadeIn delay={0.08} className="mt-5 sm:mt-6 md:mt-7">
+          <WordleWordFinder />
         </FadeIn>
       </div>
     </section>

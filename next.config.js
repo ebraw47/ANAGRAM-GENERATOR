@@ -25,29 +25,11 @@ const nextConfig = {
       { source: "/privacy", destination: "/privacy-policy", permanent: true },
       { source: "/contact", destination: "/contact-us", permanent: true },
       { source: "/blog", destination: "/category/blog", permanent: true },
-      // Legacy logistics / removed blog URLs → current ovulation content
-      { source: "/how-to-track-maersk-shipment", destination: "/how-to-use-an-ovulation-calculator", permanent: true },
-      { source: "/maersk-container-tracking", destination: "/fertile-window", permanent: true },
-      { source: "/maersk-bill-of-lading-tracking", destination: "/how-to-calculate-ovulation", permanent: true },
-      { source: "/maersk-tracking-not-updating", destination: "/irregular-periods-and-ovulation", permanent: true },
-      { source: "/understanding-your-fertile-window", destination: "/fertile-window", permanent: true },
-      { source: "/menstrual-cycle-length-and-ovulation", destination: "/how-to-calculate-ovulation", permanent: true },
-      { source: "/lh-surge-and-ovulation-tests", destination: "/how-to-use-an-ovulation-test", permanent: true },
-      { source: "/ovulation-calculator-myths", destination: "/how-to-use-an-ovulation-calculator", permanent: true },
-      { source: "/trying-to-conceive-checklist", destination: "/best-time-to-conceive", permanent: true },
-      { source: "/ovulation-vs-period-calendar", destination: "/ovulation-calendar", permanent: true },
-      { source: "/how-to-track-your-shein-order", destination: "/", permanent: true },
-      { source: "/how-long-does-shein-take", destination: "/", permanent: true },
-      { source: "/shein-tracking-statuses-explained", destination: "/", permanent: true },
-      { source: "/shein-tracking-not-updating", destination: "/", permanent: true },
-      { source: "/shein-delivered-but-not-received", destination: "/", permanent: true },
-      { source: "/shein-customs-clearance", destination: "/", permanent: true },
     ];
   },
 
   async rewrites() {
     return [
-      // Common sitemap paths → our sitemap routes
       { source: "/sitemap.xml", destination: "/sitemap-index.xml" },
       { source: "/sitemap_index.xml", destination: "/sitemap-index.xml" },
       { source: "/post-sitemap.xml", destination: "/index.xml" },

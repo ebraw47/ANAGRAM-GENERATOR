@@ -4,25 +4,22 @@ import { ARTICLES, BRAND, IMAGES, ROUTES } from "@/lib/siteConfig";
 
 export default function Footer() {
   return (
-    <footer className="relative z-20 border-t border-white/10 bg-[#2a1520] text-neutral-300">
+    <footer className="relative z-20 border-t border-white/10 bg-black text-neutral-300">
       <div className="mx-auto max-w-6xl px-4 py-12 md:px-6">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
           <div>
-            <Link href="/" className="mb-4 inline-flex items-center gap-2.5">
+            <Link href="/" className="mb-4 inline-block" aria-label={`${BRAND.name} home`}>
               <Image
-                src={IMAGES.logo}
-                alt=""
-                width={36}
-                height={36}
-                className="rounded-lg ring-1 ring-white/15"
+                src={IMAGES.headerLogo}
+                alt={`${BRAND.name} logo`}
+                width={280}
+                height={57}
+                className="h-11 w-auto max-w-[280px] object-contain object-left"
               />
-              <span className="font-display text-lg font-bold text-white">
-                Ovulation Calculator
-              </span>
             </Link>
             <p className="mt-3 text-sm leading-relaxed text-neutral-400">
-              Free ovulation estimates for your fertile window and ovulation date. Educational
-              timing tools — not medical advice or birth control.
+              Free Wordle solver and 5-letter word finder. Enter green, yellow, and gray clues —
+              get matching candidates instantly. Not affiliated with the New York Times.
             </p>
           </div>
 
@@ -33,7 +30,7 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm text-neutral-400">
               <li>
                 <Link href={ROUTES.home} className="transition-colors hover:text-white">
-                  Calculator
+                  Finder
                 </Link>
               </li>
               <li>
@@ -81,10 +78,7 @@ export default function Footer() {
               ))}
             </ul>
             <p className="mt-6 text-sm text-neutral-400">
-              <a
-                href={`mailto:${BRAND.email}`}
-                className="transition-colors hover:text-white"
-              >
+              <a href={`mailto:${BRAND.email}`} className="transition-colors hover:text-white">
                 {BRAND.email}
               </a>
             </p>
