@@ -93,34 +93,34 @@ export default function ArticlePage({
       <Script id={`article-schema-${article.slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <Script id={`breadcrumb-${article.slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
 
-      <article className="bg-[#050B16] text-[#F2F6FF]">
-        <header className="page-banner relative overflow-hidden border-b border-white/10 text-white">
-          <PageBannerPattern opacity={0.35} />
+      <article className="text-[#20242C]">
+        <header className="page-banner relative overflow-hidden border-b border-navy-900/10">
+          <PageBannerPattern opacity={0.2} />
           <div className="relative mx-auto max-w-3xl px-4 py-10 md:px-6 md:py-14">
-            <nav className="mb-5 text-sm text-white/70" aria-label="Breadcrumb">
+            <nav className="mb-5 text-sm text-ink-mute" aria-label="Breadcrumb">
               <ol className="flex flex-wrap items-center gap-1.5">
                 <li>
-                  <Link href="/" className="hover:text-white">
+                  <Link href="/" className="hover:text-[#20242C]">
                     Home
                   </Link>
                 </li>
                 <li aria-hidden>/</li>
                 <li>
-                  <Link href="/category/blog" className="hover:text-white">
+                  <Link href="/category/blog" className="hover:text-[#20242C]">
                     Blog
                   </Link>
                 </li>
                 <li aria-hidden>/</li>
-                <li className="line-clamp-1 text-white/90">{article.title}</li>
+                <li className="line-clamp-1 text-[#20242C]">{article.title}</li>
               </ol>
             </nav>
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-white/65">
-              Wordle guide
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-ink-mute">
+              Title case guide
             </p>
-            <h1 className="font-display text-3xl font-extrabold tracking-tight md:text-4xl md:leading-tight">
+            <h1 className="font-display text-3xl font-extrabold tracking-tight text-[#20242C] md:text-4xl md:leading-tight">
               {article.title}
             </h1>
-            <p className="mt-5 text-sm text-white/80">
+            <p className="mt-5 text-sm text-ink-mute">
               <time dateTime={article.date}>
                 {new Date(article.date).toLocaleDateString("en-US", {
                   year: "numeric",
@@ -135,7 +135,7 @@ export default function ArticlePage({
         </header>
 
         <div className="mx-auto max-w-3xl px-4 py-10 md:px-6 md:py-14">
-          <figure className="mb-10 overflow-hidden rounded-2xl border border-white/10 bg-[#0B1F3A] shadow-sm">
+          <figure className="mb-10 overflow-hidden rounded-2xl border border-navy-900/10 bg-white shadow-sm">
             <span className="relative block aspect-[16/9] w-full">
               <Image
                 src={article.image}
@@ -151,22 +151,22 @@ export default function ArticlePage({
         </div>
 
         {related.length > 0 && (
-          <aside className="border-t border-white/10 bg-[#02060D] py-12 md:py-14">
+          <aside className="section-glass border-t border-navy-900/10 py-12 md:py-14">
             <div className="mx-auto max-w-6xl px-4 md:px-6">
               <FadeIn>
                 <p className="section-kicker">Keep reading</p>
-                <h2 className="font-display text-2xl font-bold text-white">Related guides</h2>
+                <h2 className="font-display text-2xl font-bold text-[#20242C]">Related guides</h2>
               </FadeIn>
               <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {related.map((a, i) => (
                   <FadeIn key={a.slug} delay={0.05 * i}>
                     <Link
                       href={`/${a.slug}`}
-                      className="group block overflow-hidden rounded-2xl border border-white/10 bg-[#0B1F3A] transition hover:border-brand/50 hover:shadow-soft"
+                      className="group block overflow-hidden rounded-2xl border border-navy-900/10 bg-white/90 backdrop-blur-sm transition hover:border-brand/40 hover:shadow-soft"
                     >
                       <GuideCardThumb src={a.image} alt={a.title} />
                       <div className="p-4">
-                        <h3 className="font-display text-base font-semibold text-white group-hover:text-navy-500 line-clamp-2">
+                        <h3 className="font-display text-base font-semibold text-[#20242C] group-hover:text-brand line-clamp-2">
                           {a.title}
                         </h3>
                       </div>

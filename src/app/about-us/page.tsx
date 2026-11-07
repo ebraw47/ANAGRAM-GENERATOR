@@ -5,9 +5,9 @@ import { getMarkdown, stripLeadingH1 } from "@/lib/content";
 import { BRAND, ROUTES, SITE_ORIGIN } from "@/lib/siteConfig";
 
 const PAGE_URL = `${SITE_ORIGIN}${ROUTES.about}`;
-const PAGE_TITLE = "About Us | Wordle Word Finder";
+const PAGE_TITLE = "About Us | Title Case Converter";
 const PAGE_DESCRIPTION =
-  "Learn about WordleWordFinder.net — free Wordle solver, 5-letter word finder, and strategy guides.";
+  "Learn about TitleCaseConverter.io — a free title capitalization tool for AMA, AP, APA, Bluebook, Chicago, MLA, NY Times, and Wikipedia.";
 
 export const metadata: Metadata = {
   title: { absolute: PAGE_TITLE },

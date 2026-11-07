@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Space_Grotesk, Manrope, Lilita_One } from "next/font/google";
+import { Outfit, Fraunces } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import Header from "@/components/Header";
@@ -8,27 +8,19 @@ import ScrollToTopWrapper from "@/components/ScrollToTopWrapper";
 import WebVitalsTracker from "@/components/WebVitalsTracker";
 import { BRAND, IMAGES, SITE_ORIGIN } from "@/lib/siteConfig";
 
-const display = Space_Grotesk({
+const display = Fraunces({
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["600", "700"],
   display: "swap",
   variable: "--font-display",
   preload: true,
 });
 
-const body = Manrope({
+const body = Outfit({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
   variable: "--font-body",
-  preload: true,
-});
-
-const game = Lilita_One({
-  subsets: ["latin"],
-  weight: "400",
-  display: "swap",
-  variable: "--font-game",
   preload: true,
 });
 
@@ -37,25 +29,27 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
-  themeColor: "#050B16",
+  themeColor: "#F7F5F0",
   viewportFit: "cover",
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_ORIGIN),
   title: {
-    default: "Wordle Word Finder | Solver, Helper & 5-Letter Words",
+    default: "Title Case Converter | Free AMA, AP, APA, Chicago & MLA Tool",
     template: `%s | ${BRAND.name}`,
   },
   description: BRAND.description,
   keywords: [
-    "wordle word finder",
-    "wordle solver",
-    "wordle helper",
-    "5 letter word finder",
-    "wordle hints",
-    "best wordle starting words",
-    "wordle green yellow gray",
+    "title case converter",
+    "title capitalization",
+    "title case",
+    "sentence case",
+    "APA title case",
+    "Chicago title case",
+    "AP style titles",
+    "MLA title case",
+    "capitalize title",
   ],
   authors: [{ name: BRAND.name }],
   creator: BRAND.name,
@@ -73,10 +67,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/favicon.png", type: "image/png", sizes: "48x48" },
+      { url: "/favicon.png", type: "image/png", sizes: "64x64" },
       { url: "/icon.png", type: "image/png", sizes: "192x192" },
       { url: "/favicon-512.png", type: "image/png", sizes: "512x512" },
+      { url: "/favicon.ico", sizes: "any" },
     ],
     apple: [{ url: "/apple-icon.png", sizes: "180x180" }],
   },
@@ -87,7 +81,7 @@ export const metadata: Metadata = {
     canonical: SITE_ORIGIN,
   },
   openGraph: {
-    title: "Wordle Word Finder | Solver, Helper & 5-Letter Words",
+    title: "Title Case Converter | Free AMA, AP, APA, Chicago & MLA Tool",
     description: BRAND.description,
     url: SITE_ORIGIN,
     siteName: BRAND.name,
@@ -98,20 +92,20 @@ export const metadata: Metadata = {
         url: `${SITE_ORIGIN}${IMAGES.og}`,
         width: 1200,
         height: 630,
-        alt: `${BRAND.name} — find matching Wordle words`,
+        alt: `${BRAND.name} — free title capitalization tool`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Wordle Word Finder | Solver, Helper & 5-Letter Words",
+    title: "Title Case Converter | Free AMA, AP, APA, Chicago & MLA Tool",
     description: BRAND.description,
     creator: BRAND.twitter,
     images: [`${SITE_ORIGIN}${IMAGES.twitter}`],
   },
   applicationName: BRAND.name,
-  category: "Games",
-  classification: "Wordle Word Finder & Solver",
+  category: "Utilities",
+  classification: "Title Case Converter & Capitalization Tool",
 };
 
 export default function RootLayout({
@@ -122,12 +116,12 @@ export default function RootLayout({
   const adsenseClient = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
 
   return (
-    <html lang="en" className={`${display.variable} ${body.variable} ${game.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${display.variable} ${body.variable}`} suppressHydrationWarning>
       <head>
         <meta name="mobile-web-app-capable" content="yes" />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48" />
+        <link rel="icon" href="/favicon.png" type="image/png" sizes="64x64" />
         <link rel="icon" href="/icon.png" type="image/png" sizes="192x192" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-icon.png" sizes="180x180" />
         <link rel="manifest" href="/manifest.json" />
         {adsenseClient && (
@@ -165,9 +159,9 @@ export default function RootLayout({
             </>
           )}
       </head>
-      <body className={`${body.className} antialiased min-h-screen flex flex-col bg-[#050B16] text-[#F2F6FF]`} suppressHydrationWarning>
+      <body className={`${body.className} site-canvas antialiased min-h-screen flex flex-col text-[#20242C]`} suppressHydrationWarning>
         <Header />
-        <main className="relative flex-1">{children}</main>
+        <main className="relative z-[1] flex-1">{children}</main>
         <Footer />
         <ScrollToTopWrapper />
         <WebVitalsTracker />

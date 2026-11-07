@@ -1,39 +1,40 @@
 # Privacy Policy
 
-**Last updated:** November 6, 2026
+**Effective date:** November 7, 2026  
+**Website:** https://titlecaseconverter.io
 
-WordleWordFinder.net (“we,” “us”) respects your privacy. This policy explains what information we collect and how we use it.
+Title Case Converter (“we”, “us”) respects your privacy. This policy explains what information we collect and how we use it.
 
-## Summary
+## Title conversion privacy
 
-- The Wordle word finder runs in your browser. Your green, yellow, and gray clues are **not** sent to our servers to compute matches.
-- We may collect basic analytics and advertising data if those scripts are enabled on the site.
-- We do not sell personal information.
+The title case converter runs in your browser. The headlines and text you paste into the tool are **not uploaded to our servers** for conversion and are not stored by us as part of the conversion process.
 
 ## Information we may collect
 
-- **Usage data** such as pages visited, approximate location derived from IP, device/browser type, and referral URLs (via analytics tools when configured)
-- **Contact information** you voluntarily send by email
-- **Cookies / local storage** used for analytics, ads, or basic site preferences
+- **Contact form messages** you voluntarily send (name, email, message content)  
+- **Basic analytics** if enabled (pages viewed, device/browser type, approximate location) via privacy-conscious analytics or Google Analytics  
+- **Advertising data** if Google AdSense or similar partners are enabled on the site  
 
-## How we use information
+## Cookies
 
-- To operate and improve WordleWordFinder.net
-- To respond to messages you send us
-- To measure traffic and, when enabled, display ads
+We may use cookies or similar technologies for analytics, advertising, and essential site functions. You can control cookies through your browser settings.
 
-## Third parties
+## Third-party services
 
-We may use providers such as Google Analytics or Google AdSense when environment keys are configured. Those services have their own privacy policies.
+If we use analytics or advertising partners, those providers may process data under their own privacy policies. We do not sell your personal information.
+
+## Email
+
+If you email us at contact@titlecaseconverter.io, we use your address only to respond to your request.
 
 ## Children’s privacy
 
 This site is not directed at children under 13. We do not knowingly collect personal information from children.
 
-## Your choices
+## Changes
 
-You can block cookies in your browser settings and stop using the site at any time. Email us to request deletion of correspondence you previously sent.
+We may update this policy from time to time. The effective date above will change when we do.
 
 ## Contact
 
-[contact@wordlewordfinder.net](mailto:contact@wordlewordfinder.net)
+Privacy questions: [contact@titlecaseconverter.io](mailto:contact@titlecaseconverter.io)

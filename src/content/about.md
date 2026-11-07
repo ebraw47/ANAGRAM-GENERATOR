@@ -1,21 +1,23 @@
 # About Us
 
-**WordleWordFinder.net** is an independent Wordle helper that turns green, yellow, and gray clues into a live list of matching five-letter words.
-
-## Our mission
-
-We believe a good Wordle tool should respect how the game actually scores tiles — especially yellow positions and repeated letters — instead of offering a vague “includes letters” box. Our finder is built for that constraint logic, with clear strategy guides around the searches people already make.
+**Title Case Converter** (TitleCaseConverter.io) is a free, browser-based title capitalization tool for writers, students, marketers, and editors. We built it to settle everyday style questions — APA vs Chicago, title case vs sentence case — without forcing anyone through a signup wall.
 
 ## What we offer
 
-- A free, browser-based **Wordle word finder** and solver
-- Guides built around real search demand: starting words, strategy tips, color rules, hard mode, duplicate letters, and second-guess scouting
-- Plain-language FAQs and a clear disclaimer that we are not the official game
+- Instant conversion to AMA, AP, APA, Bluebook, Chicago, MLA, NY Times, and Wikipedia title case  
+ 
+- Sentence case, UPPERCASE, and lowercase transforms  
+- Live character and word counts for SEO-friendly titles  
+- Guides that match real search demand around capitalization rules  
 
-## What we are not
+## Our approach
 
-We are not affiliated with the New York Times, Wordle, or NYT Games. We do not publish today’s official answer. The finder only filters words from the clues **you** enter.
+Capitalization looks simple until style guides disagree. We expose those differences clearly, run conversion locally in your browser, and keep the experience fast on both desktop and mobile.
 
-## Contact
+## Not a replacement for editors
 
-Questions or feedback? Reach us at [contact@wordlewordfinder.net](mailto:contact@wordlewordfinder.net) or visit our [Contact](/contact-us) page.
+Our converter follows commonly published style patterns. Final editorial judgment — especially for brand names, trademarks, and edge-case grammar — still belongs to you and your style authority.
+
+## Get in touch
+
+Questions or feedback? Email [contact@titlecaseconverter.io](mailto:contact@titlecaseconverter.io) or visit our [contact page](/contact-us).

@@ -1,122 +1,172 @@
-A **Wordle word finder** turns the green, yellow, and gray tiles you already earned into a shortlist of five-letter words that still fit. Instead of staring at a half-solved board, you enter your clues once and browse every remaining candidate — then pick the next guess that tests the most useful letters.
+A **title case converter** turns messy headlines into correctly capitalized titles for books, movies, songs, essays, blogs, product pages, and SEO meta titles. Paste any string, choose AMA, AP, APA, Bluebook, Chicago, MLA, NY Times, or Wikipedia — or switch to sentence case, UPPERCASE, or lowercase — then copy a result that matches the style guide your editor, professor, or publisher expects.
 
-Use the free finder on **WordleWordFinder.net** above. It filters thousands of five-letter words in your browser as you type. Nothing is sent to a server, and we never reveal today’s official answer.
+Use the free converter on **TitleCaseConverter.io** above. It runs in your browser, supports multi-line batches, optional explanations, change highlighting, and a live character count so page titles stay SERP-friendly.
 
 ## Why Choose Us?
 
-## What Is a Wordle Word Finder?
+## What Is Title Case?
 
-A **Wordle word finder** (also called a Wordle solver or Wordle helper) is a constraint filter for the daily five-letter puzzle:
+**Title case** (also called **headline style**) is the traditional capitalization for names of works — books, films, songs, plays, albums — and for many blog posts, essay titles, and newspaper-style headlines. In title case, **major words** are capitalized and **minor words** stay lowercase.
 
-1. **Green letters** — locked to an exact position  
-2. **Yellow letters** — present in the word, but banned from the spot you tried  
-3. **Gray letters** — absent from the answer (with special rules for duplicates)  
+A familiar example is *Lord of the Flies*: *Lord* and *Flies* are capitalized; the short preposition *of* is not.
 
-Every candidate word must satisfy all three clue types at once. The list that survives is your playable set for the next guess.
+The everyday rule of thumb is:
 
-Top-ranking helpers emphasize the same core idea competitors leave incomplete on thin pages: **yellow letters need position bans**, not just an “includes” box. Typing a yellow R in slot 2 means “R must appear somewhere” *and* “slot 2 is not R.” That dual constraint is what collapses a 100-word list into a handful of realistic answers.
+1. Capitalize nouns, pronouns, verbs, adjectives, and adverbs  
+2. Lowercase articles (*a*, *an*, *the*), many coordinating conjunctions (*and*, *or*, *but*), and short prepositions (*in*, *on*, *for*, *up*)  
+3. Always capitalize the first word — and, in many styles, the last word — even when it is a “minor” word  
 
-## How Wordle Clues Become Constraints
+That rule sounds simple until grammar gets in the way. The same short word can be a preposition in one title and an adverb or adjective in another — and title case cares which job the word is doing.
 
-After each guess, Wordle paints every tile:
-
-- **Green** = positional equality (`slot 3 must be A`)  
-- **Yellow** = inclusion + positional inequality (`word contains R`, `slot 2 is not R`)  
-- **Gray** = exclusion for that copy (`no unmatched P remains`)  
-
-A finder applies those rules to a dictionary. Words that would have produced different feedback fall away. What remains are words still consistent with everything you have seen.
-
-### Common words vs. all valid guesses
-
-Likely **answers** are everyday five-letter words (think SLATE, CRANE, ROBOT). The broader **guess list** also includes rarer accepted words (CAULK, BAIZE, ZORIL). Those rarer words rarely appear as the daily answer, but they make excellent **scout guesses** when you need to burn obscure letters fast.
-
-Toggle **Common words only** in the finder when you want a shortlist of plausible answers. Turn it off when you need every word the game will accept.
-
-## How to Use the Wordle Word Finder Step by Step?
-
-Use the live finder at the top of this page:
-
-1. Type your **green letters** in their exact positions.  
-2. Add **yellow letters** in the slots where you tried them — we keep the letter and ban those positions.  
-3. List **gray letters** that are absent from the answer.  
-4. Browse the matching list and the **hot-letter** strip to choose a high-information next guess.
-
-Results update as you type. For a deeper walkthrough, read [How to use a Wordle word finder](/how-to-use-a-wordle-word-finder).
-
-## How a Strong Wordle Strategy Uses a Finder
-
-Top solvers on the SERP share a three-step pattern. Pair it with the finder and you waste fewer guesses:
-
-1. **Guess 1 — fixed opener.** Same word every day with five distinct, high-frequency letters. See [best Wordle starting words](/best-wordle-starting-words).  
-2. **Guess 2 — scout, don’t refine.** Test four or five brand-new letters instead of forcing early greens into a near-match. Full guide: [second-guess strategy](/wordle-second-guess-strategy).  
-3. **Guess 3 — commit.** Once the candidate list is small, play the most plausible remaining answer.
-
-Tactical add-ons that competitors highlight and players search for:
-
-- Don’t waste a turn confirming a green you already know.  
-- Watch for [repeated letters](/wordle-repeated-letters-explained) — Wordle uses doubles more than intuition suggests.  
-- Save Q, J, X, and Z for late; they appear in a tiny share of answers.  
-- In [hard mode](/wordle-hard-mode-guide), scout guesses are restricted — lean harder on the remaining candidate list.
-
-## Best Wordle Starting Words (Quick Picks)
-
-A good opener uses **five unique letters**, mixes vowels and consonants, and covers high-frequency tiles (E, A, R, O, T, L, I, S). Data-backed shortlist:
-
-| Rank | Word | Why it works |
+| Word | Lowercase (preposition / conjunction / article) | Capitalize (adverb, adjective, or noun) |
 | --- | --- | --- |
-| 1 | IRATE | Strong vowel + consonant coverage |
-| 2 | LATER / ALTER / ALERT | Same letter set, excellent coverage |
-| 3 | SLATE | Classic high-frequency mix |
-| 4 | CRANE | Popular math-backed opener |
-| 5 | TRACE / SOARE | Information-rich letter sets |
+| on | *Lay It All on Me* | *It’s On Again* |
+| in | *The Catcher in the Rye* | *Give In to Me* |
+| out | *Fresh out the Oven* | *School’s Out Forever* |
+| up | *Crawling up a Hill* | *Picking Up the Pieces* |
+| but | *Nothing but the Truth* | *Life Is But a Dream* |
+| a | *Let’s Make a Deal* | *The A to Z of Gardening* |
+| by | *Stand by Me* | *Stand By for Action* |
 
-Pick one and stick with it. Consistency beats rotating openers every morning. Full rankings: [best Wordle starting words](/best-wordle-starting-words).
+Blindly lowercasing every *in*, *on*, or *by* produces wrong headlines. Our converter looks at **context** for each word so those edge cases are handled more accurately than a naive capitalize-every-word script.
 
-## How Wordle Colors Work (So Your Finder Stays Accurate)
+## What Is a Title Case Converter?
 
-Misreading a tile is the fastest way to get a wrong shortlist:
+A **title case converter** (title capitalization tool) applies those headline-style rules automatically:
 
-- Green locks the letter **and** the slot.  
-- Yellow means move the letter — never keep it in the yellow square.  
-- Gray usually means “not in the word,” but with duplicates it can mean “no extra copy left.”
+1. **Major words** — nouns, verbs, adjectives, adverbs, and pronouns are capitalized  
+2. **Minor words** — articles, short conjunctions, and short prepositions stay lowercase mid-title when they are truly minor  
+3. **Edge rules** — first word (and usually last word) capitalized; style-specific preposition and conjunction lists applied  
 
-Master the rules in [How Wordle colors work](/how-wordle-colors-work) before you trust any solver — including ours.
+Top-ranking tools emphasize what thin pages skip: **style guides disagree**. APA and AP capitalize longer prepositions (*With*, *From*, *About*). Chicago, Bluebook, and Wikipedia lowercase more prepositions. MLA lowercases all prepositions. A useful converter lets you switch styles instead of guessing.
 
-## What Makes This Finder Different
+## Title Capitalization Rules
 
-Compared with thin pattern boxes that only ask for greens and an includes field, WordleWordFinder.net is built around gaps we found on ranking competitor pages:
+Title case is **not** one universal standard. Style manuals — including the AMA Manual of Style, AP composition-title guidance, the APA Publication Manual, *The Bluebook*, *The Chicago Manual of Style*, the MLA Handbook, *The New York Times Manual*, and Wikipedia’s house style — each define their own lists. Still, most guides share a core consensus:
 
-- **Yellow position tracking** — ban the exact spots you already tried  
-- **Live letter-frequency hints** — target letters that still dominate the pool  
-- **Common vs. full dictionary toggle** — answers first, or scout-ready full list  
-- **Runs entirely in your browser** — no login, no email gate, no puzzle tracking  
-- **Strategy content that matches search demand** — openers, hard mode, duplicates, scouting
+**Always capitalize**
 
-## Wordle Variants (After Today’s Puzzle)
+- The first word of a title or subtitle  
+- Nouns, pronouns (including *it*, *my*, *our*), verbs (including *is*, *am*, and other forms of *to be*), adverbs, and adjectives  
+- Some conjunctions and longer prepositions (style-dependent)
 
-If you finish early, the same clue logic transfers to related daily games:
+**Usually lowercase mid-title**
 
-- **Quordle** — four boards, nine guesses  
-- **Octordle** — eight boards, thirteen guesses  
-- **NYT Connections** and **Strands** — different formats, same daily habit  
-- **NYT Mini Crossword** — a short warmup before Wordle  
+- Articles (*a*, *an*, *the*)  
+- Some coordinating or subordinating conjunctions (style-dependent)  
+- Short prepositions (style-dependent)
 
-Our finder is tuned for classic Wordle, but fixed openers, information-gain scouting, and letter-frequency awareness help across most word dailies.
+### How the major styles differ
 
-## What Is Wordle?
+| Topic | What changes |
+| --- | --- |
+| **Prepositions** | AMA, APA, and AP typically lowercase prepositions of **three letters or fewer** (*in*, *on*, *off*, *out*). Bluebook, Chicago, and Wikipedia also lowercase many **four-letter** prepositions (*from*, *with*, *over*, *like*). MLA lowercases **all** prepositions. NY Times uses a selective short list (*at*, *by*, *in*, *for*…) while capitalizing others of similar length (*up*, *off*, *out*) and longer prepositions. |
+| **Coordinating conjunctions (FANBOYS)** | AMA, AP, APA, MLA, Bluebook, and Wikipedia usually lowercase *for, and, nor, but, or, yet, so*. Chicago lowercases *for, and, nor, but, or* but capitalizes *yet* and *so*. NY Times lowercases *for, and, but, or* and capitalizes *nor, yet, so*. |
+| **Subordinating conjunctions** | AP, APA, and NY Times often lowercase *as* and *if*. Chicago lowercases *as* but capitalizes *if*. AMA, Bluebook, MLA, and Wikipedia typically capitalize both *as* and *if*. |
+| **Last word** | AP, Chicago, MLA, NY Times, and Wikipedia capitalize the final word even if it is minor. AMA, APA, and Bluebook do **not** force that rule — a trailing preposition can stay lowercase (*Be Careful What You Wish for*). |
+| **Hyphenated compounds** | Guides also disagree on which parts of a hyphenated word get capitals — another reason to convert with the exact style your publisher requires. |
 
-Wordle is a once-a-day five-letter puzzle: six guesses, shared answer for everyone, color feedback after each try. Josh Wardle released it publicly in 2021; the New York Times acquired it in 2022. The puzzle resets at midnight local time.
+Shared baseline across guides: capitalize the first word after a colon, treat short verbs and pronouns as major words (*Is*, *It*, *My*), and never “title case” by capitalizing every single token.
 
-This site is an independent helper. It is **not affiliated with** the New York Times or the official Wordle game.
+Full comparison with examples: [title capitalization rules](/title-capitalization-rules). Checklist of major vs minor words: [words to capitalize in a title](/words-to-capitalize-in-a-title).
+
+## What Is Sentence Case?
+
+**Sentence case** capitalizes only the first word of a title (or sentence) plus **proper nouns**. Everything else stays lowercase.
+
+> Title case: *The Rise of Remote Work in Austin*  
+> Sentence case: *The rise of remote work in Austin*
+
+For people, the rule is easy. For software it is hard: proper nouns are endless, and many words are proper nouns only in context (*new* vs *New York*; *green* vs *Green New Deal*). Our sentence-case mode recognizes many common proper nouns, but expect occasional manual tweaks — title-case conversion remains the more deterministic path.
+
+Use the converter above for titles and headlines. Enable **multi-line input** to batch many headlines in one style, or convert a single line and flip between sentence case and title-case styles to see which look you prefer.
+
+## Title Case vs Sentence Case
+
+Writers search this comparison constantly. Prefer **title case** for book titles, composition titles, and many academic headings. Prefer **sentence case** for some news headlines, email subjects, and blogs that want a quieter voice. Our [title case vs sentence case](/title-case-vs-sentence-case) guide walks through examples and when each style wins.
+
+## How to Use the Title Case Converter Step by Step?
+
+Use the live converter at the top of this page:
+
+1. Type a title or paste from the clipboard. With **Convert When Text Is Pasted** on, pasting starts conversion automatically.  
+2. Press **Ctrl+Enter** (Windows) or **Cmd+Enter** (Mac), or click **Convert**.  
+3. Pick a **Title Case** style (AMA, AP, APA, Bluebook, Chicago, MLA, NY Times, Wikipedia) or an **Other** style (sentence, UPPERCASE, lowercase).  
+4. Review options, explanations, and highlights if you need them.  
+5. Click **Copy**, then paste into your CMS, manuscript, or ad platform. Use **Clear** when you are ready for the next headline.
+
+For a deeper walkthrough, read [how to use a title case converter](/how-to-use-a-title-case-converter).
+
+## Converter Options Explained
+
+Only some toggles change the converted text; the rest help you review and publish faster.
+
+| Option | What it does |
+| --- | --- |
+| **Keep Words in All Caps** | Title-case modes only. Leaves pasted ALL CAPS tokens alone (*FREE Consultation* stays *FREE…*). Common acronyms such as *USA*, *HTML*, and *SEO* are still normalized to uppercase even when this is off. Ambiguous tokens like *IT/it* or *US/us* are treated carefully. |
+| **Enable Multi-Line Input** | Convert many titles at once (one per line) in a single selected style. |
+| **Show Explanations** | Word-by-word reasons for capitalize vs lowercase decisions (title-case modes). |
+| **Highlight Changes** | Marks letters whose case changed so you can spot edits instantly. |
+| **Use Straight Quotes** | Prefer typewriter `"` quotes instead of curly typographic quotes. |
+| **Convert When Text Is Pasted** | Pasting replaces the box and runs conversion immediately — ideal for a copy → paste → copy workflow. |
+
+## Typography Cleanup
+
+Alongside case conversion, the tool tidies small punctuation issues: curly vs straight quotes (per your option), smarter dashes where hyphens belong as dashes, ellipses for three dots, and stray spaces before `?`, `!`, and commas. Example: `"I like rock 'n' roll !"` becomes a clean title-cased *“I Like Rock ’n’ Roll!”* (or with straight quotes if that option is on).
+
+## Words to Capitalize in a Title
+
+Capitalize these major words:
+
+- Nouns (*Market*, *Strategy*, *Ocean*)  
+- Pronouns (*She*, *They*, *It*)  
+- Verbs (*Build*, *Is*, *Become*)  
+- Adjectives & adverbs (*Rapid*, *Truly*, *Global*)  
+
+Usually leave these lowercase in the middle of a title:
+
+- Articles (*a*, *an*, *the*)  
+- Coordinating conjunctions (*and*, *but*, *or*, *nor*, *for* — and style-dependent *yet* / *so*)  
+- Short prepositions (*in*, *on*, *of*, *to*, *at*, *by*)  
+
+Style-dependent: longer prepositions (*with*, *about*, *between*) and words like *as* / *if*. See [words to capitalize in a title](/words-to-capitalize-in-a-title).
+
+## Benefits of a Free Title Case Converter
+
+- **Consistency** across a blog, catalog, or campaign  
+- **Fewer style-guide mistakes** on client or academic work  
+- **Faster publishing** — paste, convert, copy  
+- **SEO hygiene** — character counts help avoid truncated SERP titles  
+- **Privacy** — conversion stays in-browser  
+
+More detail: [benefits of a title case converter](/benefits-of-title-case-converter).
+
+## Who Can Use This Tool?
+
+- Bloggers and newsletter writers  
+- Students formatting essay and paper titles  
+- Marketers polishing ad headlines and meta titles  
+- Editors enforcing house style  
+- E-commerce teams standardizing product titles  
+- Developers naming UI labels and documentation headings  
+
+Full breakdown: [who can use a title case converter](/who-can-use-title-case-converter).
+
+## Tips for Faster Title Conversion
+
+- Turn on **Convert When Text Is Pasted**, then in your source app copy the title, switch here, paste, wait a beat, copy the result, and paste back.  
+- Prefer one style guide per publication and stick to it.  
+- Don’t keyword-stuff page titles past ~60 characters.  
+- Keep brand names and acronyms intact (*iPhone*, *SEO*, *NASA*).  
+- After a colon, capitalize the subtitle’s first word.  
+- When unsure between Chicago and APA, convert both and compare *from* / *with* / *about*.  
+- Use explanations + highlights on tricky titles until the rules feel familiar.
 
 ## Explore Our Guides
 
-- [How to use a Wordle word finder](/how-to-use-a-wordle-word-finder)  
-- [Best Wordle starting words](/best-wordle-starting-words)  
-- [Wordle strategy tips and tricks](/wordle-strategy-tips-and-tricks)  
-- [How Wordle colors work](/how-wordle-colors-work)  
-- [Wordle hard mode guide](/wordle-hard-mode-guide)  
-- [Repeated letters explained](/wordle-repeated-letters-explained)  
-- [Second-guess strategy](/wordle-second-guess-strategy)  
+- [Title case vs sentence case](/title-case-vs-sentence-case)  
+- [Title capitalization rules](/title-capitalization-rules)  
+- [Words to capitalize in a title](/words-to-capitalize-in-a-title)  
+- [How to use a title case converter](/how-to-use-a-title-case-converter)
 
-## FAQs About Wordle Word Finders
+## FAQs About Title Case Converters

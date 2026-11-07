@@ -1,10 +1,10 @@
 {
-  "name": "Wordle Word Finder",
-  "short_name": "WordFinder",
-  "description": "Free Wordle word finder and solver. Enter green, yellow, and gray clues to see matching 5-letter words.",
+  "name": "Title Case Converter",
+  "short_name": "TitleCase",
+  "description": "Free title case converter for APA, Chicago, AP, and MLA. Convert headlines to title case, sentence case, UPPERCASE, or lowercase.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#F4F8FF",
+  "background_color": "#F7F5F0",
   "theme_color": "#1E6FFF",
   "icons": [
     {
@@ -21,7 +21,7 @@
     },
     {
       "src": "/favicon.png",
-      "sizes": "48x48",
+      "sizes": "64x64",
       "type": "image/png",
       "purpose": "any"
     }

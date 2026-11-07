@@ -38,7 +38,7 @@ export default function ScrollToTop() {
         <motion.button
           key="scroll-top"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="fixed bottom-8 right-8 z-50 rounded-full bg-brand p-3 text-white shadow-lift focus-ring"
+          className="fixed bottom-8 right-8 z-50 inline-flex items-center justify-center rounded-full bg-brand p-3 text-white shadow-lift focus-ring"
           aria-label="Scroll to top"
           initial={reduce ? false : { opacity: 0, y: 16, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}

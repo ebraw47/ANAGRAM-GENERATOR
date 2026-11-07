@@ -4,27 +4,29 @@
 
 :root {
   --brand: #1e6fff;
-  --navy-start: #050b16;
+  --navy-start: #f7f5f0;
   --navy-end: #1e6fff;
-  --coral: #4da3ff;
-  --ink: #f2f6ff;
-  --paper: #050b16;
-  --foreground-rgb: 242, 246, 255;
-  --background-start-rgb: 5, 11, 22;
-  --background-end-rgb: 2, 6, 13;
-  --feature-border: #123056;
-  --feature-title: #f2f6ff;
-  --feature-icon: #4da3ff;
+  --coral: #3b8eff;
+  --ink: #20242c;
+  --paper: #f7f5f0;
+  --surface: #d9d4c8;
+  --headline: #20242c;
+  --foreground-rgb: 32, 36, 44;
+  --background-start-rgb: 247, 245, 240;
+  --background-end-rgb: 247, 245, 240;
+  --feature-border: #e8e5dd;
+  --feature-title: #20242c;
+  --feature-icon: #1e6fff;
 }
 
 html {
   scroll-behavior: smooth;
-  background-color: #02060d;
+  background-color: #f7f5f0;
 }
 
 body {
-  color: #f2f6ff;
-  background: #050b16;
+  color: #20242c;
+  background: transparent;
 }
 
 img {
@@ -40,21 +42,43 @@ footer {
   font-family: inherit;
 }
 
+/* Main website background — warm ivory (no gradients) */
+.site-canvas {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  background-color: #f7f5f0;
+}
+
+.site-canvas > main,
+.site-canvas > footer {
+  position: relative;
+  z-index: 1;
+}
+
+.site-canvas > header {
+  z-index: 50;
+}
+
 .hero-gradient {
-  background:
-    radial-gradient(ellipse 70% 55% at 18% 18%, rgba(30, 111, 255, 0.38), transparent 55%),
-    radial-gradient(ellipse 60% 45% at 88% 12%, rgba(77, 163, 255, 0.2), transparent 50%),
-    linear-gradient(160deg, #000000 0%, #050b16 42%, #0b1f3a 78%, #02060d 100%);
+  background-color: #f7f5f0;
 }
 
 .page-banner {
-  background:
-    radial-gradient(ellipse 65% 50% at 85% 20%, rgba(77, 163, 255, 0.22), transparent 55%),
-    linear-gradient(145deg, #000000 0%, #050b16 40%, #0b1f3a 70%, #1e6fff 100%);
+  background-color: #f7f5f0;
+  color: #20242c;
+}
+
+.section-glass {
+  background-color: transparent;
+}
+
+.surface-card {
+  background-color: #d9d4c8;
 }
 
 .section-kicker {
-  @apply mb-2 text-xs font-bold uppercase tracking-[0.16em] text-navy-500;
+  @apply mb-2 text-xs font-bold uppercase tracking-[0.16em] text-brand;
 }
 
 .prose-track {
@@ -66,15 +90,17 @@ footer {
 }
 
 .prose-h2 {
-  @apply relative mt-12 mb-5 flex gap-3 font-display text-[1.55rem] font-bold leading-snug tracking-tight text-white md:text-[1.85rem];
+  @apply relative mt-12 mb-5 flex gap-3 font-display text-[1.55rem] font-bold leading-snug tracking-tight md:text-[1.85rem];
+  color: #20242c;
 }
 
 .prose-h2-bar {
-  @apply mt-1.5 h-[1.15em] w-1 shrink-0 rounded-full bg-gradient-to-b from-navy-500 to-brand;
+  @apply mt-1.5 h-[1.15em] w-1 shrink-0 rounded-full bg-gradient-to-b from-brand to-[#FFB86B];
 }
 
 .prose-h3 {
-  @apply mt-9 mb-3 border-l-[3px] border-navy-500/60 pl-3.5 font-display text-xl font-semibold tracking-tight text-white md:text-[1.35rem];
+  @apply mt-9 mb-3 border-l-[3px] border-brand/50 pl-3.5 font-display text-xl font-semibold tracking-tight md:text-[1.35rem];
+  color: #20242c;
 }
 
 .prose-p {
@@ -90,15 +116,52 @@ footer {
 }
 
 .prose-a {
-  @apply font-semibold text-navy-500 underline decoration-brand/40 underline-offset-2 transition hover:text-navy-200 hover:decoration-navy-500;
+  @apply font-semibold text-brand underline decoration-brand/35 underline-offset-2 transition hover:text-brand-dark hover:decoration-brand;
 }
 
 .prose-strong {
-  @apply font-semibold text-white;
+  @apply font-semibold;
+  color: #20242c;
+}
+
+/*
+  Surface hierarchy (ivory → champagne card → white input):
+  page #F7F5F0 · card ~#D9D4C8 · inset #FFFEFA
+*/
+.tool-glass {
+  background:
+    linear-gradient(165deg, #e2ddd2 0%, #d9d4c8 45%, #cfc9bb 100%);
+  border: 1px solid rgba(32, 36, 44, 0.12);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.55) inset,
+    0 0 0 1px rgba(32, 36, 44, 0.05),
+    0 16px 34px -18px rgba(32, 36, 44, 0.24),
+    0 5px 14px -8px rgba(32, 36, 44, 0.12);
+  backdrop-filter: blur(18px) saturate(1.15);
+  -webkit-backdrop-filter: blur(18px) saturate(1.15);
+}
+
+.tool-glass-inset {
+  background: #fffefa;
+  border: 1px solid rgba(32, 36, 44, 0.12);
+  box-shadow:
+    0 1px 2px rgba(32, 36, 44, 0.05) inset,
+    0 0 0 1px rgba(255, 255, 255, 0.7);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 .prose-table-wrap {
-  @apply my-6 overflow-x-auto rounded-xl border border-white/10;
+  @apply my-6 overflow-x-auto rounded-2xl;
+  background:
+    linear-gradient(165deg, #e2ddd2 0%, #d9d4c8 50%, #cfc9bb 100%);
+  border: 1px solid rgba(32, 36, 44, 0.12);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.55) inset,
+    0 0 0 1px rgba(32, 36, 44, 0.05),
+    0 14px 30px -16px rgba(32, 36, 44, 0.22);
+  backdrop-filter: blur(16px) saturate(1.1);
+  -webkit-backdrop-filter: blur(16px) saturate(1.1);
 }
 
 .prose-table {
@@ -106,15 +169,26 @@ footer {
 }
 
 .prose-th {
-  @apply border-b border-white/10 bg-navy-800 px-4 py-3 font-semibold text-white;
+  @apply border-b border-navy-900/10 px-4 py-3 font-semibold;
+  color: #20242c;
+  background: rgba(255, 253, 248, 0.55);
 }
 
 .prose-td {
-  @apply border-b border-white/5 px-4 py-3 text-ink-soft;
+  @apply border-b border-navy-900/5 px-4 py-3 text-ink-soft;
+  background: transparent;
+}
+
+.prose-table tbody tr:nth-child(even) td {
+  background: rgba(160, 153, 138, 0.22);
+}
+
+.prose-table tbody tr:hover td {
+  background: rgba(160, 153, 138, 0.32);
 }
 
 .focus-ring {
-  @apply outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-navy-900;
+  @apply outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-[#F7F5F0];
 }
 
 input[type="range"] {

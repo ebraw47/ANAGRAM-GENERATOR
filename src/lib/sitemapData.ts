@@ -14,7 +14,7 @@ export type SitemapImage = {
   caption: string;
 };
 
-const TODAY = "2026-11-06";
+const TODAY = "2026-11-07";
 
 export const SITEMAP_PAGES: SitemapPage[] = [
   { path: ROUTES.home, lastmod: TODAY, changefreq: "daily", priority: 1.0 },
@@ -36,19 +36,31 @@ export const SITEMAP_IMAGES: SitemapImage[] = [
     path: IMAGES.logo,
     pagePath: "/",
     title: `${BRAND.name} logo`,
-    caption: "Wordle Word Finder — free Wordle solver and 5-letter helper",
+    caption: "Title Case Converter — free title capitalization tool",
   },
   {
     path: IMAGES.website,
     pagePath: "/",
-    title: `${BRAND.name} banner`,
-    caption: "Find matching Wordle words from green, yellow, and gray clues",
+    title: `${BRAND.name} hero`,
+    caption: "Convert headlines to title case with AMA, AP, APA, Chicago, MLA, and more",
   },
   {
     path: IMAGES.og,
     pagePath: "/",
     title: `${BRAND.name} open graph image`,
     caption: BRAND.description,
+  },
+  {
+    path: IMAGES.features,
+    pagePath: "/",
+    title: "Title case converter features",
+    caption: "Style guides, SEO character count, and one-click copy",
+  },
+  {
+    path: IMAGES.vsSentence,
+    pagePath: "/title-case-vs-sentence-case",
+    title: "Title case vs sentence case",
+    caption: "Compare title case and sentence case capitalization",
   },
   ...ARTICLES.map((a) => ({
     path: a.image,

@@ -11,7 +11,7 @@ type FormData = {
 };
 
 const fieldClass =
-  "w-full rounded-xl border border-white/15 bg-[#02060D] px-4 py-3 text-white placeholder:text-ink-mute focus:border-navy-500 focus:outline-none focus:ring-2 focus:ring-brand/30";
+  "tool-glass-inset w-full rounded-xl px-4 py-3 text-[#20242C] placeholder:text-ink-mute focus:border-brand/50 focus:outline-none focus:ring-2 focus:ring-brand/25";
 
 export default function ContactForm() {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -35,18 +35,18 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="rounded-2xl border border-white/10 bg-[#0B1F3A] p-6 shadow-soft md:p-8">
-      <h2 className="mb-6 text-center font-display text-2xl font-bold text-white">Send Us a Message</h2>
+    <div className="tool-glass rounded-2xl p-6 md:p-8">
+      <h2 className="mb-6 text-center font-display text-2xl font-bold text-[#20242C]">Send Us a Message</h2>
 
       {formSubmitted ? (
-        <div className="mb-6 rounded-xl border border-brand/35 bg-brand/15 p-4 text-center text-navy-200">
+        <div className="mb-6 rounded-xl border border-brand/30 bg-brand/10 p-4 text-center text-navy-900">
           Thanks! Your email client should open shortly. We typically reply within 24–48 hours.
         </div>
       ) : null}
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
         <div>
-          <label htmlFor="name" className="mb-1.5 block text-sm font-semibold text-white">
+          <label htmlFor="name" className="mb-1.5 block text-sm font-semibold text-[#20242C]">
             Name
           </label>
           <input
@@ -59,7 +59,7 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label htmlFor="email" className="mb-1.5 block text-sm font-semibold text-white">
+          <label htmlFor="email" className="mb-1.5 block text-sm font-semibold text-[#20242C]">
             Email*
           </label>
           <input
@@ -75,7 +75,7 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label htmlFor="message" className="mb-1.5 block text-sm font-semibold text-white">
+          <label htmlFor="message" className="mb-1.5 block text-sm font-semibold text-[#20242C]">
             Message*
           </label>
           <textarea

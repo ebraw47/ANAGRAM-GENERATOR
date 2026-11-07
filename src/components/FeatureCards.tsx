@@ -13,12 +13,9 @@ type CardItem = {
 const iconClass = "h-7 w-7";
 
 export const FEATURE_ICONS = {
-  grid: (
+  styles: (
     <svg className={iconClass} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <rect x="3" y="3" width="7" height="7" rx="1.5" />
-      <rect x="14" y="3" width="7" height="7" rx="1.5" />
-      <rect x="3" y="14" width="7" height="7" rx="1.5" />
-      <rect x="14" y="14" width="7" height="7" rx="1.5" />
+      <path d="M4 6h16M4 12h10M4 18h14" />
     </svg>
   ),
   bolt: (
@@ -26,9 +23,10 @@ export const FEATURE_ICONS = {
       <path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z" />
     </svg>
   ),
-  filter: (
+  copy: (
     <svg className={iconClass} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <path d="M4 5h16l-6 7.5V19l-4 2v-8.5L4 5z" />
+      <rect x="8" y="8" width="12" height="12" rx="2" />
+      <path d="M4 16V6a2 2 0 0 1 2-2h10" />
     </svg>
   ),
   chart: (
@@ -48,11 +46,10 @@ export const FEATURE_ICONS = {
       <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
     </svg>
   ),
-  tap: (
+  paste: (
     <svg className={iconClass} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <path d="M8 13V7a2 2 0 1 1 4 0v6" />
-      <path d="M12 13v2a4 4 0 0 0 8 0v-1" />
-      <path d="M8 13l-2.2 4.2A2.5 2.5 0 0 0 8 21h6" />
+      <path d="M9 5h6M8 5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2" />
+      <rect x="9" y="3" width="6" height="4" rx="1" />
     </svg>
   ),
   spark: (
@@ -60,68 +57,68 @@ export const FEATURE_ICONS = {
       <path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8" />
     </svg>
   ),
-  list: (
+  check: (
     <svg className={iconClass} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" />
+      <path d="M20 6 9 17l-5-5" />
     </svg>
   ),
 } as const;
 
 export const HOME_FEATURES: CardItem[] = [
   {
-    title: "Green Position Locks",
-    description: "Pin correct letters to exact slots and shrink the dictionary immediately.",
-    icon: FEATURE_ICONS.grid,
+    title: "Eight Style Guides",
+    description: "AMA, AP, APA, Bluebook, Chicago, MLA, NY Times, and Wikipedia — plus sentence, upper, and lower case.",
+    icon: FEATURE_ICONS.styles,
   },
   {
-    title: "Yellow Position Bans",
-    description: "Keep present letters while excluding the spots you’ve already ruled out.",
-    icon: FEATURE_ICONS.filter,
-  },
-  {
-    title: "Live Candidate List",
-    description: "Matching words update as you type — no submit button, no server wait.",
+    title: "Pro Converter Options",
+    description: "Explanations, highlight changes, multi-line input, paste-to-convert, and straight quotes — like top SERP tools.",
     icon: FEATURE_ICONS.bolt,
   },
   {
-    title: "Letter Frequency Hints",
-    description: "See which letters dominate the remaining pool so your next guess gains more info.",
+    title: "One-Click Copy",
+    description: "Copy the converted headline straight to your clipboard for docs, CMS fields, or social posts.",
+    icon: FEATURE_ICONS.copy,
+  },
+  {
+    title: "SEO Character Count",
+    description: "See live character and word counts so meta titles stay inside the 50–60 character sweet spot.",
     icon: FEATURE_ICONS.chart,
   },
   {
-    title: "Privacy-First Browser Tool",
-    description: "Filtering runs locally. Your puzzle clues never leave your device.",
+    title: "Private by Design",
+    description: "Capitalization runs locally in your browser. Headlines never leave your device.",
     icon: FEATURE_ICONS.shield,
   },
   {
-    title: "Strategy Guides",
-    description: "Learn openers, scout guesses, hard mode, and duplicate-letter traps from our blog.",
+    title: "Guides That Match Search Intent",
+    description: "Learn title vs sentence case, style-guide rules, and which words to capitalize — from our blog.",
     icon: FEATURE_ICONS.book,
   },
 ];
 
 export const HOME_STEPS: CardItem[] = [
   {
-    title: "Enter Green Letters",
-    description: "Type confirmed letters in the exact positions Wordle marked green.",
-    icon: FEATURE_ICONS.tap,
+    title: "Paste Your Title",
+    description: "Drop a headline, book title, H1, or SEO meta title into the converter.",
+    icon: FEATURE_ICONS.paste,
   },
   {
-    title: "Add Yellow & Gray Clues",
-    description: "Place yellow letters where you tried them, then list absent gray letters.",
+    title: "Pick a Style",
+    description: "Choose APA, Chicago, AP, MLA, sentence case, UPPERCASE, or lowercase.",
     icon: FEATURE_ICONS.spark,
   },
   {
-    title: "Pick Your Next Guess",
-    description: "Browse the filtered list and use hot-letter hints to choose a stronger word.",
-    icon: FEATURE_ICONS.list,
+    title: "Copy & Publish",
+    description: "Copy the result, check the character count, and paste it wherever you publish.",
+    icon: FEATURE_ICONS.check,
   },
 ];
 
 function IconCard({ item }: { item: CardItem }) {
   return (
     <motion.article
-      className="group relative rounded-2xl border border-white/10 bg-[#0B1F3A] px-5 pb-6 pt-10"
+      className="group relative rounded-2xl border border-navy-900/10 bg-white/90 px-5 pb-6 pt-10 shadow-soft backdrop-blur-sm"
       whileHover={{
         y: -6,
         borderColor: "#1E6FFF",
@@ -130,7 +127,7 @@ function IconCard({ item }: { item: CardItem }) {
       transition={{ type: "spring", stiffness: 320, damping: 24 }}
     >
       <motion.div
-        className="absolute -top-6 left-5 flex h-12 w-12 items-center justify-center rounded-full border border-brand/40 bg-[#050B16] text-[#4DA3FF] shadow-sm"
+        className="absolute -top-6 left-5 flex h-12 w-12 items-center justify-center rounded-full border border-brand/30 bg-gradient-to-br from-white to-[#EEF5FF] text-brand shadow-soft"
         aria-hidden
         variants={{
           rest: { scale: 1, rotate: 0 },
@@ -142,7 +139,7 @@ function IconCard({ item }: { item: CardItem }) {
       >
         {item.icon}
       </motion.div>
-      <h3 className="font-display text-lg font-bold tracking-tight text-white md:text-[1.15rem]">
+      <h3 className="font-display text-lg font-bold tracking-tight text-[#20242C] md:text-[1.15rem]">
         {item.title}
       </h3>
       <p className="mt-2 text-[0.95rem] leading-relaxed text-ink-mute">{item.description}</p>

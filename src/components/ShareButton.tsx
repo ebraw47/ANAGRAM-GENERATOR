@@ -33,8 +33,8 @@ export default function ShareButton({ className = "", tone = "dark", label = fal
 
   const toneClass =
     tone === "light"
-      ? "border-white/25 bg-white/10 text-white hover:bg-white/20"
-      : "border-brand/40 bg-brand/15 text-navy-200 hover:bg-brand/25";
+      ? "border-white/30 bg-white/15 text-white hover:bg-white/25"
+      : "border-brand/25 bg-white text-navy-900 shadow-sm hover:border-brand/45 hover:bg-brand/5";
 
   return (
     <button

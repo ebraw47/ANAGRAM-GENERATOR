@@ -22,8 +22,8 @@ export default function FaqAccordion({ faqs }: { faqs: readonly Faq[] }) {
             layout={!reduce}
             className={`overflow-hidden rounded-2xl border transition duration-300 ${
               isOpen
-                ? "border-brand/45 bg-gradient-to-br from-[#0B1F3A] via-[#0B1F3A] to-[#123056] shadow-[0_12px_40px_-16px_rgba(30,111,255,0.55)]"
-                : "border-white/10 bg-[#0B1F3A]/80 hover:border-white/20 hover:bg-[#0F2744]"
+                ? "border-brand/40 bg-gradient-to-br from-white via-[#EEF5FF] to-[#FFF6ED] shadow-soft"
+                : "border-navy-900/10 bg-white/85 hover:border-brand/30 hover:bg-white"
             }`}
           >
             <button
@@ -35,23 +35,23 @@ export default function FaqAccordion({ faqs }: { faqs: readonly Faq[] }) {
               <span
                 className={`mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl font-display text-xs font-bold tracking-wide transition sm:h-10 sm:w-10 sm:text-sm ${
                   isOpen
-                    ? "bg-brand text-white shadow-[0_0_20px_rgba(30,111,255,0.45)]"
-                    : "bg-white/5 text-navy-500 ring-1 ring-white/10"
+                    ? "bg-brand text-white shadow-soft"
+                    : "bg-navy-50 text-brand ring-1 ring-navy-900/10"
                 }`}
                 aria-hidden
               >
                 {num}
               </span>
 
-              <span className="min-w-0 flex-1 pt-1.5 font-display text-base font-semibold leading-snug text-white sm:pt-2 sm:text-lg">
+              <span className="min-w-0 flex-1 pt-1.5 font-display text-base font-semibold leading-snug text-[#20242C] sm:pt-2 sm:text-lg">
                 {faq.q}
               </span>
 
               <motion.span
                 className={`mt-1.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition sm:mt-2 ${
                   isOpen
-                    ? "border-brand/50 bg-brand/20 text-white"
-                    : "border-white/15 bg-white/5 text-navy-500"
+                    ? "border-brand/40 bg-brand/10 text-brand"
+                    : "border-navy-900/10 bg-navy-50 text-ink-mute"
                 }`}
                 aria-hidden
                 animate={{ rotate: isOpen ? 45 : 0 }}
@@ -73,8 +73,8 @@ export default function FaqAccordion({ faqs }: { faqs: readonly Faq[] }) {
                   transition={{ duration: 0.3, ease: EASE }}
                   className="overflow-hidden"
                 >
-                  <div className="border-t border-white/10 px-4 pb-5 pt-0 sm:px-5">
-                    <div className="ml-0 border-l-2 border-brand/50 pl-4 pt-4 text-[1.05rem] leading-relaxed text-[#C5D4EC] sm:ml-[3.25rem] sm:pl-5">
+                  <div className="border-t border-navy-900/8 px-4 pb-5 pt-0 sm:px-5">
+                    <div className="ml-0 border-l-2 border-brand/40 pl-4 pt-4 text-[1.05rem] leading-relaxed text-ink-soft sm:ml-[3.25rem] sm:pl-5">
                       {faq.a}
                     </div>
                   </div>

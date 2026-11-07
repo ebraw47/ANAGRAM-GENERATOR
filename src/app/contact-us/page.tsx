@@ -6,8 +6,9 @@ import { getMarkdown, stripLeadingH1 } from "@/lib/content";
 import { BRAND, ROUTES, SITE_ORIGIN } from "@/lib/siteConfig";
 
 const PAGE_URL = `${SITE_ORIGIN}${ROUTES.contact}`;
-const PAGE_TITLE = "Contact Us - Wordle Word Finder";
-const PAGE_DESCRIPTION = "Contact WordleWordFinder.net with questions or feedback about our Wordle word finder and guides.";
+const PAGE_TITLE = "Contact Us - Title Case Converter";
+const PAGE_DESCRIPTION =
+  "Contact TitleCaseConverter.io with questions or feedback about our title case converter and guides.";
 
 export const metadata: Metadata = {
   title: { absolute: PAGE_TITLE },

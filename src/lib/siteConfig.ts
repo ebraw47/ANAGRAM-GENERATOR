@@ -1,16 +1,16 @@
-/** Central brand / domain config for Wordle Word Finder */
-export const SITE_ORIGIN = "https://wordlewordfinder.net";
+/** Central brand / domain config for Title Case Converter */
+export const SITE_ORIGIN = "https://titlecaseconverter.io";
 
 export const BRAND = {
-  name: "Wordle Word Finder",
-  shortName: "WordFinder",
-  keyword: "wordle word finder",
-  domain: "wordlewordfinder.net",
-  email: "contact@wordlewordfinder.net",
-  twitter: "@wordlewordfind",
-  tagline: "Wordle Solver, Helper & 5-Letter Word Finder",
+  name: "Title Case Converter",
+  shortName: "TitleCase",
+  keyword: "title case converter",
+  domain: "titlecaseconverter.io",
+  email: "contact@titlecaseconverter.io",
+  twitter: "@titlecaseconv",
+  tagline: "Free Title Capitalization Tool — 8 Style Guides",
   description:
-    "Free Wordle word finder and solver. Enter green, yellow, and gray clues to see every 5-letter word that still fits — instantly in your browser.",
+    "Free title case converter for headlines, blog posts, and book titles. Convert with AMA, AP, APA, Bluebook, Chicago, MLA, NY Times, and Wikipedia — plus sentence case, options, and explanations.",
 } as const;
 
 export const ROUTES = {
@@ -23,134 +23,128 @@ export const ROUTES = {
 } as const;
 
 export const IMAGES = {
-  logo: "/logo.png",
-  /** Blue W mark — transparent background (browser favicon only) */
+  logo: "/logo.webp",
   icon: "/favicon.png",
   favicon: "/favicon.ico",
-  brandLogo: "/hero-logo.svg",
-  banner: "/wordle-word-finder-banner.webp",
-  /** Wordle tiles + WordleWord wordmark for dark surfaces */
-  headerLogo: "/header-logo-on-dark.svg",
-  /** Wordle tiles + dark WordleWord wordmark for light surfaces */
-  headerLogoLight: "/header-logo-light.svg",
+  brandLogo: "/logo.webp",
+  banner: "/title-case-converter-hero.webp",
+  headerLogo: "/logo.webp",
+  headerLogoLight: "/logo.webp",
   og: "/feature/og-image-1200x630.webp",
   ogSquare: "/feature/og-square-1200x1200.webp",
   twitter: "/feature/twitter-card-1200x600.webp",
-  website: "/wordle-word-finder-banner.webp",
-  tool: "/wordle-word-finder-banner.webp",
-  heroAlt: "/hero-logo.svg",
+  website: "/title-case-converter-hero.webp",
+  tool: "/title-case-converter-features.webp",
+  heroAlt: "/title-case-converter-1.webp",
+  features: "/title-case-converter-features.webp",
+  howItWorks: "/how-title-case-converter-works.webp",
+  benefits: "/benefits-of-title-case-converter.webp",
+  whoCanUse: "/who-can-use-title-case-converter.webp",
+  vsSentence: "/title-case-vs-sentence-case.webp",
+  showcase: "/title-case-converter-3.webp",
 } as const;
 
 /**
  * SERP-validated blog pillars only (competitor + query research):
- * wordle word finder, wordle solver, best starting words, strategy tips,
- * green/yellow/gray rules, hard mode, repeated letters, second-guess scouting.
+ * title case converter, title case vs sentence case, capitalization rules
+ * (APA/Chicago/AP/MLA), words to capitalize, how converter works, who uses it.
  */
 export const ARTICLES = [
   {
-    slug: "how-to-use-a-wordle-word-finder",
-    title: "How to Use a Wordle Word Finder: Green, Yellow & Gray Clues",
-    metaTitle: "How to Use a Wordle Word Finder | Step-by-Step",
+    slug: "title-case-vs-sentence-case",
+    title: "Title Case vs Sentence Case: What’s the Difference?",
+    metaTitle: "Title Case vs Sentence Case | Clear Examples",
     description:
-      "Enter green letters by position, yellow letters with wrong spots, and gray exclusions. Learn how a Wordle word finder filters candidates in real time.",
+      "Learn when to use title case vs sentence case for headlines, headings, and SEO titles — with style-guide examples and a free converter.",
+    date: "2026-11-07",
+    image: "/title-case-vs-sentence-case.webp",
+  },
+  {
+    slug: "title-capitalization-rules",
+    title: "Title Capitalization Rules: APA, Chicago, AP & MLA Compared",
+    metaTitle: "Title Capitalization Rules | APA Chicago AP MLA",
+    description:
+      "Compare AMA, AP, APA, Bluebook, Chicago, MLA, NY Times, and Wikipedia title case — prepositions, FANBOYS, last-word rules, and more.",
     date: "2026-11-06",
-    image: "/blog/how-to-use-wordle-word-finder.svg",
+    image: "/title-case-converter-features.webp",
   },
   {
-    slug: "best-wordle-starting-words",
-    title: "Best Wordle Starting Words (Ranked by Letter Coverage)",
-    metaTitle: "Best Wordle Starting Words | Ranked Openers",
+    slug: "how-to-use-a-title-case-converter",
+    title: "How to Use a Title Case Converter (Step by Step)",
+    metaTitle: "How to Use a Title Case Converter | Quick Guide",
     description:
-      "Compare strong Wordle openers like IRATE, SLATE, CRANE, and TRACE. See why five distinct high-frequency letters beat vowel-only starters.",
+      "Paste a headline, pick a style guide, use Convert/Clear and pro options, then copy perfect title case in seconds.",
     date: "2026-11-05",
-    image: "/blog/best-wordle-starting-words.svg",
+    image: "/how-title-case-converter-works.webp",
   },
   {
-    slug: "wordle-strategy-tips-and-tricks",
-    title: "Wordle Strategy: Tips and Tricks That Shrink the List Faster",
-    metaTitle: "Wordle Strategy Tips & Tricks",
+    slug: "words-to-capitalize-in-a-title",
+    title: "Words to Capitalize in a Title (and Which to Leave Lowercase)",
+    metaTitle: "Words to Capitalize in a Title | Major vs Minor",
     description:
-      "Use a fixed opener, a scout second guess, and information-gain thinking. Practical Wordle tips for fewer wasted guesses and stronger streaks.",
+      "Know which nouns, verbs, and short words get capitals — and when on, in, up, or by must be capitalized by context.",
     date: "2026-11-04",
-    image: "/blog/wordle-strategy-tips.svg",
+    image: "/title-case-converter-1.webp",
   },
   {
-    slug: "how-wordle-colors-work",
-    title: "How Wordle Colors Work: Green, Yellow, and Gray Explained",
-    metaTitle: "How Wordle Colors Work | Green Yellow Gray",
+    slug: "benefits-of-title-case-converter",
+    title: "Benefits of Using a Title Case Converter",
+    metaTitle: "Benefits of a Title Case Converter",
     description:
-      "Green locks a letter in place, yellow means present but wrong spot, gray removes a copy. Master the color rules before you trust any Wordle helper.",
+      "Save time, stay consistent across style guides, and ship cleaner headlines for blogs, SEO titles, books, and marketing campaigns.",
     date: "2026-11-03",
-    image: "/blog/how-wordle-colors-work.svg",
+    image: "/benefits-of-title-case-converter.webp",
   },
   {
-    slug: "wordle-hard-mode-guide",
-    title: "Wordle Hard Mode Guide: Rules, Tradeoffs, and Finder Tips",
-    metaTitle: "Wordle Hard Mode Guide | Rules & Tips",
+    slug: "who-can-use-title-case-converter",
+    title: "Who Can Use a Title Case Converter?",
+    metaTitle: "Who Can Use a Title Case Converter",
     description:
-      "Hard mode forces you to reuse greens and yellows. Learn how that kills scout guesses — and how a Wordle word finder still helps you finish.",
+      "Writers, students, marketers, editors, developers, and e-commerce teams — see how each role uses a free title capitalization tool.",
     date: "2026-11-02",
-    image: "/blog/wordle-hard-mode-guide.svg",
-  },
-  {
-    slug: "wordle-repeated-letters-explained",
-    title: "Wordle Repeated Letters: Why a Letter Can Still Turn Gray",
-    metaTitle: "Wordle Repeated Letters Explained",
-    description:
-      "Duplicate letters confuse most solvers. See why SPEED vs SPEND can show one yellow and one gray E — and how to filter correctly.",
-    date: "2026-11-01",
-    image: "/blog/wordle-repeated-letters.svg",
-  },
-  {
-    slug: "wordle-second-guess-strategy",
-    title: "Best Wordle Second Guess Strategy: Scout Before You Commit",
-    metaTitle: "Wordle Second Guess Strategy | Scout Words",
-    description:
-      "Guess two should test fresh letters, not just chase early greens. Learn scout-word thinking and when to switch to committing answers.",
-    date: "2026-10-30",
-    image: "/blog/wordle-second-guess-strategy.svg",
+    image: "/who-can-use-title-case-converter.webp",
   },
 ] as const;
 
 export const HOME_FAQS = [
   {
-    q: "What is a Wordle word finder?",
-    a: "A Wordle word finder (also called a Wordle solver or helper) filters five-letter words using the green, yellow, and gray clues from your guesses. It shows every candidate that still fits so you can pick a smarter next word.",
+    q: "What is title case?",
+    a: "Title case (headline style) capitalizes major words in titles of books, films, songs, essays, and many headlines, while articles, short conjunctions, and short prepositions usually stay lowercase mid-title.",
   },
   {
-    q: "How do I use this Wordle solver?",
-    a: "Type green letters in their exact positions, add yellow letters (present but wrong spot), and list gray letters that are absent. Matching words update instantly in your browser — nothing is sent to a server.",
+    q: "What is a title case converter?",
+    a: "A title case converter applies style-guide capitalization rules to headlines automatically — including context for words like on, in, or by that are only sometimes prepositions.",
   },
   {
-    q: "Is using a Wordle helper cheating?",
-    a: "That’s a personal call. Some players only open a finder when they’re one guess from losing; others use it to learn high-value words. The official game does not track helpers. If it keeps the puzzle fun, you’re fine.",
+    q: "Which style guides does this tool support?",
+    a: "TitleCaseConverter.io supports AMA, AP, APA, Bluebook, Chicago, MLA, NY Times, and Wikipedia title case, plus sentence case, upper case, and lower case.",
   },
   {
-    q: "What’s the best Wordle starting word?",
-    a: "Strong openers use five distinct, high-frequency letters. IRATE, LATER, SLATE, CRANE, TRACE, and SOARE are common data-backed picks. Pick one and stick with it so your muscle memory stays consistent.",
+    q: "What is the difference between title case and sentence case?",
+    a: "Title case capitalizes major words (The Lord of the Rings). Sentence case capitalizes only the first word and proper nouns (The lord of the rings).",
   },
   {
-    q: "Does this show today’s Wordle answer?",
-    a: "No. We never leak the daily answer. The tool only narrows options from the clues you enter, so you still choose the next guess yourself.",
+    q: "Which words stay lowercase in title case?",
+    a: "Articles (a, an, the), many coordinating conjunctions (and, but, or), and short prepositions (of, in, on, to) usually stay lowercase mid-title — unless the word is acting as an adverb or adjective, or a style guide capitalizes longer prepositions.",
   },
   {
-    q: "What’s the difference between common words and all valid guesses?",
-    a: "Common words are everyday answers you’re most likely to see. The full list also includes rarer accepted guesses — useful as scout words that burn obscure letters even if they’re unlikely answers.",
+    q: "How do APA and Chicago title case differ?",
+    a: "APA (and AP/AMA) typically capitalize prepositions of four or more letters (With, From, About). Chicago, Bluebook, and Wikipedia lowercase more four-letter prepositions; MLA lowercases all prepositions. Chicago also capitalizes yet and so.",
   },
   {
-    q: "How do yellow letters work in this finder?",
-    a: "Yellow means the letter is in the word but not in the position you tried. Our finder requires the letter somewhere and excludes the ruled-out slots — the same constraint that separates a 30-word list from a 4-word list.",
+    q: "What do the converter options do?",
+    a: "Keep Words in All Caps preserves pasted ALL CAPS in title modes. Multi-line batches titles. Show Explanations and Highlight Changes help you review. Straight Quotes and Convert When Text Is Pasted control punctuation and paste workflow.",
   },
   {
-    q: "Why can a letter be both colored and gray?",
-    a: "With repeats, Wordle awards greens first, then yellows, and never more colored tiles than the answer contains. An extra copy can turn gray even when the letter is still in the word. See our repeated-letters guide.",
+    q: "Does the converter work for SEO page titles?",
+    a: "Yes. Paste your meta title, convert, and check the live character count. Aim for roughly 50–60 characters so Google is less likely to truncate your SERP title.",
   },
   {
-    q: "Does Wordle hard mode change how the finder works?",
-    a: "The filtering rules are the same. Hard mode only restricts which guesses the official game accepts next. In hard mode, lean on remaining candidates instead of pure scout words.",
+    q: "Can I convert multiple titles at once?",
+    a: "Yes. Enable multi-line input, paste one title per line, and convert the list in one style. Each line is capitalized independently.",
   },
   {
-    q: "Is Wordle Word Finder free?",
-    a: "Yes. The finder on wordlewordfinder.net is free, runs locally in your browser, and does not require an account or email gate.",
+    q: "Is Title Case Converter free and private?",
+    a: "Yes. The tool is free, runs in your browser, needs no account, and does not upload your headlines for conversion.",
   },
 ] as const;

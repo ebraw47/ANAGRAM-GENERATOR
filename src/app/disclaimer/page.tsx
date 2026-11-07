@@ -5,8 +5,9 @@ import { getMarkdown, stripLeadingH1 } from "@/lib/content";
 import { BRAND, ROUTES, SITE_ORIGIN } from "@/lib/siteConfig";
 
 const PAGE_URL = `${SITE_ORIGIN}${ROUTES.disclaimer}`;
-const PAGE_TITLE = "Disclaimer - Wordle Word Finder";
-const PAGE_DESCRIPTION = "Independent helper disclaimer for https://wordlewordfinder.net/";
+const PAGE_TITLE = "Disclaimer - Title Case Converter";
+const PAGE_DESCRIPTION =
+  "Disclaimer for TitleCaseConverter.io — style-guide output is a helper, not official editorial advice.";
 
 export const metadata: Metadata = {
   title: { absolute: PAGE_TITLE },

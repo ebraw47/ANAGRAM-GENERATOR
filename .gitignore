@@ -38,3 +38,4 @@ next-env.d.ts
 .firecrawl/
 .env*.local
 .env.local
+.tmp-verify/

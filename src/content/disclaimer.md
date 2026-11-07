@@ -1,25 +1,23 @@
 # Disclaimer
 
-WordleWordFinder.net provides an independent Wordle helper and educational word-game content.
+The information and tools on **TitleCaseConverter.io** are provided for general convenience only.
 
-## Not affiliated
+## No professional advice
 
-This site is **not affiliated with**, endorsed by, or sponsored by the New York Times, Wordle, or NYT Games. Wordle is a trademark of its respective owners.
-
-## No official answers
-
-Our finder does **not** reveal today’s official Wordle answer. It only filters candidate words from the clues you enter. You remain responsible for the guesses you submit in the official game.
-
-## Educational use
-
-Strategy guides, starter-word lists, and examples are for entertainment and education. Word lists can change over time and are not guaranteed to match any official dictionary snapshot.
+Title capitalization results follow common interpretations of AMA, AP, APA, Bluebook, Chicago, MLA, NY Times, Wikipedia, and related patterns. They are **not** a substitute for official style manuals, institutional guidelines, or professional editorial review. Always defer to your publisher, professor, or client’s required style guide when rules conflict.
 
 ## Accuracy
 
-We work to keep filtering logic accurate, including yellow position bans and repeated-letter edge cases. Software can still contain errors. Double-check critical guesses before you play them.
+We strive for helpful, accurate conversions, but edge cases (brand names, trademarks, specialized jargon, multilingual titles) may need manual correction. Use the output as a starting point.
 
-## Limitation of liability
+## External links
 
-To the fullest extent permitted by law, WordleWordFinder.net is provided “as is” without warranties of any kind. We are not liable for losses related to gameplay, streaks, or reliance on site content.
+Links to third-party sites are provided for reference. We are not responsible for their content or privacy practices.
 
-Questions? [contact@wordlewordfinder.net](mailto:contact@wordlewordfinder.net)
+## Liability
+
+To the fullest extent permitted by law, Title Case Converter is not liable for decisions made based on tool output or site content — including academic grading, publishing outcomes, or SEO performance.
+
+## Contact
+
+Questions? [contact@titlecaseconverter.io](mailto:contact@titlecaseconverter.io)

@@ -1,15 +1,8 @@
 # Contact Us
 
-We read every message about the Wordle word finder, strategy guides, and site feedback.
+We’d love to hear from you. For questions about the title case converter, style-guide coverage, partnerships, or privacy, reach out anytime.
 
-## Email
+**Email:** [contact@titlecaseconverter.io](mailto:contact@titlecaseconverter.io)  
+**Website:** [titlecaseconverter.io](https://titlecaseconverter.io)
 
-**[contact@wordlewordfinder.net](mailto:contact@wordlewordfinder.net)**
-
-## What to include
-
-- The page or tool you are writing about
-- A short description of the issue or idea
-- Screenshots if a clue filter looks wrong
-
-We typically reply within a few business days. For privacy details, see our [Privacy Policy](/privacy-policy).
+Use the form on this page for a quick message. We typically reply within 1–2 business days.
