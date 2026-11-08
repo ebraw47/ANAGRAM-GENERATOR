@@ -1,13 +1,12 @@
 # Title Case Converter
 
-Next.js site for **[titlecaseconverter.io](https://titlecaseconverter.io)** — free title capitalization tool with APA, Chicago, AP, and MLA support, plus SERP-focused capitalization guides.
+Next.js site for **[titlecaseconverter.tech](https://titlecaseconverter.tech)** — free title capitalization tool with AMA, AP, APA, Bluebook, Chicago, MLA, NY Times, and Wikipedia support, plus SERP-focused capitalization guides.
 
 ## Features
 
-- Live title case converter (APA, Chicago, AP, MLA)
-- Sentence case, UPPERCASE, and lowercase modes
-- SEO character / word counts
-- 6 SEO guides aligned to real search demand
+- Live title case converter (8 style guides + sentence / upper / lower)
+- SEO character / word counts, explanations, multi-line batch
+- 7 SERP-validated guides (rules, words to capitalize, sentence case, and more)
 - Sitemap index, image sitemap, robots, and structured data
 
 ## Develop

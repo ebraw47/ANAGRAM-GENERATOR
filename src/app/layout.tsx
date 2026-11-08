@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Outfit, Fraunces } from "next/font/google";
+import { Syne, Figtree } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import Header from "@/components/Header";
@@ -8,15 +8,15 @@ import ScrollToTopWrapper from "@/components/ScrollToTopWrapper";
 import WebVitalsTracker from "@/components/WebVitalsTracker";
 import { BRAND, IMAGES, SITE_ORIGIN } from "@/lib/siteConfig";
 
-const display = Fraunces({
+const display = Syne({
   subsets: ["latin"],
-  weight: ["600", "700"],
+  weight: ["600", "700", "800"],
   display: "swap",
   variable: "--font-display",
   preload: true,
 });
 
-const body = Outfit({
+const body = Figtree({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
@@ -29,7 +29,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
-  themeColor: "#F7F5F0",
+  themeColor: "#E85D04",
   viewportFit: "cover",
 };
 
@@ -67,12 +67,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.png", type: "image/png", sizes: "64x64" },
-      { url: "/icon.png", type: "image/png", sizes: "192x192" },
-      { url: "/favicon-512.png", type: "image/png", sizes: "512x512" },
-      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.ico?v=10", sizes: "any" },
+      { url: "/favicon.png?v=10", type: "image/png", sizes: "64x64" },
+      { url: "/favicon-512.png?v=10", type: "image/png", sizes: "512x512" },
     ],
-    apple: [{ url: "/apple-icon.png", sizes: "180x180" }],
+    apple: [{ url: "/apple-icon.png?v=10", sizes: "180x180" }],
   },
   verification: {
     google: "8a7c21f6e90a89ef",
@@ -119,10 +118,9 @@ export default function RootLayout({
     <html lang="en" className={`${display.variable} ${body.variable}`} suppressHydrationWarning>
       <head>
         <meta name="mobile-web-app-capable" content="yes" />
-        <link rel="icon" href="/favicon.png" type="image/png" sizes="64x64" />
-        <link rel="icon" href="/icon.png" type="image/png" sizes="192x192" />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-icon.png" sizes="180x180" />
+        <link rel="icon" href="/favicon.ico?v=10" sizes="any" />
+        <link rel="icon" href="/favicon.png?v=10" type="image/png" sizes="64x64" />
+        <link rel="apple-touch-icon" href="/apple-icon.png?v=10" sizes="180x180" />
         <link rel="manifest" href="/manifest.json" />
         {adsenseClient && (
           <>
@@ -159,9 +157,9 @@ export default function RootLayout({
             </>
           )}
       </head>
-      <body className={`${body.className} site-canvas antialiased min-h-screen flex flex-col text-[#20242C]`} suppressHydrationWarning>
+      <body className={`${body.className} site-canvas antialiased min-h-screen flex flex-col overflow-x-hidden text-[#14161C]`} suppressHydrationWarning>
         <Header />
-        <main className="relative z-[1] flex-1">{children}</main>
+        <main className="relative z-[1] w-full max-w-[100vw] flex-1 overflow-x-hidden">{children}</main>
         <Footer />
         <ScrollToTopWrapper />
         <WebVitalsTracker />

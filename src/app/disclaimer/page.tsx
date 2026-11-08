@@ -7,7 +7,7 @@ import { BRAND, ROUTES, SITE_ORIGIN } from "@/lib/siteConfig";
 const PAGE_URL = `${SITE_ORIGIN}${ROUTES.disclaimer}`;
 const PAGE_TITLE = "Disclaimer - Title Case Converter";
 const PAGE_DESCRIPTION =
-  "Disclaimer for TitleCaseConverter.io — style-guide output is a helper, not official editorial advice.";
+  "Disclaimer for Title Case Converter — style-guide output is a helper, not official editorial advice.";
 
 export const metadata: Metadata = {
   title: { absolute: PAGE_TITLE },

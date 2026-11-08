@@ -118,20 +118,18 @@ export const HOME_STEPS: CardItem[] = [
 function IconCard({ item }: { item: CardItem }) {
   return (
     <motion.article
-      className="group relative rounded-2xl border border-navy-900/10 bg-white/90 px-5 pb-6 pt-10 shadow-soft backdrop-blur-sm"
+      className="group relative border-2 border-navy-900 bg-white px-5 pb-6 pt-10 hard-shadow"
       whileHover={{
-        y: -6,
-        borderColor: "#1E6FFF",
-        boxShadow: "0 18px 40px -20px rgba(30, 111, 255, 0.4)",
+        y: -4,
       }}
       transition={{ type: "spring", stiffness: 320, damping: 24 }}
     >
       <motion.div
-        className="absolute -top-6 left-5 flex h-12 w-12 items-center justify-center rounded-full border border-brand/30 bg-gradient-to-br from-white to-[#EEF5FF] text-brand shadow-soft"
+        className="absolute -top-5 left-4 flex h-11 w-11 items-center justify-center border-2 border-navy-900 bg-brand text-white"
         aria-hidden
         variants={{
           rest: { scale: 1, rotate: 0 },
-          hover: { scale: 1.1, rotate: -6 },
+          hover: { scale: 1.08, rotate: -4 },
         }}
         initial="rest"
         whileHover="hover"
@@ -139,7 +137,7 @@ function IconCard({ item }: { item: CardItem }) {
       >
         {item.icon}
       </motion.div>
-      <h3 className="font-display text-lg font-bold tracking-tight text-[#20242C] md:text-[1.15rem]">
+      <h3 className="font-display text-lg font-bold tracking-tight text-ink md:text-[1.15rem]">
         {item.title}
       </h3>
       <p className="mt-2 text-[0.95rem] leading-relaxed text-ink-mute">{item.description}</p>
@@ -149,7 +147,7 @@ function IconCard({ item }: { item: CardItem }) {
 
 export function FeatureCards({ items = HOME_FEATURES }: { items?: CardItem[] }) {
   return (
-    <Stagger className="grid gap-x-5 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+    <Stagger className="grid gap-x-5 gap-y-10 pt-2 sm:grid-cols-2 lg:grid-cols-3">
       {items.map((item) => (
         <StaggerItem key={item.title}>
           <IconCard item={item} />

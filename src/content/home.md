@@ -1,6 +1,6 @@
 A **title case converter** turns messy headlines into correctly capitalized titles for books, movies, songs, essays, blogs, product pages, and SEO meta titles. Paste any string, choose AMA, AP, APA, Bluebook, Chicago, MLA, NY Times, or Wikipedia — or switch to sentence case, UPPERCASE, or lowercase — then copy a result that matches the style guide your editor, professor, or publisher expects.
 
-Use the free converter on **TitleCaseConverter.io** above. It runs in your browser, supports multi-line batches, optional explanations, change highlighting, and a live character count so page titles stay SERP-friendly.
+Use the free converter on **TitleCaseConverter.tech** above. It runs in your browser, supports multi-line batches, optional explanations, change highlighting, and a live character count so page titles stay SERP-friendly.
 
 ## Why Choose Us?
 
@@ -29,6 +29,8 @@ That rule sounds simple until grammar gets in the way. The same short word can b
 | by | *Stand by Me* | *Stand By for Action* |
 
 Blindly lowercasing every *in*, *on*, or *by* produces wrong headlines. Our converter looks at **context** for each word so those edge cases are handled more accurately than a naive capitalize-every-word script.
+
+Full primer: [what is title case](/what-is-title-case).
 
 ## What Is a Title Case Converter?
 
@@ -68,7 +70,7 @@ Title case is **not** one universal standard. Style manuals — including the AM
 
 Shared baseline across guides: capitalize the first word after a colon, treat short verbs and pronouns as major words (*Is*, *It*, *My*), and never “title case” by capitalizing every single token.
 
-Full comparison with examples: [title capitalization rules](/title-capitalization-rules). Checklist of major vs minor words: [words to capitalize in a title](/words-to-capitalize-in-a-title).
+Full comparison with examples: [title capitalization rules](/title-capitalization-rules). Style-by-style deep dive: [APA vs Chicago vs AP vs MLA](/apa-chicago-ap-mla-title-case). Checklist of major vs minor words: [words to capitalize in a title](/words-to-capitalize-in-a-title).
 
 ## What Is Sentence Case?
 
@@ -80,6 +82,8 @@ Full comparison with examples: [title capitalization rules](/title-capitalizatio
 For people, the rule is easy. For software it is hard: proper nouns are endless, and many words are proper nouns only in context (*new* vs *New York*; *green* vs *Green New Deal*). Our sentence-case mode recognizes many common proper nouns, but expect occasional manual tweaks — title-case conversion remains the more deterministic path.
 
 Use the converter above for titles and headlines. Enable **multi-line input** to batch many headlines in one style, or convert a single line and flip between sentence case and title-case styles to see which look you prefer.
+
+More detail: [sentence case converter guide](/sentence-case-converter).
 
 ## Title Case vs Sentence Case
 
@@ -137,9 +141,7 @@ Style-dependent: longer prepositions (*with*, *about*, *between*) and words like
 - **Fewer style-guide mistakes** on client or academic work  
 - **Faster publishing** — paste, convert, copy  
 - **SEO hygiene** — character counts help avoid truncated SERP titles  
-- **Privacy** — conversion stays in-browser  
-
-More detail: [benefits of a title case converter](/benefits-of-title-case-converter).
+- **Privacy** — conversion stays in-browser on titlecaseconverter.tech  
 
 ## Who Can Use This Tool?
 
@@ -149,8 +151,6 @@ More detail: [benefits of a title case converter](/benefits-of-title-case-conver
 - Editors enforcing house style  
 - E-commerce teams standardizing product titles  
 - Developers naming UI labels and documentation headings  
-
-Full breakdown: [who can use a title case converter](/who-can-use-title-case-converter).
 
 ## Tips for Faster Title Conversion
 
@@ -164,9 +164,12 @@ Full breakdown: [who can use a title case converter](/who-can-use-title-case-con
 
 ## Explore Our Guides
 
+- [What is title case](/what-is-title-case)  
 - [Title case vs sentence case](/title-case-vs-sentence-case)  
 - [Title capitalization rules](/title-capitalization-rules)  
+- [APA vs Chicago vs AP vs MLA](/apa-chicago-ap-mla-title-case)  
 - [Words to capitalize in a title](/words-to-capitalize-in-a-title)  
+- [Sentence case converter](/sentence-case-converter)  
 - [How to use a title case converter](/how-to-use-a-title-case-converter)
 
 ## FAQs About Title Case Converters

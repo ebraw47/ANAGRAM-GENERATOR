@@ -12,7 +12,7 @@ export default function NotFound() {
   return (
     <div className="mx-auto max-w-lg px-4 py-20 text-center">
       <p className="font-display text-6xl font-extrabold text-brand">404</p>
-      <h1 className="mt-4 font-display text-3xl font-bold text-[#20242C]">Page Not Found</h1>
+      <h1 className="mt-4 font-display text-3xl font-bold text-ink">Page Not Found</h1>
       <p className="mt-4 text-ink-mute">
         The page you are looking for might have been removed, had its name changed, or is temporarily
         unavailable.

@@ -1,8 +1,8 @@
 # Contact Us
 
-We’d love to hear from you. For questions about the title case converter, style-guide coverage, partnerships, or privacy, reach out anytime.
+Have a question about Title Case Converter, a style-guide edge case, or a partnership idea? We’d like to hear from you.
 
-**Email:** [contact@titlecaseconverter.io](mailto:contact@titlecaseconverter.io)  
-**Website:** [titlecaseconverter.io](https://titlecaseconverter.io)
+**Email:** [contact@titlecaseconverter.tech](mailto:contact@titlecaseconverter.tech)  
+**Website:** [https://titlecaseconverter.tech](https://titlecaseconverter.tech/)
 
-Use the form on this page for a quick message. We typically reply within 1–2 business days.
+Use the form on this page for general inquiries. We typically reply within 1–2 business days.

@@ -1,11 +1,11 @@
 {
   "name": "Title Case Converter",
   "short_name": "TitleCase",
-  "description": "Free title case converter for APA, Chicago, AP, and MLA. Convert headlines to title case, sentence case, UPPERCASE, or lowercase.",
+  "description": "Free title case converter for APA, Chicago, AP, and MLA. Convert headlines to title case, sentence case, UPPERCASE, or lowercase on titlecaseconverter.tech.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#F7F5F0",
-  "theme_color": "#1E6FFF",
+  "background_color": "#D8DFE9",
+  "theme_color": "#E85D04",
   "icons": [
     {
       "src": "/favicon-512.png",
@@ -14,7 +14,7 @@
       "purpose": "any maskable"
     },
     {
-      "src": "/icon.png",
+      "src": "/app-icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"

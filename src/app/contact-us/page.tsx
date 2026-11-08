@@ -8,7 +8,7 @@ import { BRAND, ROUTES, SITE_ORIGIN } from "@/lib/siteConfig";
 const PAGE_URL = `${SITE_ORIGIN}${ROUTES.contact}`;
 const PAGE_TITLE = "Contact Us - Title Case Converter";
 const PAGE_DESCRIPTION =
-  "Contact TitleCaseConverter.io with questions or feedback about our title case converter and guides.";
+  "Contact Title Case Converter with questions or feedback about our title case converter and guides.";
 
 export const metadata: Metadata = {
   title: { absolute: PAGE_TITLE },

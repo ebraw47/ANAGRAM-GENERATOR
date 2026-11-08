@@ -1,77 +1,48 @@
 # Words to Capitalize in a Title (and Which to Leave Lowercase)
 
-The most common title-case question is simple: **which words get a capital letter?** Use this checklist alongside our free converter when you want to understand — not just accept — the result.
+When you write in title case, which words get capitals — and which stay lowercase? The short answer: capitalize major words; lowercase articles, many conjunctions, and short prepositions mid-title. Context still matters for words like *on*, *in*, *up*, and *by*.
+
+![Words to capitalize in a title](/title-case-converter-accuracy.webp)
 
 ## Always capitalize (major words)
 
-- **Nouns:** Market, Strategy, Ocean, Revenue  
-- **Pronouns:** She, They, We, It, Who  
-- **Verbs:** Build, Create, Is, Are, Be, Do, Go  
-- **Adjectives:** Rapid, Global, Silent, Best  
-- **Adverbs:** Truly, Quickly, Never, Almost  
-- **First word** of the title or subtitle (even if it is *A* or *The*)  
-- **First word after a colon**
+- **Nouns** — *Market*, *Strategy*, *Ocean*  
+- **Pronouns** — *She*, *They*, *It*, *My*, *Our*  
+- **Verbs** — including short ones: *Is*, *Am*, *Be*, *Are*  
+- **Adjectives & adverbs** — *Rapid*, *Truly*, *Global*  
+- The **first word** of a title or subtitle (even if minor)  
+- In many styles, the **last word** as well  
 
-## Usually leave lowercase (minor words)
+## Usually lowercase mid-title (minor words)
 
-Unless they are the first or last word:
+- **Articles** — *a*, *an*, *the*  
+- **Coordinating conjunctions** — *and*, *but*, *or*, *nor*, *for* (and style-dependent *yet* / *so*)  
+- **Short prepositions** — *in*, *on*, *of*, *to*, *at*, *by*  
 
-- **Articles:** a, an, the  
-- **Coordinating conjunctions:** and, but, or, nor, for  
-- **Short prepositions:** in, on, at, by, of, to, up, for, as  
+Longer prepositions (*with*, *about*, *between*, *through*) depend on the style guide. See [title capitalization rules](/title-capitalization-rules).
 
-Example:
+## Context changes everything
 
-> The Art of War  
-> How to Build a Brand Overnight
+| Word | Lowercase as… | Capitalize as… |
+| --- | --- | --- |
+| on | *Lay It All on Me* (preposition) | *It’s On Again* (adjective) |
+| in | *The Catcher in the Rye* | *Give In to Me* (adverb) |
+| out | *Fresh out the Oven* | *School’s Out Forever* |
+| up | *Crawling up a Hill* | *Picking Up the Pieces* |
+| but | *Nothing but the Truth* | *Life Is But a Dream* |
+| by | *Stand by Me* | *Stand By for Action* |
 
-## Style-dependent words
+A naive “lowercase every short word” script fails these titles. A good [title case converter](/) checks grammatical role, not just word length.
 
-These are where AMA/APA/AP diverge from Chicago/Bluebook/Wikipedia/MLA:
+## Quick checklist before you publish
 
-| Word | AMA / APA / AP | Chicago / Bluebook / Wikipedia | MLA |
-| --- | --- | --- | --- |
-| with | With (4 letters) | with | with |
-| from | From | from | from |
-| about | About | about | about |
-| between | Between | between | between |
-| yet / so | often lowercase | Yet / So (Chicago) | often lowercase |
+1. First word capped?  
+2. Nouns, verbs, adjectives, adverbs, pronouns capped?  
+3. Articles lowercase mid-title?  
+4. Prepositions match your style (APA vs Chicago vs MLA)?  
+5. Acronyms and brand names preserved (*SEO*, *NASA*, *iPhone*)?  
+6. First word after a colon capitalized?
 
-NY Times uses its own short preposition allow-list — convert with the **NY Times** tab when that house style is required.
+Paste tricky titles into the converter on [titlecaseconverter.tech](/), turn on **Highlight Changes**, and review the orange marks before you ship.
 
-## Context beats length: *on*, *in*, *up*, *by*
-
-Never assume a short word is always minor. Capitalize it when it is an adverb, adjective, or noun:
-
-| Lowercase use | Capitalize use |
-| --- | --- |
-| *Lay It All on Me* (preposition) | *It’s On Again* (adjective) |
-| *The Catcher in the Rye* | *Give In to Me* (adverb) |
-| *Crawling up a Hill* | *Picking Up the Pieces* (adverb) |
-| *Stand by Me* | *Stand By for Action* (adverb) |
-
-Use **Show Explanations** in the [converter](/) when a short word looks wrong.
-
-## Words people forget to capitalize
-
-Short verbs and pronouns still count as major words:
-
-- *Is*, *Am*, *Are*, *Be*, *Been*, *Being*  
-- *Do*, *Does*, *Did*  
-- *My*, *Your*, *Our*, *Its* (when used as pronouns)
-
-Wrong: *What is Title Case*  
-Better: *What Is Title Case*
-
-## Hyphenated words
-
-Capitalize the first element. Capitalize later elements when they are major words (*Self-Driving Cars*). Style guides differ on particles after hyphens — when in doubt, convert with APA and Chicago and compare.
-
-## Fast practice method
-
-1. Write the title in lowercase.  
-2. Run it through the [title case converter](/) on APA and Chicago.  
-3. Read this checklist once against the output.  
-4. Save the style your publication requires.
-
-Related: [title capitalization rules](/title-capitalization-rules) and [title case vs sentence case](/title-case-vs-sentence-case).
+Next: [title case vs sentence case](/title-case-vs-sentence-case) and [how to use a title case converter](/how-to-use-a-title-case-converter).

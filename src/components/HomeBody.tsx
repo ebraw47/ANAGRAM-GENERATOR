@@ -5,7 +5,7 @@ import MarkdownContent from "@/components/MarkdownContent";
 import FaqAccordion from "@/components/FaqAccordion";
 import { FeatureCards, StepCards } from "@/components/FeatureCards";
 import { FadeIn } from "@/components/motion/Motion";
-import { BRAND, HOME_FAQS, IMAGES } from "@/lib/siteConfig";
+import { BRAND, HOME_FAQS, IMAGES, imageDims } from "@/lib/siteConfig";
 
 export default function HomeBody({
   beforeSteps,
@@ -16,11 +16,11 @@ export default function HomeBody({
 }) {
   return (
     <>
-      <section className="section-glass border-t border-navy-900/10 py-14 md:py-16">
-        <div className="mx-auto max-w-6xl px-4 md:px-6">
+      <section className="section-glass overflow-x-hidden border-t-2 border-navy-900/10 py-14 md:py-16">
+        <div className="mx-auto max-w-6xl px-3 sm:px-4 md:px-6">
           <FadeIn>
             <p className="section-kicker">Why writers switch to us</p>
-            <h2 className="font-display text-2xl font-bold tracking-tight text-[#20242C] md:text-3xl">
+            <h2 className="font-display text-2xl font-bold tracking-tight text-ink md:text-3xl">
               Why Choose Our Title Case Converter?
             </h2>
             <p className="mt-2 max-w-2xl text-ink-mute">
@@ -34,49 +34,55 @@ export default function HomeBody({
         </div>
       </section>
 
-      <section className="relative overflow-hidden border-y border-navy-900/10 py-14 text-[#20242C] md:py-16">
+      <section className="relative overflow-hidden border-y-2 border-navy-900 bg-navy-900 py-14 text-white md:py-16">
+        <div className="pointer-events-none absolute inset-0 opacity-40"
+          style={{
+            background:
+              "radial-gradient(ellipse 50% 80% at 90% 50%, rgba(232,93,4,0.35), transparent 60%)",
+          }}
+        />
         <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 px-4 md:grid-cols-2 md:px-6">
           <FadeIn>
-            <p className="section-kicker">Built for publishers</p>
-            <h2 className="font-display text-2xl font-bold tracking-tight text-[#20242C] md:text-3xl">
+            <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-brand">Built for publishers</p>
+            <h2 className="font-display text-2xl font-bold tracking-tight text-white md:text-3xl">
               One converter for every capitalization style
             </h2>
-            <p className="mt-3 max-w-md text-ink-mute">
+            <p className="mt-3 max-w-md text-white/70">
               AMA, AP, APA, Bluebook, Chicago, MLA, NY Times, Wikipedia, sentence case,
               UPPERCASE, and lowercase — convert on {BRAND.domain} without juggling separate
               tools or memorizing style manuals.
             </p>
           </FadeIn>
           <FadeIn delay={0.1} className="relative">
-            <div className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-white/20 shadow-lift ring-1 ring-navy-900/10">
-              <Image
-                src={IMAGES.website}
-                alt={`${BRAND.name} hero`}
-                fill
-                className="object-cover"
-                sizes="(max-width:768px) 100vw, 560px"
-              />
-            </div>
+            <Image
+              src={IMAGES.website}
+              alt={`${BRAND.name} capitalization styles`}
+              width={imageDims(IMAGES.website).width}
+              height={imageDims(IMAGES.website).height}
+              unoptimized
+              className="block h-auto w-full border-0"
+              sizes="(max-width:768px) 100vw, 560px"
+            />
           </FadeIn>
         </div>
       </section>
 
-      <section className="border-b border-navy-900/10 py-14 md:py-16">
+      <section className="border-b-2 border-navy-900/10 py-14 md:py-16">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 md:grid-cols-2 md:px-6">
           <FadeIn className="relative order-2 md:order-1">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-white/60 shadow-lift ring-1 ring-navy-900/10">
-              <Image
-                src={IMAGES.features}
-                alt="Title case converter features"
-                fill
-                className="object-cover"
-                sizes="(max-width:768px) 100vw, 560px"
-              />
-            </div>
+            <Image
+              src={IMAGES.features}
+              alt="Title case converter accuracy"
+              width={imageDims(IMAGES.features).width}
+              height={imageDims(IMAGES.features).height}
+              unoptimized
+              className="block h-auto w-full border-0"
+              sizes="(max-width:768px) 100vw, 560px"
+            />
           </FadeIn>
           <FadeIn delay={0.08} className="order-1 md:order-2">
             <p className="section-kicker">Features that close SERP gaps</p>
-            <h2 className="font-display text-2xl font-bold tracking-tight text-[#20242C] md:text-3xl">
+            <h2 className="font-display text-2xl font-bold tracking-tight text-ink md:text-3xl">
               Style guides, batch lines, and SEO length in one place
             </h2>
             <ul className="mt-4 space-y-3 text-[1.05rem] leading-relaxed text-ink-soft">
@@ -98,7 +104,7 @@ export default function HomeBody({
 
             <FadeIn delay={0.06} className="lg:col-span-5">
               <p className="section-kicker">Quick start</p>
-              <h2 className="font-display text-2xl font-bold tracking-tight text-[#20242C] md:text-3xl">
+              <h2 className="font-display text-2xl font-bold tracking-tight text-ink md:text-3xl">
                 Convert titles in three simple steps
               </h2>
               <div className="mt-8">
@@ -106,7 +112,7 @@ export default function HomeBody({
               </div>
               <a
                 href="#converter"
-                className="mt-8 inline-flex rounded-xl bg-brand px-5 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-brand-dark focus-ring"
+                className="mt-8 inline-flex border-2 border-navy-900 bg-brand px-5 py-3 text-sm font-bold uppercase tracking-wide text-white hard-shadow-ink transition hover:bg-brand-dark focus-ring"
               >
                 Open converter
               </a>
@@ -114,24 +120,24 @@ export default function HomeBody({
           </div>
 
           {afterSteps ? (
-            <FadeIn className="mt-12 border-t border-navy-900/10 pt-10">
+            <FadeIn className="mt-12 border-t-2 border-navy-900/10 pt-10">
               <div className="mx-auto max-w-3xl lg:mx-0 lg:max-w-none lg:grid lg:grid-cols-12 lg:gap-12">
                 <div className="lg:col-span-7">
                   <MarkdownContent content={afterSteps} />
                 </div>
                 <div className="mt-8 space-y-6 lg:col-span-5 lg:mt-0">
-                  <div className="relative aspect-[16/10] overflow-hidden rounded-2xl ring-1 ring-navy-900/10">
-                    <Image
-                      src={IMAGES.vsSentence}
-                      alt="Title case versus sentence case"
-                      fill
-                      className="object-cover"
-                      sizes="(max-width:768px) 100vw, 420px"
-                    />
-                  </div>
-                  <div className="rounded-2xl border border-navy-900/10 bg-white/90 p-6 shadow-soft backdrop-blur-sm md:p-7">
+                  <Image
+                    src={IMAGES.vsSentence}
+                    alt="Title case versus sentence case"
+                    width={imageDims(IMAGES.vsSentence).width}
+                    height={imageDims(IMAGES.vsSentence).height}
+                    unoptimized
+              className="block h-auto w-full border-0"
+                    sizes="(max-width:768px) 100vw, 420px"
+                  />
+                  <div className="border-2 border-navy-900 bg-white p-6 hard-shadow-ink md:p-7">
                     <p className="section-kicker">Tip</p>
-                    <h3 className="font-display text-xl font-bold text-[#20242C]">
+                    <h3 className="font-display text-xl font-bold text-ink">
                       Match the guide your audience expects
                     </h3>
                     <p className="mt-3 text-sm leading-relaxed text-ink-mute">
@@ -153,11 +159,11 @@ export default function HomeBody({
         </div>
       </section>
 
-      <section className="border-y border-navy-900/10 py-14 md:py-16">
+      <section className="border-y-2 border-navy-900/10 py-14 md:py-16">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 md:grid-cols-2 md:px-6">
           <FadeIn>
             <p className="section-kicker">Who it&apos;s for</p>
-            <h2 className="font-display text-2xl font-bold tracking-tight text-[#20242C] md:text-3xl">
+            <h2 className="font-display text-2xl font-bold tracking-tight text-ink md:text-3xl">
               Built for writers, marketers, students, and editors
             </h2>
             <p className="mt-3 text-ink-mute">
@@ -166,25 +172,25 @@ export default function HomeBody({
             </p>
           </FadeIn>
           <FadeIn delay={0.08}>
-            <div className="relative aspect-[16/10] overflow-hidden rounded-2xl ring-1 ring-navy-900/10">
-              <Image
-                src={IMAGES.whoCanUse}
-                alt="Who can use a title case converter"
-                fill
-                className="object-cover"
-                sizes="(max-width:768px) 100vw, 560px"
-              />
-            </div>
+            <Image
+              src={IMAGES.whoCanUse}
+              alt="Who can use a title case converter"
+              width={imageDims(IMAGES.whoCanUse).width}
+              height={imageDims(IMAGES.whoCanUse).height}
+              unoptimized
+              className="block h-auto w-full border-0"
+              sizes="(max-width:768px) 100vw, 560px"
+            />
           </FadeIn>
         </div>
       </section>
 
-      <section className="section-glass border-t border-navy-900/10 py-14 md:py-20">
+      <section className="section-glass border-t-2 border-navy-900/10 py-14 md:py-20">
         <div className="mx-auto max-w-6xl px-4 md:px-6">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-12">
             <FadeIn>
               <p className="section-kicker">Help center</p>
-              <h2 className="font-display text-2xl font-bold text-[#20242C] md:text-3xl">
+              <h2 className="font-display text-2xl font-bold text-ink md:text-3xl">
                 FAQs About Title Case Converters
               </h2>
               <p className="mt-2 mb-6 text-ink-mute">
@@ -194,28 +200,28 @@ export default function HomeBody({
             </FadeIn>
 
             <FadeIn delay={0.08}>
-              <div className="overflow-hidden rounded-2xl border border-navy-900/10 bg-white/90 shadow-soft backdrop-blur-sm">
-                <div className="relative aspect-[16/9]">
-                  <Image
-                    src={IMAGES.benefits}
-                    alt="Benefits of title case converter"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width:768px) 100vw, 560px"
-                  />
-                </div>
+              <div className="overflow-hidden border-2 border-navy-900 bg-white hard-shadow">
+                <Image
+                  src={IMAGES.benefits}
+                  alt="Benefits of title case converter"
+                  width={imageDims(IMAGES.benefits).width}
+                  height={imageDims(IMAGES.benefits).height}
+                  unoptimized
+              className="block h-auto w-full border-0"
+                  sizes="(max-width:768px) 100vw, 560px"
+                />
                 <div className="p-6 md:p-8">
                   <p className="section-kicker">Ready to capitalize?</p>
-                  <h2 className="font-display text-2xl font-bold text-[#20242C] md:text-3xl">
+                  <h2 className="font-display text-2xl font-bold text-ink md:text-3xl">
                     Use the free title case converter now
                   </h2>
                   <p className="mt-3 text-ink-mute">
                     Paste a headline at the top of this page, pick your style guide, and copy a
-                    clean title in seconds.
+                    clean title in seconds on {BRAND.domain}.
                   </p>
                   <a
                     href="#converter"
-                    className="mt-6 inline-flex rounded-xl bg-brand px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-brand-dark focus-ring"
+                    className="mt-6 inline-flex border-2 border-navy-900 bg-brand px-6 py-3 text-sm font-bold uppercase tracking-wide text-white hard-shadow-ink transition hover:bg-brand-dark focus-ring"
                   >
                     Go to converter
                   </a>

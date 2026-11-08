@@ -1,73 +1,47 @@
 # How to Use a Title Case Converter (Step by Step)
 
-A title case converter removes the guesswork from headline capitalization. Here is how to use the free tool on TitleCaseConverter.io from paste to publish.
+A title case converter applies style-guide capitalization in seconds. Here’s the fastest workflow on [titlecaseconverter.tech](/) — modeled on how top-ranked tools work.
 
-## Step 1 — Paste or type your title
+![How to use a title case converter](/title-case-converter-one-click.webp)
 
-Drop a headline into the input box, or paste **one title per line** with multi-line mode for a small batch (blog archive cleanup, product list, meta title sheet).
+## Step-by-step
 
-You can paste messy ALL CAPS, lowercase, or mixed case — the converter rebuilds capitalization from the style rules you pick. If **Convert When Text Is Pasted** is enabled, pasting triggers conversion immediately (existing text is replaced).
+1. **Paste or type** your title into the box at the top of the homepage.  
+2. Click **Convert**, or press **Ctrl+Enter** (Windows) / **Cmd+Enter** (Mac).  
+3. Select a **Title Case** style: AMA, AP, APA, Bluebook, Chicago, MLA, NY Times, or Wikipedia.  
+4. Or pick an **Other** style: sentence case, UPPERCASE, or lowercase.  
+5. Review the **Result**, optionally with explanations and highlights.  
+6. Click **Copy** and paste into your CMS, manuscript, or ads tool.  
+7. Click **Clear** when you’re ready for the next headline.
 
-## Step 2 — Choose a capitalization style
+## Pro options that save time
 
-### Title Case styles
-
-| Style | Typical use |
+| Option | Use it when… |
 | --- | --- |
-| AMA | Medical and scientific publishing |
-| AP | News, PR, marketing composition titles |
-| APA | Research papers and social-science titles |
-| Bluebook | Legal citations and related titles |
-| Chicago | Books, long-form, many business docs |
-| MLA | Literature and humanities titles |
-| NY Times | NYT-style composition titles |
-| Wikipedia | Wikipedia-style article titles |
+| Keep Words in All Caps | You pasted *FREE*, *NEW*, or acronyms you want preserved |
+| Enable Multi-Line Input | You have a list of titles (one per line) |
+| Show Explanations | You’re learning why a word was capped or lowercased |
+| Highlight Changes | You want a visual diff before publishing |
+| Use Straight Quotes | Your CMS prefers typewriter quotes |
+| Convert When Text Is Pasted | You want a copy → paste → copy assembly line |
 
-### Other styles
-
-| Style | Use it for |
-| --- | --- |
-| Sentence case | Softer headings; first word + proper nouns |
-| UPPERCASE / lowercase | Shouting headlines or CSS-like transforms |
-
-## Step 3 — Convert
-
-Click **Convert**, or press **Ctrl+Enter** (Windows) / **Cmd+Enter** (Mac). Results appear in the Result panel. Use **Clear** to reset input and output.
-
-## Step 4 — Tune options
-
-| Option | Effect |
-| --- | --- |
-| Keep Words in All Caps | Title modes keep pasted ALL CAPS tokens; common acronyms still normalize to uppercase |
-| Enable Multi-Line Input | Batch many titles; one style at a time |
-| Show Explanations | Word-by-word capitalize / lowercase reasons |
-| Highlight Changes | Orange marks on letters that changed case |
-| Use Straight Quotes | Prefer `"` over curly quotes |
-| Convert When Text Is Pasted | Auto-convert on paste |
-
-Watch the **word / character / line** stats. Google often truncates titles past ~60 characters.
-
-## Step 5 — Copy the result
-
-Click **Copy**, then paste into your CMS title field, Word doc, Notion page, or ad platform. With explanations on, skim any uncertain words before you publish.
-
-## Fast clipboard workflow
+## Power workflow
 
 1. Enable **Convert When Text Is Pasted**.  
-2. In your source app, copy the title(s).  
-3. Switch to TitleCaseConverter.io and paste (**Ctrl/Cmd+V**).  
-4. Copy the result (**Ctrl/Cmd+C**) and paste back into your app.
+2. In your source app, copy the raw title.  
+3. Switch to Title Case Converter and paste.  
+4. Wait a beat, then copy the result (**Copy** or Ctrl/Cmd+C).  
+5. Paste back into your document.
 
-## Tips that improve accuracy
+## SEO tip
 
-- Prefer the style guide your audience already uses.  
-- After converting, skim proper nouns and brand names (*iPhone*, *eBay*).  
-- For SEO titles, put the primary keyword near the front, then convert.  
-- When Chicago and APA disagree on *about* / *with*, convert both and pick intentionally.  
-- Remember context: *on*, *in*, *up*, and *by* are not always prepositions — use explanations when a title looks odd.
+Watch the live character count under the input. Aim for roughly **50–60 characters** for page titles so Google is less likely to truncate your SERP listing.
 
-## Why use a converter instead of manual edits?
+## Common mistakes to avoid
 
-Manual title case is slow and inconsistent — especially across a team. The converter applies the same style-guide rules every time, which is exactly what editors and SERP-facing titles need.
+- Using “Capitalize Each Word” instead of true title case  
+- Mixing APA and Chicago rules on the same site  
+- Forcing title case on email subjects that should be sentence case  
+- Letting converters mangle brand names — spot-check *iPhone*, *YouTube*, *NASA*
 
-Ready? Open the [title case converter](/) and convert your next headline in seconds.
+Related guides: [what is title case](/what-is-title-case), [words to capitalize](/words-to-capitalize-in-a-title), and [title case vs sentence case](/title-case-vs-sentence-case).

@@ -6,7 +6,7 @@ import { BRAND, ROUTES, SITE_ORIGIN } from "@/lib/siteConfig";
 
 const PAGE_URL = `${SITE_ORIGIN}${ROUTES.privacy}`;
 const PAGE_TITLE = "Privacy Policy - Title Case Converter";
-const PAGE_DESCRIPTION = "Privacy Policy of titlecaseconverter.io";
+const PAGE_DESCRIPTION = "Privacy Policy of titlecaseconverter.tech";
 
 export const metadata: Metadata = {
   title: { absolute: PAGE_TITLE },

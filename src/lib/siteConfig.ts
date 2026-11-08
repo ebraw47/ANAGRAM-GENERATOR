@@ -1,12 +1,12 @@
 /** Central brand / domain config for Title Case Converter */
-export const SITE_ORIGIN = "https://titlecaseconverter.io";
+export const SITE_ORIGIN = "https://titlecaseconverter.tech";
 
 export const BRAND = {
   name: "Title Case Converter",
   shortName: "TitleCase",
   keyword: "title case converter",
-  domain: "titlecaseconverter.io",
-  email: "contact@titlecaseconverter.io",
+  domain: "titlecaseconverter.tech",
+  email: "contact@titlecaseconverter.tech",
   twitter: "@titlecaseconv",
   tagline: "Free Title Capitalization Tool — 8 Style Guides",
   description:
@@ -23,59 +23,64 @@ export const ROUTES = {
 } as const;
 
 export const IMAGES = {
-  logo: "/logo.webp",
-  icon: "/favicon.png",
+  logo: "/title-case-converter-logo.webp",
+  heroLogo: "/title-case-converter-hero-logo.webp",
+  icon: "/title-case-converter-Fav-icon.webp",
   favicon: "/favicon.ico",
-  brandLogo: "/logo.webp",
-  banner: "/title-case-converter-hero.webp",
-  headerLogo: "/logo.webp",
-  headerLogoLight: "/logo.webp",
+  brandLogo: "/title-case-converter-logo.webp",
+  banner: "/title-case-converter-brand.webp",
+  headerLogo: "/title-case-converter-logo.webp",
+  headerLogoLight: "/title-case-converter-logo.webp",
   og: "/feature/og-image-1200x630.webp",
-  ogSquare: "/feature/og-square-1200x1200.webp",
+  ogSquare: "/title-case-converter-logo.webp",
   twitter: "/feature/twitter-card-1200x600.webp",
-  website: "/title-case-converter-hero.webp",
-  tool: "/title-case-converter-features.webp",
-  heroAlt: "/title-case-converter-1.webp",
-  features: "/title-case-converter-features.webp",
-  howItWorks: "/how-title-case-converter-works.webp",
-  benefits: "/benefits-of-title-case-converter.webp",
-  whoCanUse: "/who-can-use-title-case-converter.webp",
-  vsSentence: "/title-case-vs-sentence-case.webp",
-  showcase: "/title-case-converter-3.webp",
+  website: "/title-case-converter-capitalization.webp",
+  tool: "/title-case-converter-fast.webp",
+  heroAlt: "/title-case-converter-search.webp",
+  features: "/title-case-converter-accuracy.webp",
+  howItWorks: "/title-case-converter-one-click.webp",
+  benefits: "/title-case-converter-fast.webp",
+  whoCanUse: "/title-case-converter-search.webp",
+  vsSentence: "/title-case-converter-capitalization.webp",
+  showcase: "/title-case-converter-one-click.webp",
+  accuracy: "/title-case-converter-accuracy.webp",
+  capitalization: "/title-case-converter-capitalization.webp",
+  fast: "/title-case-converter-fast.webp",
+  oneClick: "/title-case-converter-one-click.webp",
+  search: "/title-case-converter-search.webp",
 } as const;
 
+/** Intrinsic pixel sizes — boxes size to the image, not a forced aspect ratio */
+export const IMAGE_DIMS: Record<string, { width: number; height: number }> = {
+  [IMAGES.logo]: { width: 146, height: 156 },
+  [IMAGES.heroLogo]: { width: 442, height: 442 },
+  [IMAGES.icon]: { width: 512, height: 512 },
+  [IMAGES.banner]: { width: 716, height: 218 },
+  [IMAGES.accuracy]: { width: 716, height: 216 },
+  [IMAGES.capitalization]: { width: 724, height: 268 },
+  [IMAGES.fast]: { width: 716, height: 268 },
+  [IMAGES.oneClick]: { width: 724, height: 224 },
+  [IMAGES.search]: { width: 718, height: 212 },
+};
+
+export function imageDims(src: string, fallback = { width: 728, height: 272 }) {
+  return IMAGE_DIMS[src] ?? fallback;
+}
+
 /**
- * SERP-validated blog pillars only (competitor + query research):
- * title case converter, title case vs sentence case, capitalization rules
- * (APA/Chicago/AP/MLA), words to capitalize, how converter works, who uses it.
+ * SERP-validated blogs only (competitor titlecaseconverter.com + query research):
+ * rules, words-to-capitalize, sentence case, title vs sentence, what is title case,
+ * how to use converter, APA/Chicago/AP/MLA comparison.
  */
 export const ARTICLES = [
-  {
-    slug: "title-case-vs-sentence-case",
-    title: "Title Case vs Sentence Case: What’s the Difference?",
-    metaTitle: "Title Case vs Sentence Case | Clear Examples",
-    description:
-      "Learn when to use title case vs sentence case for headlines, headings, and SEO titles — with style-guide examples and a free converter.",
-    date: "2026-11-07",
-    image: "/title-case-vs-sentence-case.webp",
-  },
   {
     slug: "title-capitalization-rules",
     title: "Title Capitalization Rules: APA, Chicago, AP & MLA Compared",
     metaTitle: "Title Capitalization Rules | APA Chicago AP MLA",
     description:
       "Compare AMA, AP, APA, Bluebook, Chicago, MLA, NY Times, and Wikipedia title case — prepositions, FANBOYS, last-word rules, and more.",
-    date: "2026-11-06",
-    image: "/title-case-converter-features.webp",
-  },
-  {
-    slug: "how-to-use-a-title-case-converter",
-    title: "How to Use a Title Case Converter (Step by Step)",
-    metaTitle: "How to Use a Title Case Converter | Quick Guide",
-    description:
-      "Paste a headline, pick a style guide, use Convert/Clear and pro options, then copy perfect title case in seconds.",
-    date: "2026-11-05",
-    image: "/how-title-case-converter-works.webp",
+    date: "2026-11-08",
+    image: IMAGES.capitalization,
   },
   {
     slug: "words-to-capitalize-in-a-title",
@@ -83,26 +88,53 @@ export const ARTICLES = [
     metaTitle: "Words to Capitalize in a Title | Major vs Minor",
     description:
       "Know which nouns, verbs, and short words get capitals — and when on, in, up, or by must be capitalized by context.",
+    date: "2026-11-07",
+    image: IMAGES.accuracy,
+  },
+  {
+    slug: "title-case-vs-sentence-case",
+    title: "Title Case vs Sentence Case: What’s the Difference?",
+    metaTitle: "Title Case vs Sentence Case | Clear Examples",
+    description:
+      "Learn when to use title case vs sentence case for headlines, headings, and SEO titles — with style-guide examples and a free converter.",
+    date: "2026-11-06",
+    image: IMAGES.vsSentence,
+  },
+  {
+    slug: "what-is-title-case",
+    title: "What Is Title Case? Definition, Examples & Rules",
+    metaTitle: "What Is Title Case? | Definition & Examples",
+    description:
+      "Title case (headline style) capitalizes major words in titles. See plain-English rules, edge-case examples, and how converters apply style guides.",
+    date: "2026-11-05",
+    image: IMAGES.search,
+  },
+  {
+    slug: "how-to-use-a-title-case-converter",
+    title: "How to Use a Title Case Converter (Step by Step)",
+    metaTitle: "How to Use a Title Case Converter | Quick Guide",
+    description:
+      "Paste a headline, pick a style guide, use Convert/Clear and pro options, then copy perfect title case in seconds.",
     date: "2026-11-04",
-    image: "/title-case-converter-1.webp",
+    image: IMAGES.oneClick,
   },
   {
-    slug: "benefits-of-title-case-converter",
-    title: "Benefits of Using a Title Case Converter",
-    metaTitle: "Benefits of a Title Case Converter",
+    slug: "sentence-case-converter",
+    title: "Sentence Case Converter: What It Is and When to Use It",
+    metaTitle: "Sentence Case Converter | Proper Nouns & Titles",
     description:
-      "Save time, stay consistent across style guides, and ship cleaner headlines for blogs, SEO titles, books, and marketing campaigns.",
+      "Convert headlines to sentence case with proper-noun awareness. Learn the difference from title case and when quieter capitalization wins.",
     date: "2026-11-03",
-    image: "/benefits-of-title-case-converter.webp",
+    image: IMAGES.fast,
   },
   {
-    slug: "who-can-use-title-case-converter",
-    title: "Who Can Use a Title Case Converter?",
-    metaTitle: "Who Can Use a Title Case Converter",
+    slug: "apa-chicago-ap-mla-title-case",
+    title: "APA vs Chicago vs AP vs MLA Title Case: Which Style Wins?",
+    metaTitle: "APA vs Chicago vs AP vs MLA Title Case",
     description:
-      "Writers, students, marketers, editors, developers, and e-commerce teams — see how each role uses a free title capitalization tool.",
+      "Side-by-side title case differences for prepositions, conjunctions, and last words — plus when academics, newsrooms, and publishers pick each guide.",
     date: "2026-11-02",
-    image: "/who-can-use-title-case-converter.webp",
+    image: IMAGES.features,
   },
 ] as const;
 
@@ -117,7 +149,7 @@ export const HOME_FAQS = [
   },
   {
     q: "Which style guides does this tool support?",
-    a: "TitleCaseConverter.io supports AMA, AP, APA, Bluebook, Chicago, MLA, NY Times, and Wikipedia title case, plus sentence case, upper case, and lower case.",
+    a: "TitleCaseConverter.tech supports AMA, AP, APA, Bluebook, Chicago, MLA, NY Times, and Wikipedia title case, plus sentence case, upper case, and lower case.",
   },
   {
     q: "What is the difference between title case and sentence case?",

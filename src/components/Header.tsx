@@ -1,12 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import ShareButton from "@/components/ShareButton";
-import { BRAND, IMAGES, ROUTES } from "@/lib/siteConfig";
+import { BRAND, ROUTES } from "@/lib/siteConfig";
 
 const navLinks = [
   { href: ROUTES.home, label: "Converter" },
@@ -39,32 +38,27 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[rgba(32,36,44,0.05)] bg-white shadow-[0_1px_0_rgba(32,36,44,0.03)]">
-      <div className="mx-auto flex h-[3.75rem] max-w-6xl items-center justify-between gap-3 px-3 sm:h-16 sm:px-4 md:h-20 md:px-6 lg:h-[5.5rem]">
+    <header className="sticky top-0 z-50 border-b-2 border-navy-900 bg-navy-900 text-white shadow-[0_3px_0_0_rgba(232,93,4,0.9)]">
+      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-2 px-3 sm:h-16 sm:gap-3 sm:px-4 md:h-[4.5rem] md:px-6">
         <Link
           href="/"
-          className="flex min-w-0 flex-1 items-center group sm:flex-none"
+          className="min-w-0 shrink py-1"
           aria-label={`${BRAND.name} home`}
         >
-          <Image
-            src={IMAGES.headerLogo}
-            alt={`${BRAND.name} logo`}
-            width={490}
-            height={100}
-            priority
-            sizes="(max-width: 640px) 220px, (max-width: 768px) 280px, (max-width: 1024px) 340px, 420px"
-            className="h-9 w-auto max-w-[min(240px,68vw)] object-contain object-left sm:h-10 sm:max-w-[280px] md:h-12 md:max-w-[340px] lg:h-14 lg:max-w-[420px]"
-          />
+          <span className="block whitespace-nowrap font-display text-[0.8125rem] font-extrabold leading-none tracking-tight sm:text-sm md:text-base">
+            <span className="text-white">Title Case </span>
+            <span className="text-brand">Converter</span>
+          </span>
         </Link>
 
-        <div className="flex shrink-0 items-center gap-1.5 sm:gap-2 lg:gap-3">
-          <nav className="mr-1 hidden items-center gap-7 lg:flex" aria-label="Primary">
+        <div className="flex shrink-0 items-center gap-1 sm:gap-2 lg:gap-3">
+          <nav className="mr-1 hidden items-center gap-6 lg:flex" aria-label="Primary">
             {navLinks.map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
                 className={`relative pb-0.5 text-sm font-semibold transition-colors ${
-                  isActive(href) ? "text-navy-900" : "text-ink-mute hover:text-navy-900"
+                  isActive(href) ? "text-brand" : "text-white/75 hover:text-white"
                 }`}
               >
                 {label}
@@ -77,9 +71,12 @@ export default function Header() {
             ))}
           </nav>
 
+          <ShareButton tone="light" className="hidden sm:inline-flex" label />
+          <ShareButton tone="light" className="sm:hidden !px-2 !py-1.5" />
+
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-navy-900 hover:bg-navy-900/5 lg:hidden focus-ring"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md text-white hover:bg-white/10 lg:hidden focus-ring"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
@@ -94,16 +91,13 @@ export default function Header() {
               </svg>
             )}
           </button>
-
-          <ShareButton tone="dark" className="hidden sm:inline-flex" label />
-          <ShareButton tone="dark" className="sm:hidden !px-2" />
         </div>
       </div>
 
       <AnimatePresence initial={false}>
         {open && (
           <motion.div
-            className="overflow-hidden border-t border-navy-900/10 bg-white/95 backdrop-blur-xl lg:hidden"
+            className="overflow-hidden border-t border-white/10 bg-navy-950 lg:hidden"
             initial={reduce ? false : { height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -114,10 +108,10 @@ export default function Header() {
                 <Link
                   key={href}
                   href={href}
-                  className={`rounded-lg px-3 py-3 text-base font-semibold ${
+                  className={`rounded-md px-3 py-3 text-base font-semibold ${
                     isActive(href)
-                      ? "bg-brand/10 text-navy-900"
-                      : "text-ink-soft hover:bg-navy-900/5 hover:text-navy-900"
+                      ? "bg-brand/20 text-brand"
+                      : "text-white/85 hover:bg-white/5 hover:text-white"
                   }`}
                 >
                   {label}

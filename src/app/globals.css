@@ -3,30 +3,34 @@
 @tailwind utilities;
 
 :root {
-  --brand: #1e6fff;
-  --navy-start: #f7f5f0;
-  --navy-end: #1e6fff;
-  --coral: #3b8eff;
-  --ink: #20242c;
-  --paper: #f7f5f0;
-  --surface: #d9d4c8;
-  --headline: #20242c;
-  --foreground-rgb: 32, 36, 44;
-  --background-start-rgb: 247, 245, 240;
-  --background-end-rgb: 247, 245, 240;
-  --feature-border: #e8e5dd;
-  --feature-title: #20242c;
-  --feature-icon: #1e6fff;
+  --brand: #e85d04;
+  --brand-dark: #c44d03;
+  --ink: #14161c;
+  --paper: #e4e9f0;
+  --surface: #ffffff;
+  --headline: #14161c;
+  --foreground-rgb: 20, 22, 28;
+  --background-start-rgb: 228, 233, 240;
+  --background-end-rgb: 216, 223, 233;
+  --feature-border: #cfd6e0;
+  --feature-title: #14161c;
+  --feature-icon: #e85d04;
+  --navy-start: #e4e9f0;
+  --navy-end: #e85d04;
+  --coral: #f48c3c;
 }
 
 html {
   scroll-behavior: smooth;
-  background-color: #f7f5f0;
+  background-color: #e4e9f0;
+  overflow-x: hidden;
 }
 
 body {
-  color: #20242c;
+  color: #14161c;
   background: transparent;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 img {
@@ -42,12 +46,29 @@ footer {
   font-family: inherit;
 }
 
-/* Main website background — warm ivory (no gradients) */
+/* Dense cool slate — solid body color, crisp contrast for white tool cards */
 .site-canvas {
   position: relative;
   isolation: isolate;
   min-height: 100vh;
-  background-color: #f7f5f0;
+  background-color: #d8dfe9;
+  background-image:
+    radial-gradient(ellipse 90% 55% at 50% -5%, rgba(232, 93, 4, 0.14), transparent 58%),
+    linear-gradient(180deg, #e8eef5 0%, #d8dfe9 42%, #cfd7e3 100%);
+}
+
+.site-canvas::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.22;
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.055) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent 62%);
 }
 
 .site-canvas > main,
@@ -61,12 +82,15 @@ footer {
 }
 
 .hero-gradient {
-  background-color: #f7f5f0;
+  background:
+    radial-gradient(ellipse 75% 55% at 50% 0%, rgba(232, 93, 4, 0.16), transparent 62%),
+    transparent;
 }
 
 .page-banner {
-  background-color: #f7f5f0;
-  color: #20242c;
+  background:
+    linear-gradient(135deg, #151820 0%, #1e2330 55%, #2a1a12 100%);
+  color: #fff;
 }
 
 .section-glass {
@@ -74,7 +98,7 @@ footer {
 }
 
 .surface-card {
-  background-color: #d9d4c8;
+  background-color: #ffffff;
 }
 
 .section-kicker {
@@ -91,20 +115,28 @@ footer {
 
 .prose-h2 {
   @apply relative mt-12 mb-5 flex gap-3 font-display text-[1.55rem] font-bold leading-snug tracking-tight md:text-[1.85rem];
-  color: #20242c;
+  color: #14161c;
 }
 
 .prose-h2-bar {
-  @apply mt-1.5 h-[1.15em] w-1 shrink-0 rounded-full bg-gradient-to-b from-brand to-[#FFB86B];
+  @apply mt-1.5 h-[1.15em] w-1 shrink-0 rounded-sm bg-brand;
 }
 
 .prose-h3 {
-  @apply mt-9 mb-3 border-l-[3px] border-brand/50 pl-3.5 font-display text-xl font-semibold tracking-tight md:text-[1.35rem];
-  color: #20242c;
+  @apply mt-9 mb-3 border-l-[3px] border-brand pl-3.5 font-display text-xl font-semibold tracking-tight md:text-[1.35rem];
+  color: #14161c;
+}
+
+.prose-h4 {
+  @apply mt-6 mb-2 font-display text-lg font-semibold text-[#14161C];
 }
 
 .prose-p {
   @apply mb-4 text-[1.05rem] leading-relaxed text-ink-soft;
+}
+
+.prose-p-media {
+  @apply mb-6;
 }
 
 .prose-ul {
@@ -115,53 +147,112 @@ footer {
   @apply mb-5 list-decimal space-y-2 pl-5 text-[1.05rem] leading-relaxed text-ink-soft;
 }
 
+.prose-li {
+  @apply marker:text-brand;
+}
+
 .prose-a {
   @apply font-semibold text-brand underline decoration-brand/35 underline-offset-2 transition hover:text-brand-dark hover:decoration-brand;
 }
 
 .prose-strong {
   @apply font-semibold;
-  color: #20242c;
+  color: #14161c;
+}
+
+.prose-em {
+  @apply italic;
+}
+
+.prose-quote {
+  @apply my-6 border-l-4 border-brand bg-white px-5 py-4 text-ink-soft shadow-sm;
+}
+
+.prose-hr {
+  @apply my-10 border-navy-900/10;
+}
+
+.prose-figure {
+  @apply my-6 overflow-hidden border-0 bg-transparent p-0 shadow-none;
+  line-height: 0;
+}
+
+.prose-figure img,
+.prose-figure > span {
+  @apply block h-auto w-full max-w-full border-0 outline-none;
+}
+
+.prose-table img,
+.prose-td img,
+.prose-th img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  margin: 0;
+  border: 0;
+  outline: none;
+  vertical-align: middle;
+}
+
+.prose-caption {
+  @apply mt-2 px-0 py-0 text-center text-sm text-ink-mute;
+  line-height: 1.5;
 }
 
 /*
-  Surface hierarchy (ivory → champagne card → white input):
-  page #F7F5F0 · card ~#D9D4C8 · inset #FFFEFA
+  Tool surface — crisp white panel with charcoal frame.
+  Soft shadow on mobile so offset neo-shadow does not cause horizontal scroll.
 */
 .tool-glass {
-  background:
-    linear-gradient(165deg, #e2ddd2 0%, #d9d4c8 45%, #cfc9bb 100%);
-  border: 1px solid rgba(32, 36, 44, 0.12);
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.55) inset,
-    0 0 0 1px rgba(32, 36, 44, 0.05),
-    0 16px 34px -18px rgba(32, 36, 44, 0.24),
-    0 5px 14px -8px rgba(32, 36, 44, 0.12);
-  backdrop-filter: blur(18px) saturate(1.15);
-  -webkit-backdrop-filter: blur(18px) saturate(1.15);
+  background: #ffffff;
+  border: 2px solid #151820;
+  box-shadow: 0 10px 28px -16px rgba(20, 22, 28, 0.35);
+}
+
+@media (min-width: 640px) {
+  .tool-glass {
+    box-shadow:
+      4px 4px 0 0 rgba(232, 93, 4, 0.85),
+      0 18px 40px -24px rgba(20, 22, 28, 0.35);
+  }
 }
 
 .tool-glass-inset {
-  background: #fffefa;
-  border: 1px solid rgba(32, 36, 44, 0.12);
-  box-shadow:
-    0 1px 2px rgba(32, 36, 44, 0.05) inset,
-    0 0 0 1px rgba(255, 255, 255, 0.7);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
+  background: #fafbfc;
+  border: 1px solid rgba(20, 22, 28, 0.14);
+  box-shadow: inset 0 1px 2px rgba(20, 22, 28, 0.04);
 }
 
+/* Offset “hard” shadows — soft on small screens (avoids horizontal scroll) */
+.hard-shadow,
+.hard-shadow-ink {
+  box-shadow: 0 8px 20px -14px rgba(20, 22, 28, 0.35);
+}
+
+@media (min-width: 640px) {
+  .hard-shadow {
+    box-shadow: 3px 3px 0 0 #e85d04;
+  }
+
+  .hard-shadow-ink {
+    box-shadow: 3px 3px 0 0 #151820;
+  }
+}
+
+/*
+  Tables — charcoal header + orange accent (not champagne glass)
+*/
 .prose-table-wrap {
-  @apply my-6 overflow-x-auto rounded-2xl;
-  background:
-    linear-gradient(165deg, #e2ddd2 0%, #d9d4c8 50%, #cfc9bb 100%);
-  border: 1px solid rgba(32, 36, 44, 0.12);
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.55) inset,
-    0 0 0 1px rgba(32, 36, 44, 0.05),
-    0 14px 30px -16px rgba(32, 36, 44, 0.22);
-  backdrop-filter: blur(16px) saturate(1.1);
-  -webkit-backdrop-filter: blur(16px) saturate(1.1);
+  @apply my-6 overflow-x-auto;
+  border: 2px solid #151820;
+  background: #fff;
+  box-shadow: 0 8px 20px -14px rgba(20, 22, 28, 0.3);
+}
+
+@media (min-width: 640px) {
+  .prose-table-wrap {
+    box-shadow: 3px 3px 0 0 rgba(232, 93, 4, 0.75);
+  }
 }
 
 .prose-table {
@@ -169,26 +260,26 @@ footer {
 }
 
 .prose-th {
-  @apply border-b border-navy-900/10 px-4 py-3 font-semibold;
-  color: #20242c;
-  background: rgba(255, 253, 248, 0.55);
+  @apply px-4 py-3.5 text-xs font-bold uppercase tracking-[0.08em] text-white;
+  background: #151820;
+  border-bottom: 3px solid #e85d04;
 }
 
 .prose-td {
-  @apply border-b border-navy-900/5 px-4 py-3 text-ink-soft;
-  background: transparent;
+  @apply border-b border-navy-900/10 px-4 py-3 text-ink-soft;
+  background: #fff;
 }
 
 .prose-table tbody tr:nth-child(even) td {
-  background: rgba(160, 153, 138, 0.22);
+  background: #f7f8fa;
 }
 
 .prose-table tbody tr:hover td {
-  background: rgba(160, 153, 138, 0.32);
+  background: #fff6ef;
 }
 
 .focus-ring {
-  @apply outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-[#F7F5F0];
+  @apply outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-[#D8DFE9];
 }
 
 input[type="range"] {

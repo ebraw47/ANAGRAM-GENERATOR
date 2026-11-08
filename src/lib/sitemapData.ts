@@ -14,7 +14,7 @@ export type SitemapImage = {
   caption: string;
 };
 
-const TODAY = "2026-11-07";
+const TODAY = "2026-11-08";
 
 export const SITEMAP_PAGES: SitemapPage[] = [
   { path: ROUTES.home, lastmod: TODAY, changefreq: "daily", priority: 1.0 },
@@ -33,7 +33,7 @@ export const SITEMAP_PAGES: SitemapPage[] = [
 
 export const SITEMAP_IMAGES: SitemapImage[] = [
   {
-    path: IMAGES.logo,
+    path: IMAGES.heroLogo,
     pagePath: "/",
     title: `${BRAND.name} logo`,
     caption: "Title Case Converter — free title capitalization tool",
@@ -41,7 +41,7 @@ export const SITEMAP_IMAGES: SitemapImage[] = [
   {
     path: IMAGES.website,
     pagePath: "/",
-    title: `${BRAND.name} hero`,
+    title: `${BRAND.name} feature banner`,
     caption: "Convert headlines to title case with AMA, AP, APA, Chicago, MLA, and more",
   },
   {

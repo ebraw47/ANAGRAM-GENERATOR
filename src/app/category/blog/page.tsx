@@ -2,12 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { PageBannerPattern } from "@/components/BoxPattern";
-import { ARTICLES, BRAND, ROUTES, SITE_ORIGIN } from "@/lib/siteConfig";
+import { ARTICLES, BRAND, ROUTES, SITE_ORIGIN, imageDims } from "@/lib/siteConfig";
 
 const PAGE_URL = `${SITE_ORIGIN}${ROUTES.blog}`;
 const PAGE_TITLE = "Blog - Title Case Converter";
 const PAGE_DESCRIPTION =
-  "Title case guides: title vs sentence case, APA/Chicago/AP/MLA rules, words to capitalize, and how to use a title case converter.";
+  "Title case guides: title vs sentence case, APA/Chicago/AP/MLA rules, words to capitalize, sentence case, and how to use a title case converter.";
 
 export const metadata: Metadata = {
   title: { absolute: PAGE_TITLE },
@@ -24,17 +24,17 @@ export const metadata: Metadata = {
 
 export default function BlogCategoryPage() {
   return (
-    <div className="text-[#20242C]">
-      <header className="page-banner relative overflow-hidden border-b border-navy-900/10">
-        <PageBannerPattern opacity={0.2} />
+    <div className="text-ink">
+      <header className="page-banner relative overflow-hidden border-b-2 border-navy-900">
+        <PageBannerPattern opacity={0.15} />
         <div className="relative mx-auto max-w-6xl px-4 py-12 md:px-6 md:py-16">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-ink-mute">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-brand">
             Guides & tips
           </p>
-          <h1 className="font-display text-3xl font-extrabold tracking-tight text-[#20242C] md:text-4xl">
+          <h1 className="font-display text-3xl font-extrabold tracking-tight text-white md:text-4xl">
             Blog
           </h1>
-          <p className="mt-3 max-w-2xl text-base leading-relaxed text-ink-soft md:text-lg">
+          <p className="mt-3 max-w-2xl text-base leading-relaxed text-white/75 md:text-lg">
             {PAGE_DESCRIPTION}
           </p>
         </div>
@@ -45,18 +45,18 @@ export default function BlogCategoryPage() {
           {ARTICLES.map((a) => (
             <article
               key={a.slug}
-              className="group overflow-hidden rounded-2xl border border-navy-900/10 bg-white/90 shadow-sm backdrop-blur-sm transition hover:border-brand/40 hover:shadow-soft"
+              className="group overflow-hidden border-2 border-navy-900 bg-white hard-shadow transition hover:hard-shadow-ink"
             >
               <Link href={`/${a.slug}`} className="block">
-                <div className="relative aspect-[16/9] overflow-hidden bg-navy-50">
-                  <Image
-                    src={a.image}
-                    alt={a.title}
-                    fill
-                    className="object-cover object-center transition duration-500 group-hover:scale-[1.02]"
-                    sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
-                  />
-                </div>
+                <Image
+                  src={a.image}
+                  alt={a.title}
+                  width={imageDims(a.image).width}
+                  height={imageDims(a.image).height}
+                  unoptimized
+              className="block h-auto w-full border-0"
+                  sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
+                />
                 <div className="p-5">
                   <time
                     className="text-xs font-semibold uppercase tracking-wide text-brand"
@@ -68,7 +68,7 @@ export default function BlogCategoryPage() {
                       day: "numeric",
                     })}
                   </time>
-                  <h2 className="mt-2 font-display text-xl font-bold text-[#20242C] group-hover:text-brand line-clamp-2">
+                  <h2 className="mt-2 font-display text-xl font-bold text-ink group-hover:text-brand line-clamp-2">
                     {a.title}
                   </h2>
                   <p className="mt-2 text-sm leading-relaxed text-ink-mute line-clamp-3">

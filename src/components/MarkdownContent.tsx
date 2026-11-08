@@ -5,6 +5,7 @@ import remarkGfm from "remark-gfm";
 import Image from "next/image";
 import Link from "next/link";
 import type { Components } from "react-markdown";
+import { imageDims } from "@/lib/siteConfig";
 
 type Props = {
   content: string;
@@ -52,8 +53,8 @@ const components: Components = {
     </div>
   ),
   thead: ({ children }) => <thead>{children}</thead>,
-  th: ({ children }) => <th>{children}</th>,
-  td: ({ children }) => <td>{children}</td>,
+  th: ({ children }) => <th className="prose-th">{children}</th>,
+  td: ({ children }) => <td className="prose-td">{children}</td>,
   a: ({ href, children }) => {
     const url = href || "#";
     const external = url.startsWith("http");
@@ -73,20 +74,21 @@ const components: Components = {
   img: ({ src, alt }) => {
     if (!src || typeof src !== "string") return null;
     const isLocal = src.startsWith("/");
+    const { width, height } = imageDims(src);
     return (
       <figure className="prose-figure">
         {isLocal ? (
-          <span className="relative block aspect-[16/9] w-full overflow-hidden">
-            <Image
-              src={src}
-              alt={alt || ""}
-              fill
-              className="object-cover"
-              sizes="(max-width:768px) 100vw, 760px"
-            />
-          </span>
+          <Image
+            src={src}
+            alt={alt || ""}
+            width={width}
+            height={height}
+            unoptimized
+            className="h-auto w-full border-0"
+            sizes="(max-width:768px) 100vw, 760px"
+          />
         ) : (
-          <img src={src} alt={alt || ""} loading="lazy" />
+          <img src={src} alt={alt || ""} loading="lazy" className="h-auto w-full border-0" />
         )}
         {alt ? <figcaption className="prose-caption">{alt}</figcaption> : null}
       </figure>

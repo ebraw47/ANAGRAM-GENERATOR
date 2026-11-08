@@ -11,7 +11,7 @@ type FormData = {
 };
 
 const fieldClass =
-  "tool-glass-inset w-full rounded-xl px-4 py-3 text-[#20242C] placeholder:text-ink-mute focus:border-brand/50 focus:outline-none focus:ring-2 focus:ring-brand/25";
+  "tool-glass-inset w-full px-4 py-3 text-ink placeholder:text-ink-mute focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/25";
 
 export default function ContactForm() {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -35,18 +35,18 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="tool-glass rounded-2xl p-6 md:p-8">
-      <h2 className="mb-6 text-center font-display text-2xl font-bold text-[#20242C]">Send Us a Message</h2>
+    <div className="tool-glass p-6 md:p-8">
+      <h2 className="mb-6 text-center font-display text-2xl font-bold text-ink">Send Us a Message</h2>
 
       {formSubmitted ? (
-        <div className="mb-6 rounded-xl border border-brand/30 bg-brand/10 p-4 text-center text-navy-900">
+        <div className="mb-6 border-2 border-navy-900 bg-brand-soft p-4 text-center text-ink">
           Thanks! Your email client should open shortly. We typically reply within 24–48 hours.
         </div>
       ) : null}
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
         <div>
-          <label htmlFor="name" className="mb-1.5 block text-sm font-semibold text-[#20242C]">
+          <label htmlFor="name" className="mb-1.5 block text-sm font-semibold text-ink">
             Name
           </label>
           <input
@@ -59,7 +59,7 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label htmlFor="email" className="mb-1.5 block text-sm font-semibold text-[#20242C]">
+          <label htmlFor="email" className="mb-1.5 block text-sm font-semibold text-ink">
             Email*
           </label>
           <input
@@ -75,7 +75,7 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label htmlFor="message" className="mb-1.5 block text-sm font-semibold text-[#20242C]">
+          <label htmlFor="message" className="mb-1.5 block text-sm font-semibold text-ink">
             Message*
           </label>
           <textarea
@@ -89,7 +89,7 @@ export default function ContactForm() {
 
         <button
           type="submit"
-          className="w-full rounded-xl bg-brand py-3.5 font-bold uppercase tracking-wide text-white transition hover:bg-brand-dark focus-ring"
+          className="w-full border-2 border-navy-900 bg-brand py-3.5 font-bold uppercase tracking-wide text-white hard-shadow-ink transition hover:bg-brand-dark focus-ring"
         >
           Submit
         </button>

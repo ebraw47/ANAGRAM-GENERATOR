@@ -5,8 +5,8 @@ import type { Metadata } from "next";
 import { PageBannerPattern } from "@/components/BoxPattern";
 import MarkdownContent from "@/components/MarkdownContent";
 import { FadeIn } from "@/components/motion/Motion";
-import { getMarkdown, stripLeadingH1 } from "@/lib/content";
-import { ARTICLES, BRAND, IMAGES, SITE_ORIGIN } from "@/lib/siteConfig";
+import { getMarkdown, stripLeadingH1, stripLeadingImage } from "@/lib/content";
+import { ARTICLES, BRAND, IMAGES, SITE_ORIGIN, imageDims } from "@/lib/siteConfig";
 
 type ArticleMeta = (typeof ARTICLES)[number];
 
@@ -24,7 +24,13 @@ export function articleMetadata(article: ArticleMeta): Metadata {
       siteName: BRAND.name,
       type: "article",
       publishedTime: article.date,
-      images: [{ url: `${SITE_ORIGIN}${article.image}`, width: 1280, height: 720, alt: article.title }],
+      images: [
+        {
+          url: `${SITE_ORIGIN}${article.image}`,
+          ...imageDims(article.image),
+          alt: article.title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
@@ -36,16 +42,17 @@ export function articleMetadata(article: ArticleMeta): Metadata {
 }
 
 function GuideCardThumb({ src, alt }: { src: string; alt: string }) {
+  const { width, height } = imageDims(src);
   return (
-    <div className="relative aspect-[16/9] overflow-hidden bg-navy-950">
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        className="object-cover object-left transition duration-500 group-hover:scale-[1.02]"
-        sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
-      />
-    </div>
+    <Image
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      unoptimized
+      className="block h-auto w-full border-0"
+      sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
+    />
   );
 }
 
@@ -57,7 +64,7 @@ export default function ArticlePage({
   contentSlug?: string;
 }) {
   const raw = getMarkdown(contentSlug || article.slug);
-  const content = stripLeadingH1(raw);
+  const content = stripLeadingImage(stripLeadingH1(raw));
   const url = `${SITE_ORIGIN}/${article.slug}`;
   const related = ARTICLES.filter((a) => a.slug !== article.slug).slice(0, 3);
 
@@ -93,34 +100,34 @@ export default function ArticlePage({
       <Script id={`article-schema-${article.slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <Script id={`breadcrumb-${article.slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
 
-      <article className="text-[#20242C]">
-        <header className="page-banner relative overflow-hidden border-b border-navy-900/10">
-          <PageBannerPattern opacity={0.2} />
+      <article className="text-ink">
+        <header className="page-banner relative overflow-hidden border-b-2 border-navy-900">
+          <PageBannerPattern opacity={0.15} />
           <div className="relative mx-auto max-w-3xl px-4 py-10 md:px-6 md:py-14">
-            <nav className="mb-5 text-sm text-ink-mute" aria-label="Breadcrumb">
+            <nav className="mb-5 text-sm text-white/65" aria-label="Breadcrumb">
               <ol className="flex flex-wrap items-center gap-1.5">
                 <li>
-                  <Link href="/" className="hover:text-[#20242C]">
+                  <Link href="/" className="hover:text-brand">
                     Home
                   </Link>
                 </li>
                 <li aria-hidden>/</li>
                 <li>
-                  <Link href="/category/blog" className="hover:text-[#20242C]">
+                  <Link href="/category/blog" className="hover:text-brand">
                     Blog
                   </Link>
                 </li>
                 <li aria-hidden>/</li>
-                <li className="line-clamp-1 text-[#20242C]">{article.title}</li>
+                <li className="line-clamp-1 text-white">{article.title}</li>
               </ol>
             </nav>
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-ink-mute">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-brand">
               Title case guide
             </p>
-            <h1 className="font-display text-3xl font-extrabold tracking-tight text-[#20242C] md:text-4xl md:leading-tight">
+            <h1 className="font-display text-3xl font-extrabold tracking-tight text-white md:text-4xl md:leading-tight">
               {article.title}
             </h1>
-            <p className="mt-5 text-sm text-ink-mute">
+            <p className="mt-5 text-sm text-white/65">
               <time dateTime={article.date}>
                 {new Date(article.date).toLocaleDateString("en-US", {
                   year: "numeric",
@@ -135,38 +142,38 @@ export default function ArticlePage({
         </header>
 
         <div className="mx-auto max-w-3xl px-4 py-10 md:px-6 md:py-14">
-          <figure className="mb-10 overflow-hidden rounded-2xl border border-navy-900/10 bg-white shadow-sm">
-            <span className="relative block aspect-[16/9] w-full">
-              <Image
-                src={article.image}
-                alt={article.title}
-                fill
-                priority
-                className="object-cover object-left"
-                sizes="(max-width:768px) 100vw, 760px"
-              />
-            </span>
+          <figure className="mb-10 overflow-hidden border-0">
+            <Image
+              src={article.image}
+              alt={article.title}
+              width={imageDims(article.image).width}
+              height={imageDims(article.image).height}
+              priority
+              unoptimized
+              className="block h-auto w-full border-0"
+              sizes="(max-width:768px) 100vw, 760px"
+            />
           </figure>
           <MarkdownContent content={content} />
         </div>
 
         {related.length > 0 && (
-          <aside className="section-glass border-t border-navy-900/10 py-12 md:py-14">
+          <aside className="section-glass border-t-2 border-navy-900/10 py-12 md:py-14">
             <div className="mx-auto max-w-6xl px-4 md:px-6">
               <FadeIn>
                 <p className="section-kicker">Keep reading</p>
-                <h2 className="font-display text-2xl font-bold text-[#20242C]">Related guides</h2>
+                <h2 className="font-display text-2xl font-bold text-ink">Related guides</h2>
               </FadeIn>
               <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {related.map((a, i) => (
                   <FadeIn key={a.slug} delay={0.05 * i}>
                     <Link
                       href={`/${a.slug}`}
-                      className="group block overflow-hidden rounded-2xl border border-navy-900/10 bg-white/90 backdrop-blur-sm transition hover:border-brand/40 hover:shadow-soft"
+                      className="group block overflow-hidden border-2 border-navy-900 bg-white hard-shadow transition hover:hard-shadow-ink"
                     >
                       <GuideCardThumb src={a.image} alt={a.title} />
                       <div className="p-4">
-                        <h3 className="font-display text-base font-semibold text-[#20242C] group-hover:text-brand line-clamp-2">
+                        <h3 className="font-display text-base font-semibold text-ink group-hover:text-brand line-clamp-2">
                           {a.title}
                         </h3>
                       </div>

@@ -4,6 +4,9 @@ import { ARTICLES } from "@/lib/siteConfig";
 
 type Props = { params: Promise<{ slug: string }> };
 
+/** Unknown slugs must 404 — do not soft-serve the homepage shell */
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return ARTICLES.map((a) => ({ slug: a.slug }));
 }

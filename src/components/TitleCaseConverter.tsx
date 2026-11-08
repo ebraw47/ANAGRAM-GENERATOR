@@ -57,7 +57,6 @@ export default function TitleCaseConverter() {
     [input, mode, keepAllCaps, multiLine, straightQuotes]
   );
 
-  // Re-convert live when options/mode change and we already have a result
   useEffect(() => {
     if (!output && !input) return;
     if (!input.trim()) return;
@@ -198,27 +197,24 @@ export default function TitleCaseConverter() {
     setShareNote("");
   };
 
-  const actionBtnClass =
-    "rounded-lg border border-brand/30 bg-brand px-3 py-1.5 text-xs font-semibold text-white shadow-soft transition hover:bg-brand-dark disabled:cursor-not-allowed disabled:opacity-40 focus-ring";
-
   const titleStyles = STYLE_OPTIONS.filter((s) => s.group === "Title Case");
   const otherStyles = STYLE_OPTIONS.filter((s) => s.group === "Other");
 
   const optionClass =
     "inline-flex items-center gap-2 text-sm text-ink-soft cursor-pointer select-none";
   const checkClass =
-    "h-3.5 w-3.5 rounded border-navy-900/25 bg-white text-brand focus:ring-brand focus:ring-offset-0";
-  const chipIdle =
-    "bg-navy-50 text-ink-soft hover:bg-brand/10 hover:text-navy-900";
-  const chipActive = "bg-brand text-white shadow-soft";
-  const legendClass =
-    "mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-mute";
+    "h-3.5 w-3.5 rounded-sm border-navy-900/30 bg-white text-brand focus:ring-brand focus:ring-offset-0";
+
+  const styleLink = (active: boolean) =>
+    active
+      ? "border-b-2 border-brand pb-0.5 font-bold text-brand"
+      : "border-b border-dotted border-ink-mute/50 pb-0.5 font-medium text-ink-soft hover:border-brand hover:text-brand";
 
   return (
     <div className="mx-auto w-full max-w-4xl">
-      <div className="tool-glass overflow-hidden rounded-2xl">
-        {/* Input */}
-        <div className="border-b border-navy-900/8 p-4 sm:p-5 md:p-6">
+      <div className="tool-glass overflow-hidden">
+        {/* Input — layout mirrors top-ranked titlecaseconverter.com */}
+        <div className="border-b-2 border-navy-900/10 p-3 sm:p-5 md:p-6">
           <label className="block">
             <span className="sr-only">Enter a title</span>
             <textarea
@@ -227,35 +223,35 @@ export default function TitleCaseConverter() {
               onPaste={onPaste}
               onKeyDown={onKeyDown}
               placeholder={PLACEHOLDER}
-              rows={multiLine ? 5 : 3}
+              rows={multiLine ? 4 : 3}
               spellCheck
-              className="tool-glass-inset w-full resize-y rounded-xl px-4 py-3 text-base leading-relaxed text-[#20242C] placeholder:text-ink-mute/70 focus:border-brand/50 focus:outline-none focus:ring-2 focus:ring-brand/25 sm:min-h-[120px] sm:text-[1.05rem]"
+              className="tool-glass-inset w-full resize-y rounded-none px-3 py-3 text-base leading-relaxed text-ink placeholder:text-ink-mute/70 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30 sm:min-h-[128px] sm:px-4 sm:text-[1.05rem]"
             />
           </label>
 
-          <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+          <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-xs text-ink-mute sm:text-sm" aria-live="polite">
               {stats.words} words · {stats.chars} characters · {stats.lines} lines
               {stats.chars > 0 && (
-                <span className={stats.chars > 60 ? " text-amber-600" : " text-ink-mute/80"}>
+                <span className={stats.chars > 60 ? " text-brand" : " text-ink-mute/80"}>
                   {" "}
                   · SEO {stats.chars <= 60 ? "OK" : "may truncate"}
                 </span>
               )}
             </p>
 
-            <div className="flex shrink-0 gap-2">
+            <div className="grid grid-cols-2 gap-2 sm:flex sm:shrink-0">
               <button
                 type="button"
                 onClick={() => runConvert()}
-                className="rounded-xl bg-brand px-5 py-2.5 text-sm font-bold text-white shadow-soft transition hover:bg-brand-dark focus-ring"
+                className="hard-shadow-ink border-2 border-navy-900 bg-brand px-4 py-2.5 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-brand-dark focus-ring sm:px-5 sm:py-2"
               >
                 Convert
               </button>
               <button
                 type="button"
                 onClick={clearAll}
-                className="rounded-xl border border-navy-900/12 bg-white px-5 py-2.5 text-sm font-semibold text-ink-soft transition hover:bg-navy-50 focus-ring"
+                className="hard-shadow-ink border-2 border-navy-900 bg-white px-4 py-2.5 text-sm font-bold uppercase tracking-wide text-ink transition hover:bg-paper focus-ring sm:px-5 sm:py-2"
               >
                 Clear
               </button>
@@ -263,11 +259,11 @@ export default function TitleCaseConverter() {
           </div>
         </div>
 
-        {/* Styles */}
-        <div className="space-y-4 border-b border-navy-900/8 px-4 py-4 sm:px-6 sm:py-5">
+        {/* Styles — text-link style like .com */}
+        <div className="space-y-5 border-b-2 border-navy-900/10 px-3 py-4 sm:px-6 sm:py-5">
           <fieldset>
-            <legend className={legendClass}>Title Case</legend>
-            <div className="flex flex-wrap gap-1.5 sm:gap-2" role="radiogroup" aria-label="Title case style">
+            <legend className="mb-2.5 text-sm font-bold text-ink">Title Case</legend>
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-2" role="radiogroup" aria-label="Title case style">
               {titleStyles.map((s) => (
                 <button
                   key={s.id}
@@ -276,29 +272,27 @@ export default function TitleCaseConverter() {
                   aria-checked={mode === s.id}
                   title={STYLE_HELP[s.id]}
                   onClick={() => setMode(s.id)}
-                  className={`rounded-lg px-2.5 py-1.5 text-xs font-semibold transition focus-ring sm:px-3 sm:text-sm ${
-                    mode === s.id ? chipActive : chipIdle
-                  }`}
+                  className={`text-sm transition focus-ring sm:text-[0.95rem] ${styleLink(mode === s.id)}`}
                 >
-                  <span className="border-b border-dotted border-current/40">{s.label}</span>
+                  {s.label}
                 </button>
               ))}
             </div>
             <button
               type="button"
               onClick={() => setStyleHelpOpen((v) => !v)}
-              className="mt-2 text-xs font-medium text-brand underline decoration-brand/35 underline-offset-2 hover:text-brand-dark"
+              className="mt-3 text-xs font-semibold text-brand underline decoration-brand/40 underline-offset-2 hover:text-brand-dark"
             >
               Which title case style should I use?
             </button>
             {styleHelpOpen && (
-              <div className="tool-glass-inset mt-3 rounded-xl p-3 text-sm text-ink-soft sm:p-4">
-                <p className="mb-2 font-semibold text-[#20242C]">{STYLE_OPTIONS.find((s) => s.id === mode)?.label}</p>
+              <div className="tool-glass-inset mt-3 p-3 text-sm text-ink-soft sm:p-4">
+                <p className="mb-2 font-semibold text-ink">{STYLE_OPTIONS.find((s) => s.id === mode)?.label}</p>
                 <p>{STYLE_HELP[mode]}</p>
                 <ul className="mt-3 grid gap-1.5 text-xs text-ink-mute sm:grid-cols-2">
                   {titleStyles.map((s) => (
                     <li key={s.id}>
-                      <strong className="text-[#20242C]">{s.label}:</strong> {STYLE_HELP[s.id]}
+                      <strong className="text-ink">{s.label}:</strong> {STYLE_HELP[s.id]}
                     </li>
                   ))}
                 </ul>
@@ -307,8 +301,8 @@ export default function TitleCaseConverter() {
           </fieldset>
 
           <fieldset>
-            <legend className={legendClass}>Other Styles</legend>
-            <div className="flex flex-wrap gap-1.5 sm:gap-2" role="radiogroup" aria-label="Other case styles">
+            <legend className="mb-2.5 text-sm font-bold text-ink">Other Styles</legend>
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-2" role="radiogroup" aria-label="Other case styles">
               {otherStyles.map((s) => (
                 <button
                   key={s.id}
@@ -317,9 +311,7 @@ export default function TitleCaseConverter() {
                   aria-checked={mode === s.id}
                   title={STYLE_HELP[s.id]}
                   onClick={() => setMode(s.id)}
-                  className={`rounded-lg px-2.5 py-1.5 text-xs font-semibold transition focus-ring sm:px-3 sm:text-sm ${
-                    mode === s.id ? chipActive : chipIdle
-                  }`}
+                  className={`text-sm transition focus-ring sm:text-[0.95rem] ${styleLink(mode === s.id)}`}
                 >
                   {s.id === "sentence" ? "Sentence case (proper nouns)" : s.label}
                 </button>
@@ -328,60 +320,30 @@ export default function TitleCaseConverter() {
           </fieldset>
 
           <fieldset>
-            <legend className={legendClass}>Options</legend>
+            <legend className="mb-2.5 text-sm font-bold text-ink">Options</legend>
             <div className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
               <label className={optionClass}>
-                <input
-                  type="checkbox"
-                  className={checkClass}
-                  checked={keepAllCaps}
-                  onChange={(e) => setKeepAllCaps(e.target.checked)}
-                />
+                <input type="checkbox" className={checkClass} checked={keepAllCaps} onChange={(e) => setKeepAllCaps(e.target.checked)} />
                 Keep Words in All Caps
               </label>
               <label className={optionClass}>
-                <input
-                  type="checkbox"
-                  className={checkClass}
-                  checked={multiLine}
-                  onChange={(e) => setMultiLine(e.target.checked)}
-                />
+                <input type="checkbox" className={checkClass} checked={multiLine} onChange={(e) => setMultiLine(e.target.checked)} />
                 Enable Multi-Line Input
               </label>
               <label className={optionClass}>
-                <input
-                  type="checkbox"
-                  className={checkClass}
-                  checked={showExplanations}
-                  onChange={(e) => setShowExplanations(e.target.checked)}
-                />
+                <input type="checkbox" className={checkClass} checked={showExplanations} onChange={(e) => setShowExplanations(e.target.checked)} />
                 Show Explanations
               </label>
               <label className={optionClass}>
-                <input
-                  type="checkbox"
-                  className={checkClass}
-                  checked={highlightChanges}
-                  onChange={(e) => setHighlightChanges(e.target.checked)}
-                />
+                <input type="checkbox" className={checkClass} checked={highlightChanges} onChange={(e) => setHighlightChanges(e.target.checked)} />
                 Highlight Changes
               </label>
               <label className={optionClass}>
-                <input
-                  type="checkbox"
-                  className={checkClass}
-                  checked={straightQuotes}
-                  onChange={(e) => setStraightQuotes(e.target.checked)}
-                />
+                <input type="checkbox" className={checkClass} checked={straightQuotes} onChange={(e) => setStraightQuotes(e.target.checked)} />
                 Use Straight Quotes
               </label>
               <label className={optionClass}>
-                <input
-                  type="checkbox"
-                  className={checkClass}
-                  checked={convertOnPaste}
-                  onChange={(e) => setConvertOnPaste(e.target.checked)}
-                />
+                <input type="checkbox" className={checkClass} checked={convertOnPaste} onChange={(e) => setConvertOnPaste(e.target.checked)} />
                 Convert When Text Is Pasted
               </label>
             </div>
@@ -389,9 +351,9 @@ export default function TitleCaseConverter() {
         </div>
 
         {/* Result */}
-        <div className="px-4 py-4 sm:px-6 sm:py-5">
+        <div className="px-3 py-4 sm:px-6 sm:py-5">
           <div className="mb-2 flex items-center justify-between gap-3">
-            <p className={legendClass}>Result</p>
+            <p className="text-sm font-bold text-ink">Result</p>
             <div className="flex items-center gap-2">
               {shareNote ? (
                 <span className="hidden text-xs font-medium text-brand sm:inline" aria-live="polite">
@@ -402,7 +364,7 @@ export default function TitleCaseConverter() {
                 type="button"
                 onClick={copyResult}
                 disabled={!output}
-                className={actionBtnClass}
+                className="border border-navy-900/20 bg-navy-900 px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-white transition hover:bg-brand disabled:cursor-not-allowed disabled:opacity-40 focus-ring"
               >
                 {copied ? "Copied!" : "Copy"}
               </button>
@@ -414,53 +376,37 @@ export default function TitleCaseConverter() {
                   disabled={!output}
                   aria-expanded={shareOpen}
                   aria-haspopup="menu"
-                  className={actionBtnClass}
+                  className="border border-navy-900/20 bg-white px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-ink transition hover:border-brand hover:text-brand disabled:cursor-not-allowed disabled:opacity-40 focus-ring"
                 >
                   Share
                 </button>
                 {shareOpen && output ? (
                   <div
                     role="menu"
-                    className="absolute right-0 z-20 mt-1.5 min-w-[11.5rem] overflow-hidden rounded-xl border border-navy-900/10 bg-white py-1 shadow-lift"
+                    className="absolute right-0 z-20 mt-1.5 min-w-[11.5rem] overflow-hidden border-2 border-navy-900 bg-white py-1 hard-shadow"
                   >
-                    <button
-                      type="button"
-                      role="menuitem"
-                      onClick={shareToEmail}
-                      className="flex w-full items-center gap-2 px-3 py-2 text-left text-xs font-semibold text-[#20242C] transition hover:bg-[#F7F5F0]"
-                    >
-                      Email
-                    </button>
-                    <button
-                      type="button"
-                      role="menuitem"
-                      onClick={shareToDocs}
-                      className="flex w-full items-center gap-2 px-3 py-2 text-left text-xs font-semibold text-[#20242C] transition hover:bg-[#F7F5F0]"
-                    >
-                      Google Docs
-                    </button>
-                    <button
-                      type="button"
-                      role="menuitem"
-                      onClick={shareToNotepad}
-                      className="flex w-full items-center gap-2 px-3 py-2 text-left text-xs font-semibold text-[#20242C] transition hover:bg-[#F7F5F0]"
-                    >
-                      Notepad (.txt)
-                    </button>
-                    <button
-                      type="button"
-                      role="menuitem"
-                      onClick={shareToWord}
-                      className="flex w-full items-center gap-2 px-3 py-2 text-left text-xs font-semibold text-[#20242C] transition hover:bg-[#F7F5F0]"
-                    >
-                      MS Word (.doc)
-                    </button>
+                    {[
+                      { label: "Email", onClick: shareToEmail },
+                      { label: "Google Docs", onClick: shareToDocs },
+                      { label: "Notepad (.txt)", onClick: shareToNotepad },
+                      { label: "MS Word (.doc)", onClick: shareToWord },
+                    ].map((item) => (
+                      <button
+                        key={item.label}
+                        type="button"
+                        role="menuitem"
+                        onClick={item.onClick}
+                        className="flex w-full items-center gap-2 px-3 py-2 text-left text-xs font-semibold text-ink transition hover:bg-brand-soft"
+                      >
+                        {item.label}
+                      </button>
+                    ))}
                     {canNativeShare ? (
                       <button
                         type="button"
                         role="menuitem"
                         onClick={shareNative}
-                        className="flex w-full items-center gap-2 border-t border-navy-900/8 px-3 py-2 text-left text-xs font-semibold text-[#20242C] transition hover:bg-[#F7F5F0]"
+                        className="flex w-full items-center gap-2 border-t border-navy-900/10 px-3 py-2 text-left text-xs font-semibold text-ink transition hover:bg-brand-soft"
                       >
                         More…
                       </button>
@@ -472,8 +418,8 @@ export default function TitleCaseConverter() {
           </div>
 
           <div
-            className={`tool-glass-inset min-h-[88px] rounded-xl px-4 py-3 text-base leading-relaxed sm:min-h-[100px] sm:text-[1.1rem] ${
-              output ? "text-[#20242C]" : "text-ink-mute/70"
+            className={`tool-glass-inset min-h-[88px] px-4 py-3 text-base leading-relaxed sm:min-h-[100px] sm:text-[1.1rem] ${
+              output ? "text-ink" : "text-ink-mute/70"
             }`}
             aria-live="polite"
           >
@@ -482,10 +428,7 @@ export default function TitleCaseConverter() {
               <span className="whitespace-pre-wrap break-words">
                 {diff.afterParts.map((p, i) =>
                   p.highlight ? (
-                    <mark
-                      key={i}
-                      className="rounded-sm bg-amber-300/50 text-navy-900"
-                    >
+                    <mark key={i} className="rounded-sm bg-brand/25 text-ink">
                       {p.text}
                     </mark>
                   ) : (
@@ -499,20 +442,20 @@ export default function TitleCaseConverter() {
           </div>
 
           {showExplanations && detailed && detailed.words.length > 0 && (
-            <div className="tool-glass-inset mt-4 overflow-hidden rounded-xl">
-              <div className="border-b border-navy-900/10 bg-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-ink-mute">
+            <div className="mt-4 overflow-hidden border-2 border-navy-900">
+              <div className="border-b-2 border-brand bg-navy-900 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white">
                 Word-by-word explanations
               </div>
-              <ul className="divide-y divide-navy-900/5 text-sm">
+              <ul className="divide-y divide-navy-900/10 bg-white text-sm">
                 {detailed.words.map((w, i) => (
                   <li
                     key={`${w.original}-${i}`}
-                    className="flex flex-col gap-0.5 px-4 py-2.5 sm:flex-row sm:items-baseline sm:gap-4"
+                    className="flex flex-col gap-0.5 px-4 py-2.5 even:bg-paper sm:flex-row sm:items-baseline sm:gap-4"
                   >
-                    <span className="shrink-0 font-semibold text-[#20242C]">
+                    <span className="shrink-0 font-semibold text-ink">
                       {w.result}
                       {w.changed && (
-                        <span className="ml-2 text-xs font-normal text-amber-700">
+                        <span className="ml-2 text-xs font-normal text-brand">
                           ({w.original} → {w.result})
                         </span>
                       )}

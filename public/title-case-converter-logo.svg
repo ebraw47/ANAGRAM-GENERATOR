@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="rim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFB06A"/>
+      <stop offset="100%" stop-color="#E85D04"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="496" height="496" rx="112" ry="112" fill="#0F1014"/>
+  <rect x="14" y="14" width="484" height="484" rx="106" ry="106" fill="none" stroke="url(#rim)" stroke-width="6"/>
+  <path d="M156 368 A148 148 0 1 1 368 156" fill="none" stroke="#E85D04" stroke-width="38" stroke-linecap="round"/>
+  <path d="M168 354 A130 130 0 1 1 354 168" fill="none" stroke="#FFB06A" stroke-width="8" stroke-linecap="round" opacity="0.4"/>
+  <text x="256" y="328" text-anchor="middle" font-family="Arial Black, Helvetica Neue, Arial, sans-serif" font-size="260" font-weight="800" fill="#FFFFFF">T</text>
+</svg>

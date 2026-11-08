@@ -8,7 +8,7 @@ export default function Error({
 }) {
   return (
     <div className="flex min-h-[60vh] flex-col items-center justify-center px-4">
-      <h2 className="font-display text-2xl font-bold text-[#20242C] mb-4">Something went wrong!</h2>
+      <h2 className="font-display text-2xl font-bold text-ink mb-4">Something went wrong!</h2>
       <p className="mb-6 text-center text-ink-mute">
         We apologize for the inconvenience. Please try again.
       </p>

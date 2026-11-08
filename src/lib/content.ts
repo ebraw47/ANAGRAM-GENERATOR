@@ -12,3 +12,8 @@ export function getMarkdown(slug: string): string {
 export function stripLeadingH1(markdown: string): string {
   return markdown.replace(/^#\s+\*?\*?[^\n]+\*?\*?\s*\n+/, "");
 }
+
+/** Drop the first markdown image — article pages already render the featured image */
+export function stripLeadingImage(markdown: string): string {
+  return markdown.replace(/!\[[^\]]*\]\([^)]+\)\s*\n+/, "");
+}
