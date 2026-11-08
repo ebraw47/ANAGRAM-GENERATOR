@@ -93,7 +93,7 @@ export default function ScrollToTop() {
             e.stopPropagation();
             scrollPageToTop();
           }}
-          className="fixed bottom-8 right-8 z-[70] inline-flex items-center justify-center rounded-full bg-brand p-3 text-white shadow-lift focus-ring"
+          className="fixed bottom-[calc(1rem+env(safe-area-inset-bottom))] right-3 z-[70] inline-flex items-center justify-center rounded-full bg-brand p-2.5 text-white shadow-lift focus-ring sm:bottom-8 sm:right-8 sm:p-3"
           aria-label="Scroll to top"
           initial={reduce ? false : { opacity: 0, y: 16, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}

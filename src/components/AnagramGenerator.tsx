@@ -263,10 +263,10 @@ export default function AnagramGenerator() {
   );
 
   return (
-    <div className="mac-tablet relative mx-auto w-full max-w-[1120px] overflow-x-clip">
-      {/* Soft leafy blur peeking around the glass panel */}
+    <div className="mac-tablet relative mx-auto w-full max-w-[min(1120px,100%)] overflow-hidden">
+      {/* Soft leafy blur — desktop only (blur filters lag mobile scroll) */}
       <div
-        className="pointer-events-none absolute -inset-10 -z-10 rounded-[3rem] opacity-100 blur-3xl sm:-inset-x-14 sm:-inset-y-10"
+        className="pointer-events-none absolute -inset-x-14 -inset-y-10 -z-10 hidden rounded-[3rem] opacity-100 blur-3xl md:block"
         style={{
           background:
             "radial-gradient(ellipse 55% 50% at 20% 30%, rgba(98, 148, 88, 0.55), transparent 70%), radial-gradient(ellipse 50% 45% at 85% 25%, rgba(190, 210, 155, 0.7), transparent 65%), radial-gradient(ellipse 60% 55% at 55% 85%, rgba(72, 118, 78, 0.4), transparent 70%)",
@@ -274,20 +274,20 @@ export default function AnagramGenerator() {
         aria-hidden
       />
 
-      <div className="overflow-hidden rounded-[1.75rem] border border-white/70 bg-white/78 shadow-[0_40px_90px_-30px_rgba(40,70,40,0.45),0_0_0_1px_rgba(255,255,255,0.65)_inset] backdrop-blur-2xl sm:rounded-[2rem]">
+      <div className="overflow-hidden rounded-2xl border border-white/70 bg-white shadow-sm sm:rounded-[2rem] sm:bg-white/90 sm:shadow-[0_40px_90px_-30px_rgba(40,70,40,0.45),0_0_0_1px_rgba(255,255,255,0.65)_inset] sm:backdrop-blur-xl">
         {/* Mac chrome */}
-        <div className="flex items-center gap-2 border-b border-black/5 px-4 py-3 sm:px-5">
-          <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
-          <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
-          <span className="h-3 w-3 rounded-full bg-[#28c840]" />
-          <span className="ml-3 hidden truncate text-xs font-medium text-ink-mute sm:inline">
+        <div className="flex items-center gap-2 border-b border-black/5 px-3 py-2.5 sm:px-5 sm:py-3">
+          <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57] sm:h-3 sm:w-3" />
+          <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e] sm:h-3 sm:w-3" />
+          <span className="h-2.5 w-2.5 rounded-full bg-[#28c840] sm:h-3 sm:w-3" />
+          <span className="ml-2 hidden truncate text-xs font-medium text-ink-mute sm:ml-3 sm:inline">
             {t.workspaceTitle}
           </span>
 
-          <div className="ml-auto flex items-center gap-2">
+          <div className="ml-auto flex min-w-0 items-center gap-1.5 sm:gap-2">
             <Link
               href={ROUTES.blog}
-              className="inline-flex items-center rounded-full border border-black/8 bg-white/90 px-3.5 py-1.5 text-xs font-semibold text-ink shadow-sm transition hover:bg-white sm:px-4 sm:text-sm"
+              className="inline-flex max-w-[9.5rem] items-center truncate rounded-full border border-black/8 bg-white px-2.5 py-1.5 text-[0.7rem] font-semibold text-ink shadow-sm transition hover:bg-white sm:max-w-none sm:px-4 sm:text-sm"
             >
               {t.readGuides}
             </Link>
@@ -345,8 +345,33 @@ export default function AnagramGenerator() {
           </div>
         </div>
 
-        <div className="flex min-h-[34rem] flex-col lg:min-h-[40rem] lg:flex-row">
-          {/* Sidebar */}
+        {/* Mobile mode chips — always visible under chrome */}
+        <div className="flex gap-2 overflow-x-auto border-b border-black/5 bg-white px-3 py-2.5 lg:hidden">
+          {(Object.keys(MODE_ICONS) as AnagramMode[]).map((m) => (
+            <button
+              key={m}
+              type="button"
+              onClick={() => selectMode(m)}
+              className={`shrink-0 rounded-full px-3 py-1.5 text-xs font-semibold transition ${
+                mode === m
+                  ? "bg-brand text-white"
+                  : "border border-black/8 bg-white text-ink-soft"
+              }`}
+            >
+              {t.mode[m].label}
+            </button>
+          ))}
+          <button
+            type="button"
+            onClick={clearAll}
+            className="shrink-0 rounded-full border border-black/8 bg-white px-3 py-1.5 text-xs font-semibold text-ink-soft"
+          >
+            {t.clearBoard}
+          </button>
+        </div>
+
+        <div className="flex min-h-0 flex-col lg:min-h-[40rem] lg:flex-row">
+          {/* Sidebar — desktop / optional mobile drawer */}
           <aside
             className={`${
               mobileNav ? "flex" : "hidden"
@@ -417,17 +442,17 @@ export default function AnagramGenerator() {
           </aside>
 
           {/* Main workspace */}
-          <div className="flex min-w-0 flex-1 flex-col bg-white/55 backdrop-blur-sm">
-            <div className="border-b border-black/5 px-4 py-5 sm:px-6 sm:py-6">
-              <div className="flex flex-wrap items-end justify-between gap-3">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-mute">
+          <div className="flex min-w-0 flex-1 flex-col bg-white sm:bg-white/70">
+            <div className="border-b border-black/5 px-3 py-4 sm:px-6 sm:py-6">
+              <div className="flex flex-wrap items-end justify-between gap-2 sm:gap-3">
+                <div className="min-w-0">
+                  <p className="text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-ink-mute sm:text-xs">
                     {todayLabelFor(lang)}
                   </p>
-                  <h2 className="mt-1 font-display text-2xl font-bold tracking-tight text-ink sm:text-[1.75rem]">
+                  <h2 className="mt-1 font-display text-xl font-bold tracking-tight text-ink sm:text-[1.75rem]">
                     {greetingFor(lang)}, {t.puzzler}
                   </h2>
-                  <p className="mt-1 text-sm text-ink-mute">{t.mode[mode].short}</p>
+                  <p className="mt-1 text-xs text-ink-mute sm:text-sm">{t.mode[mode].short}</p>
                 </div>
                 <div className="flex flex-wrap items-center gap-2 text-xs font-semibold text-ink-mute">
                   {!dictReady && !dictError ? <span className="text-brand">{t.loadingDict}</span> : null}
@@ -459,21 +484,21 @@ export default function AnagramGenerator() {
                     }}
                     spellCheck={false}
                     placeholder={t.placeholder}
-                    className="w-full rounded-2xl border border-black/8 bg-white py-3.5 pl-12 pr-4 text-[0.95rem] text-ink shadow-sm outline-none transition placeholder:text-ink-mute/70 focus:border-brand/40 focus:ring-4 focus:ring-brand/10"
+                    className="w-full rounded-xl border border-black/8 bg-white py-3 pl-11 pr-3 text-base text-ink shadow-sm outline-none transition placeholder:text-ink-mute/70 focus:border-brand/40 focus:ring-4 focus:ring-brand/10 sm:rounded-2xl sm:py-3.5 sm:pl-12 sm:pr-4 sm:text-[0.95rem]"
                   />
                 </label>
                 <button
                   type="button"
                   onClick={() => runSearch()}
                   disabled={!dictReady}
-                  className="shrink-0 rounded-2xl bg-ink px-5 py-3.5 text-sm font-bold text-white shadow-sm transition hover:bg-black disabled:opacity-60"
+                  className="w-full shrink-0 rounded-xl bg-ink px-5 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-black disabled:opacity-60 sm:w-auto sm:rounded-2xl sm:py-3.5"
                 >
                   {t.generate}
                 </button>
               </div>
 
               {/* Quick chips */}
-              <div className="mt-3 flex flex-wrap gap-2">
+              <div className="mt-3 flex gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                 {examples.map((ex) => (
                   <button
                     key={ex}
@@ -482,7 +507,7 @@ export default function AnagramGenerator() {
                       if (/\s/.test(ex)) setMode("multi");
                       setInput(ex);
                     }}
-                    className="rounded-full border border-black/8 bg-white/80 px-3 py-1.5 text-xs font-semibold text-ink-soft transition hover:border-brand/40 hover:text-brand"
+                    className="shrink-0 rounded-full border border-black/8 bg-white px-3 py-1.5 text-xs font-semibold text-ink-soft transition hover:border-brand/40 hover:text-brand"
                   >
                     {ex}
                   </button>
@@ -490,7 +515,7 @@ export default function AnagramGenerator() {
               </div>
 
               {/* Filters row */}
-              <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="mt-4 grid grid-cols-2 gap-2 lg:grid-cols-4">
                 <label className="block">
                   <span className="mb-1.5 block text-[0.65rem] font-bold uppercase tracking-wider text-ink-mute">
                     {t.language}
@@ -555,39 +580,39 @@ export default function AnagramGenerator() {
             </div>
 
             {/* Stat cards */}
-            <div className="grid grid-cols-2 gap-3 px-4 py-4 sm:grid-cols-4 sm:px-6">
+            <div className="grid grid-cols-4 gap-1.5 px-3 py-3 sm:gap-3 sm:px-6 sm:py-4">
               {[
-                { label: t.lettersN, value: String(letterCount), tone: "bg-white" },
-                { label: t.results, value: String(sortedHits.length), tone: "bg-white" },
-                { label: t.exactHits, value: String(exactCount), tone: "bg-white" },
-                { label: t.topScore, value: String(topScore), tone: "bg-white" },
+                { label: t.lettersN, value: String(letterCount), tone: "bg-[#f7f4ee] sm:bg-white" },
+                { label: t.results, value: String(sortedHits.length), tone: "bg-[#f7f4ee] sm:bg-white" },
+                { label: t.exactHits, value: String(exactCount), tone: "bg-[#f7f4ee] sm:bg-white" },
+                { label: t.topScore, value: String(topScore), tone: "bg-[#f7f4ee] sm:bg-white" },
               ].map((card) => (
                 <div
                   key={card.label}
-                  className={`${card.tone} rounded-2xl border border-black/5 px-4 py-3 shadow-sm`}
+                  className={`${card.tone} rounded-xl border border-black/5 px-2 py-2 sm:rounded-2xl sm:px-4 sm:py-3 sm:shadow-sm`}
                 >
-                  <p className="text-[0.65rem] font-bold uppercase tracking-wider text-ink-mute">
+                  <p className="truncate text-[0.55rem] font-bold uppercase tracking-wider text-ink-mute sm:text-[0.65rem]">
                     {card.label}
                   </p>
-                  <p className="mt-1 font-display text-2xl font-bold text-ink">{card.value}</p>
+                  <p className="mt-0.5 font-display text-lg font-bold text-ink sm:mt-1 sm:text-2xl">{card.value}</p>
                 </div>
               ))}
             </div>
 
-            {/* Results panels */}
-            <div className="grid min-h-0 flex-1 gap-4 px-4 pb-5 sm:px-6 lg:grid-cols-12">
-              <section className="flex min-h-[16rem] flex-col overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm lg:col-span-7">
-                <div className="flex items-center justify-between border-b border-black/5 px-4 py-3">
-                  <h3 className="font-display text-base font-bold text-ink">{t.myResults}</h3>
-                  <span className="text-xs font-semibold text-ink-mute">
+            {/* Results panels — no nested overflow on mobile (avoids scroll lag / trapped scroll) */}
+            <div className="grid min-h-0 flex-1 gap-3 px-3 pb-4 sm:gap-4 sm:px-6 sm:pb-5 lg:grid-cols-12">
+              <section className="flex flex-col rounded-2xl border border-black/5 bg-white shadow-sm lg:col-span-7 lg:min-h-[16rem] lg:overflow-hidden">
+                <div className="flex items-center justify-between border-b border-black/5 px-3 py-2.5 sm:px-4 sm:py-3">
+                  <h3 className="font-display text-sm font-bold text-ink sm:text-base">{t.myResults}</h3>
+                  <span className="text-[0.7rem] font-semibold text-ink-mute sm:text-xs">
                     {sortedHits.length ? `${sortedHits.length} ${t.found}` : t.waiting}
                   </span>
                 </div>
-                <div className="flex-1 overflow-y-auto px-3 py-3 sm:px-4">
+                <div className="px-2 py-3 sm:flex-1 sm:overflow-y-auto sm:px-4 lg:max-h-[28rem]">
                   {!input.trim() ? (
-                    <div className="flex h-full min-h-[12rem] flex-col items-center justify-center px-4 text-center">
-                      <p className="font-display text-lg font-bold text-ink">{t.startTitle}</p>
-                      <p className="mt-2 max-w-sm text-sm leading-relaxed text-ink-mute">
+                    <div className="flex flex-col items-center justify-center px-3 py-8 text-center sm:min-h-[12rem]">
+                      <p className="font-display text-base font-bold text-ink sm:text-lg">{t.startTitle}</p>
+                      <p className="mt-2 max-w-sm text-xs leading-relaxed text-ink-mute sm:text-sm">
                         {t.startBody}
                       </p>
                     </div>
@@ -596,20 +621,20 @@ export default function AnagramGenerator() {
                       {t.noMatches}
                     </p>
                   ) : (
-                    <div className="space-y-5">
+                    <div className="space-y-4 sm:space-y-5">
                       {grouped.map(([len, group]) => (
                         <div key={len}>
                           <p className="mb-2 px-1 text-[0.65rem] font-bold uppercase tracking-wider text-ink-mute">
                             {len}-letter {mode === "multi" ? t.letterSet : t.letterWords} · {group.length}
                           </p>
-                          <ul className="space-y-1.5">
+                          <ul className="space-y-1">
                             {group.map((hit) => (
                               <li key={hit.word}>
-                                <div className="flex items-center gap-1.5 rounded-xl px-2 py-1.5 transition hover:bg-[#f7f4ee] sm:gap-2 sm:px-3 sm:py-2">
+                                <div className="flex items-center gap-1 rounded-xl px-1.5 py-1.5 transition hover:bg-[#f7f4ee] sm:gap-2 sm:px-3 sm:py-2">
                                   <button
                                     type="button"
                                     onClick={() => copyWord(hit.word)}
-                                    className="flex min-w-0 flex-1 items-center gap-3 rounded-lg py-1 text-left"
+                                    className="flex min-w-0 flex-1 items-center gap-2 rounded-lg py-1 text-left sm:gap-3"
                                     title={t.copy}
                                   >
                                     <span
@@ -626,10 +651,10 @@ export default function AnagramGenerator() {
                                         </svg>
                                       ) : null}
                                     </span>
-                                    <span className="min-w-0 flex-1 font-mono text-sm font-semibold text-ink">
+                                    <span className="min-w-0 flex-1 break-words font-mono text-[0.8rem] font-semibold text-ink sm:text-sm">
                                       {hit.word}
                                     </span>
-                                    <span className="text-[0.7rem] font-bold text-ink-mute">
+                                    <span className="text-[0.65rem] font-bold text-ink-mute sm:text-[0.7rem]">
                                       {hit.score} {t.pts}
                                     </span>
                                     {copied === hit.word ? (
@@ -639,7 +664,7 @@ export default function AnagramGenerator() {
                                   <button
                                     type="button"
                                     onClick={() => speakWord(hit.word)}
-                                    className={`inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border transition focus-ring ${
+                                    className={`inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border transition focus-ring sm:h-8 sm:w-8 ${
                                       speakingWord === hit.word
                                         ? "border-brand bg-brand/15 text-brand"
                                         : "border-black/8 bg-white text-ink-mute hover:border-brand/35 hover:text-brand"
@@ -668,11 +693,11 @@ export default function AnagramGenerator() {
                 </div>
               </section>
 
-              <section className="flex min-h-[14rem] flex-col overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm lg:col-span-5">
-                <div className="border-b border-black/5 px-4 py-3">
-                  <h3 className="font-display text-base font-bold text-ink">{t.upcomingTips}</h3>
+              <section className="flex flex-col rounded-2xl border border-black/5 bg-white shadow-sm lg:col-span-5 lg:min-h-[14rem] lg:overflow-hidden">
+                <div className="border-b border-black/5 px-3 py-2.5 sm:px-4 sm:py-3">
+                  <h3 className="font-display text-sm font-bold text-ink sm:text-base">{t.upcomingTips}</h3>
                 </div>
-                <ul className="flex-1 space-y-3 overflow-y-auto px-4 py-4">
+                <ul className="space-y-3 px-3 py-3 sm:flex-1 sm:overflow-y-auto sm:px-4 sm:py-4 lg:max-h-[28rem]">
                   <li className="rounded-2xl bg-brand-soft/60 px-4 py-3">
                     <p className="text-[0.65rem] font-bold uppercase tracking-wider text-brand">{t.mode.exact.label}</p>
                     <p className="mt-1 text-sm font-semibold text-ink">{t.tipExactTitle}</p>

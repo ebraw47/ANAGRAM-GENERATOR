@@ -98,7 +98,7 @@ const components: Components = {
 
 export default function MarkdownContent({ content, className = "" }: Props) {
   return (
-    <div className={`prose-track ${className}`}>
+    <div className={`prose-track min-w-0 max-w-full ${className}`}>
       <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>
         {content}
       </ReactMarkdown>

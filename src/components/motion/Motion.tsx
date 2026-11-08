@@ -36,7 +36,7 @@ export function FadeIn({
   // Visible by default — never mount at opacity:0 (fixes blank first load).
   return (
     <motion.div
-      className={className}
+      className={`min-w-0 max-w-full ${className ?? ""}`}
       initial={false}
       whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
       viewport={{ ...inView, once }}

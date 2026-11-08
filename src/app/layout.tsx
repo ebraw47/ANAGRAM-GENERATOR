@@ -159,9 +159,9 @@ export default function RootLayout({
             </>
           )}
       </head>
-      <body className={`${body.className} site-canvas antialiased min-h-screen flex flex-col overflow-x-clip text-[#14161C]`} suppressHydrationWarning>
+      <body className={`${body.className} site-canvas antialiased min-h-screen flex w-full max-w-[100%] flex-col overflow-x-hidden text-[#14161C]`} suppressHydrationWarning>
         <Header />
-        <main className="relative z-[1] w-full max-w-[100vw] flex-1">{children}</main>
+        <main className="relative z-[1] w-full min-w-0 max-w-[100%] flex-1 overflow-x-hidden">{children}</main>
         <Footer />
         <FixedSideActions />
         <ScrollToTopWrapper />

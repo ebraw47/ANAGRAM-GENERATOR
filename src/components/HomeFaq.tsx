@@ -8,9 +8,9 @@ import { BRAND, HOME_FAQS, IMAGES, imageDims } from "@/lib/siteConfig";
 export default function HomeFaq() {
   return (
     <section className="py-14 md:py-20">
-      <div className="mx-auto max-w-7xl px-4 md:px-8">
-        <div className="grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-12">
-          <FadeIn>
+      <div className="mx-auto w-full max-w-7xl overflow-x-hidden px-3 sm:px-4 md:px-8">
+        <div className="grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-12">
+          <FadeIn className="min-w-0">
             <p className="section-kicker">Help center</p>
             <h2 className="font-display text-3xl font-bold text-ink md:text-4xl">
               FAQs about anagram generators

@@ -54,8 +54,8 @@ export default function HomeBody({
   return (
     <>
       {/* Feature tabs — LIMA-style */}
-      <section className="overflow-x-hidden py-16 md:py-20">
-        <div className="mx-auto max-w-7xl px-4 md:px-8">
+      <section className="overflow-x-hidden py-12 md:py-20">
+        <div className="mx-auto w-full max-w-7xl px-3 sm:px-4 md:px-8">
           <FadeIn className="mx-auto max-w-2xl text-center">
             <h2 className="font-display text-3xl font-bold tracking-tight text-ink md:text-4xl">
               Define anagrams the way you actually solve them
@@ -119,7 +119,7 @@ export default function HomeBody({
 
       {/* Why choose — soft feature grid */}
       <section className="py-6 md:py-10">
-        <div className="mx-auto max-w-7xl px-4 md:px-8">
+        <div className="mx-auto w-full max-w-7xl px-3 sm:px-4 md:px-8">
           <FadeIn className="max-w-2xl">
             <p className="section-kicker">Why puzzlers switch</p>
             <h2 className="font-display text-3xl font-bold tracking-tight text-ink md:text-4xl">
@@ -137,8 +137,8 @@ export default function HomeBody({
       </section>
 
       {/* Zigzag feature 1 */}
-      <section className="py-14 md:py-20">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 md:grid-cols-2 md:gap-16 md:px-8">
+      <section className="overflow-x-hidden py-12 md:py-20">
+        <div className="mx-auto grid w-full max-w-7xl items-center gap-8 px-3 sm:px-4 md:grid-cols-2 md:gap-16 md:px-8">
           <FadeIn>
             <p className="section-kicker">Product</p>
             <h2 className="font-display text-3xl font-bold tracking-tight text-ink md:text-4xl">
@@ -169,8 +169,8 @@ export default function HomeBody({
       </section>
 
       {/* Zigzag feature 2 */}
-      <section className="py-14 md:py-20">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 md:grid-cols-2 md:gap-16 md:px-8">
+      <section className="overflow-x-hidden py-12 md:py-20">
+        <div className="mx-auto grid w-full max-w-7xl items-center gap-8 px-3 sm:px-4 md:grid-cols-2 md:gap-16 md:px-8">
           <FadeIn className="order-2 md:order-1">
             <div className="overflow-hidden rounded-[2rem] border border-black/5 bg-white p-3 shadow-lift">
               <Image
@@ -203,35 +203,35 @@ export default function HomeBody({
       </section>
 
       {/* How-to + steps */}
-      <section className="py-14 md:py-20">
-        <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
-            <FadeIn className="lg:col-span-7">
-              <div className="soft-panel p-6 md:p-8">
+      <section className="overflow-x-hidden py-10 md:py-20">
+        <div className="mx-auto w-full max-w-7xl px-3 sm:px-4 md:px-8">
+          <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
+            <FadeIn className="min-w-0 lg:col-span-7">
+              <div className="soft-panel p-4 sm:p-6 md:p-8">
                 <MarkdownContent content={beforeSteps} />
               </div>
             </FadeIn>
-            <FadeIn delay={0.06} className="lg:col-span-5">
+            <FadeIn delay={0.06} className="min-w-0 lg:col-span-5">
               <p className="section-kicker">Quick start</p>
-              <h2 className="font-display text-3xl font-bold tracking-tight text-ink">
+              <h2 className="font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">
                 Generate anagrams in three steps
               </h2>
-              <div className="mt-8">
+              <div className="mt-6 sm:mt-8">
                 <StepCards className="grid gap-4" />
               </div>
-              <a href="#generator" className="cta-pill mt-8">
+              <a href="#generator" className="cta-pill mt-6 sm:mt-8">
                 Open generator
               </a>
             </FadeIn>
           </div>
 
           {afterSteps ? (
-            <FadeIn className="mt-12">
-              <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
-                <div className="soft-panel p-6 md:p-8 lg:col-span-7">
+            <FadeIn className="mt-10 min-w-0 sm:mt-12">
+              <div className="grid gap-6 lg:grid-cols-12 lg:gap-12">
+                <div className="soft-panel min-w-0 p-4 sm:p-6 md:p-8 lg:col-span-7">
                   <MarkdownContent content={afterSteps} />
                 </div>
-                <div className="space-y-6 lg:col-span-5">
+                <div className="min-w-0 space-y-6 lg:col-span-5">
                   <div className="overflow-hidden rounded-[2rem] border border-black/5 bg-white p-3 shadow-lift">
                     <Image
                       src={IMAGES.vsSentence}
@@ -264,8 +264,8 @@ export default function HomeBody({
       </section>
 
       {/* Who it's for */}
-      <section className="py-14 md:py-20">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 md:grid-cols-2 md:gap-16 md:px-8">
+      <section className="overflow-x-hidden py-12 md:py-20">
+        <div className="mx-auto grid w-full max-w-7xl items-center gap-8 px-3 sm:px-4 md:grid-cols-2 md:gap-16 md:px-8">
           <FadeIn>
             <p className="section-kicker">Who it&apos;s for</p>
             <h2 className="font-display text-3xl font-bold tracking-tight text-ink md:text-4xl">
@@ -293,8 +293,8 @@ export default function HomeBody({
       </section>
 
       {/* Stats */}
-      <section className="py-14 md:py-20">
-        <div className="mx-auto max-w-7xl px-4 md:px-8">
+      <section className="overflow-x-hidden py-12 md:py-20">
+        <div className="mx-auto w-full max-w-7xl px-3 sm:px-4 md:px-8">
           <FadeIn className="mx-auto max-w-2xl text-center">
             <h2 className="font-display text-3xl font-bold tracking-tight text-ink md:text-4xl">
               More gets solved when the modes work together

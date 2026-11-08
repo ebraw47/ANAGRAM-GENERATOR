@@ -26,14 +26,14 @@ export default function FixedSideActions() {
   };
 
   const btnClass =
-    "inline-flex h-11 w-11 items-center justify-center rounded-full border border-brand/25 bg-white/90 text-brand shadow-[0_8px_24px_rgba(47,82,56,0.18)] backdrop-blur-md transition hover:-translate-y-0.5 hover:border-brand/50 hover:bg-white hover:text-brand-dark focus-ring";
+    "inline-flex h-10 w-10 items-center justify-center rounded-full border border-brand/25 bg-white text-brand shadow-sm transition hover:border-brand/50 hover:text-brand-dark focus-ring sm:h-11 sm:w-11 sm:bg-white/90 sm:shadow-[0_8px_24px_rgba(47,82,56,0.18)] sm:backdrop-blur-md";
 
   return (
     <aside
-      className="pointer-events-none fixed right-3 top-1/2 z-[60] -translate-y-1/2 sm:right-4"
+      className="pointer-events-none fixed bottom-[calc(5.5rem+env(safe-area-inset-bottom))] right-3 z-[60] sm:bottom-auto sm:right-4 sm:top-1/2 sm:-translate-y-1/2"
       aria-label="Quick actions"
     >
-      <div className="pointer-events-auto flex flex-col gap-2.5">
+      <div className="pointer-events-auto flex flex-col gap-2 sm:gap-2.5">
         <button
           type="button"
           onClick={onShare}

@@ -8,7 +8,7 @@ import { ARTICLES, ROUTES } from "@/lib/siteConfig";
 export default function HomeGuides() {
   return (
     <section className="py-14 md:py-20">
-      <div className="mx-auto max-w-7xl px-4 md:px-8">
+      <div className="mx-auto w-full max-w-7xl overflow-x-hidden px-3 sm:px-4 md:px-8">
         <FadeIn className="mx-auto max-w-2xl text-center">
           <p className="section-kicker">Guides & tips</p>
           <h2 className="font-display text-3xl font-bold tracking-tight text-ink md:text-4xl">

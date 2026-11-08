@@ -126,8 +126,8 @@ export default function ArticlePage({
           </div>
         </header>
 
-        <div className="mx-auto max-w-3xl px-4 py-10 md:px-6 md:py-14">
-          <figure className="mb-10 overflow-hidden border-0">
+        <div className="mx-auto w-full min-w-0 max-w-3xl overflow-x-hidden px-3 py-8 sm:px-4 md:px-6 md:py-14">
+          <figure className="mb-8 overflow-hidden border-0 sm:mb-10">
             <Image
               src={article.image}
               alt={article.title}
@@ -135,7 +135,7 @@ export default function ArticlePage({
               height={imageDims(article.image).height}
               priority
               unoptimized
-              className="block h-auto w-full border-0"
+              className="block h-auto w-full max-w-full border-0"
               sizes="(max-width:768px) 100vw, 760px"
             />
           </figure>

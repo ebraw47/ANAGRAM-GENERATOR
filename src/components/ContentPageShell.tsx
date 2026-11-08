@@ -40,8 +40,8 @@ export default function ContentPageShell({
         </div>
       </header>
 
-      <div className={`mx-auto px-4 py-10 md:px-8 md:py-14 ${wide ? "max-w-7xl" : "max-w-3xl"}`}>
-        <div className="rounded-[1.75rem] border border-black/5 bg-white/80 p-6 shadow-sm backdrop-blur-sm md:p-8">
+      <div className={`mx-auto w-full min-w-0 max-w-full px-3 py-8 sm:px-4 md:px-8 md:py-14 ${wide ? "md:max-w-7xl" : "md:max-w-3xl"}`}>
+        <div className="min-w-0 max-w-full overflow-x-hidden rounded-2xl border border-black/5 bg-white p-4 shadow-sm sm:rounded-[1.75rem] sm:bg-white/80 sm:p-6 sm:backdrop-blur-sm md:p-8">
           {children}
         </div>
       </div>

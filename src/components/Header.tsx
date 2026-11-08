@@ -35,8 +35,8 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/40 bg-white/55 backdrop-blur-2xl">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 md:h-[4.25rem] md:px-8">
+    <header className="sticky top-0 z-50 border-b border-white/40 bg-white/90 backdrop-blur-md sm:bg-white/55 sm:backdrop-blur-2xl">
+      <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-2 px-3 sm:h-16 sm:gap-3 sm:px-6 md:h-[4.25rem] md:px-8">
         <Link href="/" className="min-w-0 shrink py-1" aria-label={`${BRAND.name} home`}>
           <span className="flex items-center gap-2 font-display text-sm font-extrabold tracking-tight sm:text-base">
             <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-brand text-[0.65rem] font-black text-white">
