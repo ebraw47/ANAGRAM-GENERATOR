@@ -1,53 +1,57 @@
-# SEO Strategy — Title Case Converter (titlecaseconverter.tech)
+# SEO Strategy — Anagram Generator (anagramgenerator.tech)
 
-## Competitor SERP set (primary query: title case converter)
+## Competitor SERP set (primary query: anagram generator / anagram solver)
 
-- titlecaseconverter.com (top-ranked — tool UX reference)
-- capitalizemytitle.com
-- titleformat.com
-- thecapitalizer.com
-- wordcounter.ai/title-case-converter
-- title.sh
+- word.tips/anagram-solver (tool UX + content depth reference)
+- anagramsgenerator.com
+- dcode.fr/anagram-generator
+- wordsmith.org/anagram
+- thewordfinder.com/anagram-solver
+- utilsworld.com/anagramgenerator
+- spellscout.com/anagram-solver
+- anagramsolver.ai
 
 ## Content coverage (no gap vs ranking pages)
 
 | Topic | Where we cover it |
 | --- | --- |
-| Live title case converter tool | Homepage converter |
-| APA / Chicago / AP / MLA styles | Converter + `/title-capitalization-rules` + `/apa-chicago-ap-mla-title-case` |
-| Sentence case / UPPER / lower | Converter + `/sentence-case-converter` |
-| Title case vs sentence case | Homepage + `/title-case-vs-sentence-case` |
-| What is title case | Homepage + `/what-is-title-case` |
-| Words to capitalize / lowercase | Homepage + `/words-to-capitalize-in-a-title` |
-| How to use the tool | Homepage steps + `/how-to-use-a-title-case-converter` |
-| SEO title length / character count | Converter stats bar |
+| Live anagram generator / solver / maker | Homepage tool |
+| Exact vs subset (unscrambler) words | Tool modes + `/anagram-vs-word-unscrambler` |
+| Multi-word / phrase anagrams | Multi-word mode + `/multi-word-anagrams` |
+| What is an anagram | Homepage + `/what-is-an-anagram` |
+| Famous examples | Homepage + `/famous-anagram-examples` |
+| How to solve anagrams | Homepage + `/how-to-solve-anagrams` |
+| Anagram of a name | Multi-word + `/anagram-of-a-name` |
+| How to use the tool | Homepage steps + `/how-to-use-an-anagram-generator` |
+| Wildcards / blank tiles | Tool `?` support + FAQs |
+| Scrabble scores / sort | Tool stats |
 | FAQs / WebApplication schema | Homepage |
 
 ## Blog pillars (7 — SERP-validated only)
 
-1. title-capitalization-rules  
-2. words-to-capitalize-in-a-title  
-3. title-case-vs-sentence-case  
-4. what-is-title-case  
-5. how-to-use-a-title-case-converter  
-6. sentence-case-converter  
-7. apa-chicago-ap-mla-title-case  
+1. what-is-an-anagram  
+2. how-to-use-an-anagram-generator  
+3. famous-anagram-examples  
+4. how-to-solve-anagrams  
+5. anagram-vs-word-unscrambler  
+6. multi-word-anagrams  
+7. anagram-of-a-name  
 
 ## Primary keywords
 
-- title case converter
-- title capitalization
-- title case vs sentence case
-- APA title case
-- Chicago title case
-- capitalize title
-- title case rules
-- words to capitalize in a title
-- sentence case converter
-- what is title case
+- anagram generator
+- anagram solver
+- anagram maker
+- anagram finder
+- word unscrambler
+- anagram of a name
+- multi word anagram
+- what is an anagram
+- famous anagrams
+- how to solve anagrams
 
 ## Technical
 
-- Canonical host: `https://titlecaseconverter.tech`
-- Sitemaps: `/sitemap-index.xml`, `/index.xml`, `/image-sitemap.xml` (+ rewrites for `/sitemap.xml`)
+- Canonical host: `https://anagramgenerator.tech`
+- Sitemaps: `/sitemap-index.xml` (alias `/sitemap.xml`) → `/page-sitemap.xml`, `/post-sitemap.xml`, `/image-sitemap.xml`
 - Robots: `/robots.txt`

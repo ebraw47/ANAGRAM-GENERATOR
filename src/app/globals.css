@@ -3,33 +3,35 @@
 @tailwind utilities;
 
 :root {
-  --brand: #e85d04;
-  --brand-dark: #c44d03;
-  --ink: #14161c;
-  --paper: #e4e9f0;
+  --brand: #3f6b4b;
+  --brand-dark: #2f5238;
+  --ink: #161816;
+  --paper: #f4f1ea;
   --surface: #ffffff;
-  --headline: #14161c;
-  --foreground-rgb: 20, 22, 28;
-  --background-start-rgb: 228, 233, 240;
-  --background-end-rgb: 216, 223, 233;
-  --feature-border: #cfd6e0;
-  --feature-title: #14161c;
-  --feature-icon: #e85d04;
-  --navy-start: #e4e9f0;
-  --navy-end: #e85d04;
-  --coral: #f48c3c;
+  --headline: #161816;
+  --foreground-rgb: 22, 24, 22;
+  --background-start-rgb: 244, 241, 234;
+  --background-end-rgb: 236, 232, 223;
+  --feature-border: #e2ddd3;
+  --feature-title: #161816;
+  --feature-icon: #3f6b4b;
+  --navy-start: #f4f1ea;
+  --navy-end: #3f6b4b;
+  --coral: #5c8a66;
 }
 
 html {
-  scroll-behavior: smooth;
-  background-color: #e4e9f0;
-  overflow-x: hidden;
+  /* auto — global `smooth` makes scrollTop jumps animate and breaks scroll-to-top */
+  scroll-behavior: auto;
+  background-color: #e8efe6;
+  /* clip avoids the scroll/sticky bugs that overflow-x: hidden causes on html */
+  overflow-x: clip;
 }
 
 body {
-  color: #14161c;
+  color: #161816;
   background: transparent;
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100vw;
 }
 
@@ -46,29 +48,47 @@ footer {
   font-family: inherit;
 }
 
-/* Dense cool slate — solid body color, crisp contrast for white tool cards */
+/* Blurred sage-green + white glass theme (reference dashboard look) */
 .site-canvas {
   position: relative;
   isolation: isolate;
   min-height: 100vh;
-  background-color: #d8dfe9;
+  background-color: #e7eee6;
   background-image:
-    radial-gradient(ellipse 90% 55% at 50% -5%, rgba(232, 93, 4, 0.14), transparent 58%),
-    linear-gradient(180deg, #e8eef5 0%, #d8dfe9 42%, #cfd7e3 100%);
+    radial-gradient(ellipse 70% 55% at 15% 10%, rgba(120, 160, 110, 0.55), transparent 58%),
+    radial-gradient(ellipse 65% 50% at 88% 8%, rgba(190, 210, 170, 0.7), transparent 55%),
+    radial-gradient(ellipse 55% 45% at 70% 55%, rgba(90, 130, 85, 0.35), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 20% 75%, rgba(210, 220, 190, 0.65), transparent 55%),
+    linear-gradient(165deg, #f5f7f2 0%, #e8efe6 38%, #dce8d8 72%, #eef3ec 100%);
+  overflow-x: clip;
 }
 
+/* Fixed so decorative blur cannot expand document height below the footer */
 .site-canvas::before {
   content: "";
-  position: absolute;
+  position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.22;
-  background-image:
-    linear-gradient(rgba(15, 23, 42, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(15, 23, 42, 0.055) 1px, transparent 1px);
-  background-size: 40px 40px;
-  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent 62%);
+  filter: blur(56px);
+  opacity: 0.95;
+  background:
+    radial-gradient(closest-side at 22% 28%, rgba(98, 148, 88, 0.65), transparent 72%),
+    radial-gradient(closest-side at 78% 18%, rgba(176, 204, 148, 0.8), transparent 70%),
+    radial-gradient(closest-side at 62% 62%, rgba(72, 118, 78, 0.45), transparent 74%),
+    radial-gradient(closest-side at 30% 78%, rgba(210, 222, 180, 0.75), transparent 70%),
+    radial-gradient(closest-side at 90% 70%, rgba(140, 176, 120, 0.5), transparent 68%);
+}
+
+.site-canvas::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 90% 60% at 50% 0%, rgba(255, 255, 255, 0.55), transparent 62%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.28), transparent 28%, rgba(255, 255, 255, 0.12) 70%, rgba(232, 239, 230, 0.35));
 }
 
 .site-canvas > main,
@@ -82,14 +102,27 @@ footer {
 }
 
 .hero-gradient {
+  background: transparent;
+}
+
+.scenic-blur {
+  pointer-events: none;
+  position: absolute;
+  inset: -20% -10% auto;
+  height: min(72vh, 44rem);
+  z-index: 0;
+  filter: blur(48px);
+  opacity: 1;
   background:
-    radial-gradient(ellipse 75% 55% at 50% 0%, rgba(232, 93, 4, 0.16), transparent 62%),
-    transparent;
+    radial-gradient(closest-side at 18% 40%, rgba(86, 136, 78, 0.7), transparent 72%),
+    radial-gradient(closest-side at 55% 20%, rgba(200, 220, 170, 0.85), transparent 68%),
+    radial-gradient(closest-side at 82% 45%, rgba(110, 158, 100, 0.65), transparent 70%),
+    radial-gradient(closest-side at 40% 75%, rgba(230, 238, 210, 0.9), transparent 65%);
 }
 
 .page-banner {
   background:
-    linear-gradient(135deg, #151820 0%, #1e2330 55%, #2a1a12 100%);
+    linear-gradient(135deg, #1a1d1a 0%, #242824 55%, #2f5238 100%);
   color: #fff;
 }
 
@@ -115,20 +148,20 @@ footer {
 
 .prose-h2 {
   @apply relative mt-12 mb-5 flex gap-3 font-display text-[1.55rem] font-bold leading-snug tracking-tight md:text-[1.85rem];
-  color: #14161c;
+  color: #161816;
 }
 
 .prose-h2-bar {
-  @apply mt-1.5 h-[1.15em] w-1 shrink-0 rounded-sm bg-brand;
+  @apply mt-1.5 h-[1.15em] w-1 shrink-0 rounded-full bg-brand;
 }
 
 .prose-h3 {
   @apply mt-9 mb-3 border-l-[3px] border-brand pl-3.5 font-display text-xl font-semibold tracking-tight md:text-[1.35rem];
-  color: #14161c;
+  color: #161816;
 }
 
 .prose-h4 {
-  @apply mt-6 mb-2 font-display text-lg font-semibold text-[#14161C];
+  @apply mt-6 mb-2 font-display text-lg font-semibold text-[#161816];
 }
 
 .prose-p {
@@ -157,7 +190,7 @@ footer {
 
 .prose-strong {
   @apply font-semibold;
-  color: #14161c;
+  color: #161816;
 }
 
 .prose-em {
@@ -165,15 +198,15 @@ footer {
 }
 
 .prose-quote {
-  @apply my-6 border-l-4 border-brand bg-white px-5 py-4 text-ink-soft shadow-sm;
+  @apply my-6 rounded-2xl border border-black/5 bg-white px-5 py-4 text-ink-soft shadow-sm;
 }
 
 .prose-hr {
-  @apply my-10 border-navy-900/10;
+  @apply my-10 border-black/10;
 }
 
 .prose-figure {
-  @apply my-6 overflow-hidden border-0 bg-transparent p-0 shadow-none;
+  @apply my-6 overflow-hidden rounded-2xl border-0 bg-transparent p-0 shadow-none;
   line-height: 0;
 }
 
@@ -199,60 +232,30 @@ footer {
   line-height: 1.5;
 }
 
-/*
-  Tool surface — crisp white panel with charcoal frame.
-  Soft shadow on mobile so offset neo-shadow does not cause horizontal scroll.
-*/
 .tool-glass {
-  background: #ffffff;
-  border: 2px solid #151820;
-  box-shadow: 0 10px 28px -16px rgba(20, 22, 28, 0.35);
-}
-
-@media (min-width: 640px) {
-  .tool-glass {
-    box-shadow:
-      4px 4px 0 0 rgba(232, 93, 4, 0.85),
-      0 18px 40px -24px rgba(20, 22, 28, 0.35);
-  }
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(22, 24, 22, 0.08);
+  border-radius: 1.5rem;
+  box-shadow: 0 24px 50px -28px rgba(22, 24, 22, 0.2);
 }
 
 .tool-glass-inset {
-  background: #fafbfc;
-  border: 1px solid rgba(20, 22, 28, 0.14);
-  box-shadow: inset 0 1px 2px rgba(20, 22, 28, 0.04);
+  background: #faf8f3;
+  border: 1px solid rgba(22, 24, 22, 0.08);
+  border-radius: 0.9rem;
+  box-shadow: inset 0 1px 2px rgba(22, 24, 22, 0.03);
 }
 
-/* Offset “hard” shadows — soft on small screens (avoids horizontal scroll) */
 .hard-shadow,
 .hard-shadow-ink {
-  box-shadow: 0 8px 20px -14px rgba(20, 22, 28, 0.35);
+  box-shadow: 0 18px 40px -24px rgba(22, 24, 22, 0.2);
 }
 
-@media (min-width: 640px) {
-  .hard-shadow {
-    box-shadow: 3px 3px 0 0 #e85d04;
-  }
-
-  .hard-shadow-ink {
-    box-shadow: 3px 3px 0 0 #151820;
-  }
-}
-
-/*
-  Tables — charcoal header + orange accent (not champagne glass)
-*/
 .prose-table-wrap {
-  @apply my-6 overflow-x-auto;
-  border: 2px solid #151820;
+  @apply my-6 overflow-x-auto rounded-2xl;
+  border: 1px solid rgba(22, 24, 22, 0.08);
   background: #fff;
-  box-shadow: 0 8px 20px -14px rgba(20, 22, 28, 0.3);
-}
-
-@media (min-width: 640px) {
-  .prose-table-wrap {
-    box-shadow: 3px 3px 0 0 rgba(232, 93, 4, 0.75);
-  }
+  box-shadow: 0 12px 30px -20px rgba(22, 24, 22, 0.2);
 }
 
 .prose-table {
@@ -261,27 +264,45 @@ footer {
 
 .prose-th {
   @apply px-4 py-3.5 text-xs font-bold uppercase tracking-[0.08em] text-white;
-  background: #151820;
-  border-bottom: 3px solid #e85d04;
+  background: #1a1d1a;
+  border-bottom: 2px solid #3f6b4b;
 }
 
 .prose-td {
-  @apply border-b border-navy-900/10 px-4 py-3 text-ink-soft;
+  @apply border-b border-black/5 px-4 py-3 text-ink-soft;
   background: #fff;
 }
 
 .prose-table tbody tr:nth-child(even) td {
-  background: #f7f8fa;
+  background: #faf8f3;
 }
 
 .prose-table tbody tr:hover td {
-  background: #fff6ef;
+  background: #e7f0e9;
 }
 
 .focus-ring {
-  @apply outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-[#D8DFE9];
+  @apply outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-[#E8EFE6];
 }
 
 input[type="range"] {
   accent-color: var(--brand);
+}
+
+.mac-tablet {
+  isolation: isolate;
+}
+
+.mac-tablet input,
+.mac-tablet select,
+.mac-tablet button {
+  font-family: inherit;
+}
+
+.soft-panel {
+  @apply rounded-3xl border border-black/5 bg-white/80 shadow-lift backdrop-blur-sm;
+}
+
+.cta-pill {
+  @apply inline-flex items-center justify-center rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-black;
 }

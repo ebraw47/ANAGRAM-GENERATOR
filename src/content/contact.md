@@ -1,8 +1,8 @@
 # Contact Us
 
-Have a question about Title Case Converter, a style-guide edge case, or a partnership idea? We’d like to hear from you.
+Have a question about Anagram Generator, a dictionary edge case, or a partnership idea? We’d like to hear from you.
 
-**Email:** [contact@titlecaseconverter.tech](mailto:contact@titlecaseconverter.tech)  
-**Website:** [https://titlecaseconverter.tech](https://titlecaseconverter.tech/)
+**Email:** [contact@anagramgenerator.tech](mailto:contact@anagramgenerator.tech)  
+**Website:** [https://anagramgenerator.tech](https://anagramgenerator.tech/)
 
-Use the form on this page for general inquiries. We typically reply within 1–2 business days.
+Use the form on this page for general feedback. We read every message and reply as soon as we can.

@@ -1,34 +1,34 @@
 # Privacy Policy
 
-**Effective date:** November 8, 2026  
-**Website:** https://titlecaseconverter.tech
+**Last updated:** November 9, 2026  
+**Website:** https://anagramgenerator.tech
 
-Title Case Converter (“we”, “us”) respects your privacy. This policy explains what we collect and how we use it.
+Anagram Generator (“we”, “us”) respects your privacy. This policy explains what we collect and how we use it.
 
-## Title conversion
+## Anagram tool input
 
-The title case converter runs **in your browser**. Headlines you type or paste for conversion are **not uploaded** to our servers for capitalization. Conversion happens locally on your device.
+The anagram generator runs **in your browser**. Letters, names, and phrases you type for solving are **not uploaded** to our servers for anagram search. Matching happens locally on your device against a bundled word list.
 
 ## Information we may collect
 
-- **Contact form submissions** — name, email, and message you send us  
-- **Basic analytics** — if enabled (e.g., Google Analytics), aggregated page views and device data  
-- **Advertising** — if Google AdSense or similar is enabled, those providers may use cookies per their policies  
+- **Contact form messages** you choose to send (email address and message body)  
+- **Standard server or analytics logs** if analytics are enabled (pages visited, approximate location, device/browser type)  
+- **Advertising cookies** if Google AdSense or similar partners are enabled on the site  
 
-## Cookies
+We do not sell personal information.
 
-We may use essential cookies for site function and optional analytics/ads cookies when those features are active. You can control cookies in your browser settings.
+## Cookies and third parties
 
-## Third-party services
-
-Links to third-party sites (docs, social share targets) are governed by those sites’ privacy policies. We are not responsible for their practices.
+If analytics or ads are active, third parties such as Google may set cookies and process data under their own policies. You can control cookies through your browser settings.
 
 ## Children’s privacy
 
-This site is not directed at children under 13. We do not knowingly collect personal information from children.
+The site is not directed at children under 13. We do not knowingly collect personal information from children.
+
+## Changes
+
+We may update this policy from time to time. The “Last updated” date at the top will change when we do.
 
 ## Contact
 
-For privacy questions: [contact@titlecaseconverter.tech](mailto:contact@titlecaseconverter.tech)
-
-We may update this policy periodically. The effective date above will change when we do.
+For privacy questions: [contact@anagramgenerator.tech](mailto:contact@anagramgenerator.tech)

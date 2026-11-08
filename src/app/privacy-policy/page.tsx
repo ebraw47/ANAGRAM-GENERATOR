@@ -5,8 +5,8 @@ import { getMarkdown, stripLeadingH1 } from "@/lib/content";
 import { BRAND, ROUTES, SITE_ORIGIN } from "@/lib/siteConfig";
 
 const PAGE_URL = `${SITE_ORIGIN}${ROUTES.privacy}`;
-const PAGE_TITLE = "Privacy Policy - Title Case Converter";
-const PAGE_DESCRIPTION = "Privacy Policy of titlecaseconverter.tech";
+const PAGE_TITLE = "Privacy Policy - Anagram Generator";
+const PAGE_DESCRIPTION = "Privacy Policy of anagramgenerator.tech";
 
 export const metadata: Metadata = {
   title: { absolute: PAGE_TITLE },

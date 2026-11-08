@@ -1,11 +1,45 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import MarkdownContent from "@/components/MarkdownContent";
-import FaqAccordion from "@/components/FaqAccordion";
 import { FeatureCards, StepCards } from "@/components/FeatureCards";
 import { FadeIn } from "@/components/motion/Motion";
-import { BRAND, HOME_FAQS, IMAGES, imageDims } from "@/lib/siteConfig";
+import { BRAND, IMAGES, imageDims } from "@/lib/siteConfig";
+
+const TABS = [
+  {
+    id: "exact",
+    label: "Exact anagrams",
+    title: "Full-letter rearrangements only",
+    body: "When every letter must be used once — jumbles, crossword enumerations, and true anagram answers — Exact mode filters the noise.",
+  },
+  {
+    id: "subset",
+    label: "All words",
+    title: "Unscramble every playable word",
+    body: "Subset mode lists shorter words hiding in your tiles — ideal for Scrabble racks, Wordle practice, and classroom challenges.",
+  },
+  {
+    id: "multi",
+    label: "Multi-word",
+    title: "Phrase anagrams for names & clues",
+    body: "Split letters across two or three real words. Famous results like dormitory → dirty room start here.",
+  },
+  {
+    id: "private",
+    label: "Private search",
+    title: "Everything stays in your browser",
+    body: "Matching runs locally against bundled dictionaries in 6 languages. No account, no upload — rearrange, speak, and copy.",
+  },
+] as const;
+
+const STATS = [
+  { value: "6", label: "Languages with full dictionaries + UI" },
+  { value: "3", label: "Modes — exact, subset, multi-word" },
+  { value: "Voice", label: "Speak any result in the selected language" },
+  { value: "0$", label: "Free forever, no sign-up wall" },
+];
 
 export default function HomeBody({
   beforeSteps,
@@ -14,18 +48,86 @@ export default function HomeBody({
   beforeSteps: string;
   afterSteps: string;
 }) {
+  const [tab, setTab] = useState<(typeof TABS)[number]["id"]>("exact");
+  const active = TABS.find((t) => t.id === tab) ?? TABS[0];
+
   return (
     <>
-      <section className="section-glass overflow-x-hidden border-t-2 border-navy-900/10 py-14 md:py-16">
-        <div className="mx-auto max-w-6xl px-3 sm:px-4 md:px-6">
-          <FadeIn>
-            <p className="section-kicker">Why writers switch to us</p>
-            <h2 className="font-display text-2xl font-bold tracking-tight text-ink md:text-3xl">
-              Why Choose Our Title Case Converter?
+      {/* Feature tabs — LIMA-style */}
+      <section className="overflow-x-hidden py-16 md:py-20">
+        <div className="mx-auto max-w-7xl px-4 md:px-8">
+          <FadeIn className="mx-auto max-w-2xl text-center">
+            <h2 className="font-display text-3xl font-bold tracking-tight text-ink md:text-4xl">
+              Define anagrams the way you actually solve them
             </h2>
-            <p className="mt-2 max-w-2xl text-ink-mute">
-              Style-accurate capitalization, live SEO counts, and private browser-side conversion —
-              built for headlines that have to look right every time.
+            <p className="mt-3 text-ink-mute">
+              Switch modes like a workspace — not a one-size list dump.
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={0.06} className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {TABS.map((t) => {
+              const on = t.id === tab;
+              return (
+                <button
+                  key={t.id}
+                  type="button"
+                  onClick={() => setTab(t.id)}
+                  className={`rounded-3xl border px-5 py-5 text-left transition ${
+                    on
+                      ? "border-brand/30 bg-white shadow-lift"
+                      : "border-black/5 bg-white/50 hover:bg-white"
+                  }`}
+                >
+                  <p className={`text-sm font-bold ${on ? "text-brand" : "text-ink"}`}>{t.label}</p>
+                  <p className="mt-2 text-xs leading-relaxed text-ink-mute line-clamp-2">{t.body}</p>
+                </button>
+              );
+            })}
+          </FadeIn>
+
+          <FadeIn delay={0.1} className="relative mt-8 overflow-hidden rounded-[2rem] border border-black/5 bg-white/70 p-6 shadow-lift backdrop-blur-sm md:p-10">
+            <div
+              className="pointer-events-none absolute inset-0 opacity-60"
+              style={{
+                background:
+                  "radial-gradient(ellipse 60% 80% at 90% 20%, rgba(63,107,75,0.12), transparent 55%)",
+              }}
+            />
+            <div className="relative grid items-center gap-8 md:grid-cols-2">
+              <div>
+                <p className="section-kicker">Workspace mode</p>
+                <h3 className="font-display text-2xl font-bold text-ink md:text-3xl">{active.title}</h3>
+                <p className="mt-3 text-ink-mute">{active.body}</p>
+                <a href="#generator" className="cta-pill mt-6">
+                  Try this mode
+                </a>
+              </div>
+              <Image
+                src={IMAGES.features}
+                alt={active.title}
+                width={imageDims(IMAGES.features).width}
+                height={imageDims(IMAGES.features).height}
+                unoptimized
+                className="relative z-10 block h-auto w-full rounded-2xl border-0"
+                sizes="(max-width:768px) 100vw, 520px"
+              />
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Why choose — soft feature grid */}
+      <section className="py-6 md:py-10">
+        <div className="mx-auto max-w-7xl px-4 md:px-8">
+          <FadeIn className="max-w-2xl">
+            <p className="section-kicker">Why puzzlers switch</p>
+            <h2 className="font-display text-3xl font-bold tracking-tight text-ink md:text-4xl">
+              Why choose our anagram generator?
+            </h2>
+            <p className="mt-3 text-ink-mute">
+              Exact matches, 6 languages, voice playback, phrase splits, and Scrabble scores — in one
+              calm workspace.
             </p>
           </FadeIn>
           <div className="mt-10">
@@ -34,122 +136,124 @@ export default function HomeBody({
         </div>
       </section>
 
-      <section className="relative overflow-hidden border-y-2 border-navy-900 bg-navy-900 py-14 text-white md:py-16">
-        <div className="pointer-events-none absolute inset-0 opacity-40"
-          style={{
-            background:
-              "radial-gradient(ellipse 50% 80% at 90% 50%, rgba(232,93,4,0.35), transparent 60%)",
-          }}
-        />
-        <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 px-4 md:grid-cols-2 md:px-6">
+      {/* Zigzag feature 1 */}
+      <section className="py-14 md:py-20">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 md:grid-cols-2 md:gap-16 md:px-8">
           <FadeIn>
-            <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-brand">Built for publishers</p>
-            <h2 className="font-display text-2xl font-bold tracking-tight text-white md:text-3xl">
-              One converter for every capitalization style
+            <p className="section-kicker">Product</p>
+            <h2 className="font-display text-3xl font-bold tracking-tight text-ink md:text-4xl">
+              Connect letters to every real word they hide
             </h2>
-            <p className="mt-3 max-w-md text-white/70">
-              AMA, AP, APA, Bluebook, Chicago, MLA, NY Times, Wikipedia, sentence case,
-              UPPERCASE, and lowercase — convert on {BRAND.domain} without juggling separate
-              tools or memorizing style manuals.
+            <p className="mt-4 text-ink-mute">
+              Whether you searched for an anagram generator, maker, finder, or word rearranger, this
+              tool covers exact rearrangements and every shorter play on {BRAND.domain}.
             </p>
+            <a href="#generator" className="cta-pill mt-6">
+              Open generator
+            </a>
           </FadeIn>
-          <FadeIn delay={0.1} className="relative">
-            <Image
-              src={IMAGES.website}
-              alt={`${BRAND.name} capitalization styles`}
-              width={imageDims(IMAGES.website).width}
-              height={imageDims(IMAGES.website).height}
-              unoptimized
-              className="block h-auto w-full border-0"
-              sizes="(max-width:768px) 100vw, 560px"
-            />
+          <FadeIn delay={0.08}>
+            <div className="overflow-hidden rounded-[2rem] border border-black/5 bg-white p-3 shadow-lift">
+              <Image
+                src={IMAGES.website}
+                alt={`${BRAND.name} unscramble letters`}
+                width={imageDims(IMAGES.website).width}
+                height={imageDims(IMAGES.website).height}
+                unoptimized
+                className="block h-auto w-full rounded-2xl border-0"
+                sizes="(max-width:768px) 100vw, 560px"
+              />
+            </div>
           </FadeIn>
         </div>
       </section>
 
-      <section className="border-b-2 border-navy-900/10 py-14 md:py-16">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 md:grid-cols-2 md:px-6">
-          <FadeIn className="relative order-2 md:order-1">
-            <Image
-              src={IMAGES.features}
-              alt="Title case converter accuracy"
-              width={imageDims(IMAGES.features).width}
-              height={imageDims(IMAGES.features).height}
-              unoptimized
-              className="block h-auto w-full border-0"
-              sizes="(max-width:768px) 100vw, 560px"
-            />
+      {/* Zigzag feature 2 */}
+      <section className="py-14 md:py-20">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 md:grid-cols-2 md:gap-16 md:px-8">
+          <FadeIn className="order-2 md:order-1">
+            <div className="overflow-hidden rounded-[2rem] border border-black/5 bg-white p-3 shadow-lift">
+              <Image
+                src={IMAGES.search}
+                alt="Filter anagram results by length and mode"
+                width={imageDims(IMAGES.search).width}
+                height={imageDims(IMAGES.search).height}
+                unoptimized
+                className="block h-auto w-full rounded-2xl border-0"
+                sizes="(max-width:768px) 100vw, 560px"
+              />
+            </div>
           </FadeIn>
           <FadeIn delay={0.08} className="order-1 md:order-2">
-            <p className="section-kicker">Features that close SERP gaps</p>
-            <h2 className="font-display text-2xl font-bold tracking-tight text-ink md:text-3xl">
-              Style guides, batch lines, and SEO length in one place
+            <p className="section-kicker">Focus</p>
+            <h2 className="font-display text-3xl font-bold tracking-tight text-ink md:text-4xl">
+              Stay focused on the answers that matter
             </h2>
-            <ul className="mt-4 space-y-3 text-[1.05rem] leading-relaxed text-ink-soft">
-              <li>Compare APA vs Chicago preposition rules side by side.</li>
-              <li>Paste multi-line title lists and convert each line independently.</li>
-              <li>Watch character counts so SERP titles stay readable.</li>
-              <li>Preserve common acronyms and optional ALL CAPS words.</li>
+            <ul className="mt-4 space-y-3 text-ink-soft">
+              <li>6 languages — English, Spanish, French, German, Italian, Portuguese</li>
+              <li>Speak button to hear any result aloud</li>
+              <li>Blank tiles with `?` wildcards</li>
+              <li>Min length, Scrabble sort, and one-click copy</li>
             </ul>
+            <a href="#generator" className="cta-pill mt-6">
+              Generate now
+            </a>
           </FadeIn>
         </div>
       </section>
 
-      <section className="section-glass py-10 md:py-14">
-        <div className="mx-auto max-w-6xl px-4 md:px-6">
+      {/* How-to + steps */}
+      <section className="py-14 md:py-20">
+        <div className="mx-auto max-w-7xl px-4 md:px-8">
           <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
             <FadeIn className="lg:col-span-7">
-              <MarkdownContent content={beforeSteps} />
+              <div className="soft-panel p-6 md:p-8">
+                <MarkdownContent content={beforeSteps} />
+              </div>
             </FadeIn>
-
             <FadeIn delay={0.06} className="lg:col-span-5">
               <p className="section-kicker">Quick start</p>
-              <h2 className="font-display text-2xl font-bold tracking-tight text-ink md:text-3xl">
-                Convert titles in three simple steps
+              <h2 className="font-display text-3xl font-bold tracking-tight text-ink">
+                Generate anagrams in three steps
               </h2>
               <div className="mt-8">
-                <StepCards className="grid gap-y-10" />
+                <StepCards className="grid gap-4" />
               </div>
-              <a
-                href="#converter"
-                className="mt-8 inline-flex border-2 border-navy-900 bg-brand px-5 py-3 text-sm font-bold uppercase tracking-wide text-white hard-shadow-ink transition hover:bg-brand-dark focus-ring"
-              >
-                Open converter
+              <a href="#generator" className="cta-pill mt-8">
+                Open generator
               </a>
             </FadeIn>
           </div>
 
           {afterSteps ? (
-            <FadeIn className="mt-12 border-t-2 border-navy-900/10 pt-10">
-              <div className="mx-auto max-w-3xl lg:mx-0 lg:max-w-none lg:grid lg:grid-cols-12 lg:gap-12">
-                <div className="lg:col-span-7">
+            <FadeIn className="mt-12">
+              <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
+                <div className="soft-panel p-6 md:p-8 lg:col-span-7">
                   <MarkdownContent content={afterSteps} />
                 </div>
-                <div className="mt-8 space-y-6 lg:col-span-5 lg:mt-0">
-                  <Image
-                    src={IMAGES.vsSentence}
-                    alt="Title case versus sentence case"
-                    width={imageDims(IMAGES.vsSentence).width}
-                    height={imageDims(IMAGES.vsSentence).height}
-                    unoptimized
-              className="block h-auto w-full border-0"
-                    sizes="(max-width:768px) 100vw, 420px"
-                  />
-                  <div className="border-2 border-navy-900 bg-white p-6 hard-shadow-ink md:p-7">
+                <div className="space-y-6 lg:col-span-5">
+                  <div className="overflow-hidden rounded-[2rem] border border-black/5 bg-white p-3 shadow-lift">
+                    <Image
+                      src={IMAGES.vsSentence}
+                      alt="Exact anagrams versus word unscrambling"
+                      width={imageDims(IMAGES.vsSentence).width}
+                      height={imageDims(IMAGES.vsSentence).height}
+                      unoptimized
+                      className="block h-auto w-full rounded-2xl border-0"
+                      sizes="(max-width:768px) 100vw, 420px"
+                    />
+                  </div>
+                  <div className="rounded-[2rem] border border-black/5 bg-white p-6 shadow-sm md:p-7">
                     <p className="section-kicker">Tip</p>
                     <h3 className="font-display text-xl font-bold text-ink">
-                      Match the guide your audience expects
+                      Exact mode for true anagrams
                     </h3>
                     <p className="mt-3 text-sm leading-relaxed text-ink-mute">
-                      Academic papers lean APA, Chicago, or MLA. Newsrooms lean AP or NY Times.
-                      Legal and medical titles may need Bluebook or AMA. Switch styles in one click
-                      and copy the version your editor wants.
+                      Need a full rearrangement? Use Exact. Holding a Scrabble rack? Stay on All
+                      words. For names, try Multi-word with min length 3 or 4.
                     </p>
-                    <a
-                      href="#converter"
-                      className="mt-5 inline-flex text-sm font-semibold text-brand transition hover:text-brand-dark"
-                    >
-                      Back to converter →
+                    <a href="#generator" className="mt-5 inline-flex text-sm font-semibold text-brand hover:text-brand-dark">
+                      Back to generator →
                     </a>
                   </div>
                 </div>
@@ -159,78 +263,58 @@ export default function HomeBody({
         </div>
       </section>
 
-      <section className="border-y-2 border-navy-900/10 py-14 md:py-16">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 md:grid-cols-2 md:px-6">
+      {/* Who it's for */}
+      <section className="py-14 md:py-20">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 md:grid-cols-2 md:gap-16 md:px-8">
           <FadeIn>
             <p className="section-kicker">Who it&apos;s for</p>
-            <h2 className="font-display text-2xl font-bold tracking-tight text-ink md:text-3xl">
-              Built for writers, marketers, students, and editors
+            <h2 className="font-display text-3xl font-bold tracking-tight text-ink md:text-4xl">
+              Built for players, puzzlers, teachers, and writers
             </h2>
-            <p className="mt-3 text-ink-mute">
-              Anyone who publishes titles — blogs, books, product pages, research papers, or social
-              posts — can keep capitalization consistent without opening a style manual.
+            <p className="mt-4 text-ink-mute">
+              Scrabble, crosswords, Jumble, classroom challenges, or clever name anagrams — generate
+              answers without uploading your text.
             </p>
           </FadeIn>
           <FadeIn delay={0.08}>
-            <Image
-              src={IMAGES.whoCanUse}
-              alt="Who can use a title case converter"
-              width={imageDims(IMAGES.whoCanUse).width}
-              height={imageDims(IMAGES.whoCanUse).height}
-              unoptimized
-              className="block h-auto w-full border-0"
-              sizes="(max-width:768px) 100vw, 560px"
-            />
+            <div className="overflow-hidden rounded-[2rem] border border-black/5 bg-white p-3 shadow-lift">
+              <Image
+                src={IMAGES.whoCanUse}
+                alt="Who can use an anagram generator"
+                width={imageDims(IMAGES.whoCanUse).width}
+                height={imageDims(IMAGES.whoCanUse).height}
+                unoptimized
+                className="block h-auto w-full rounded-2xl border-0"
+                sizes="(max-width:768px) 100vw, 560px"
+              />
+            </div>
           </FadeIn>
         </div>
       </section>
 
-      <section className="section-glass border-t-2 border-navy-900/10 py-14 md:py-20">
-        <div className="mx-auto max-w-6xl px-4 md:px-6">
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-12">
-            <FadeIn>
-              <p className="section-kicker">Help center</p>
-              <h2 className="font-display text-2xl font-bold text-ink md:text-3xl">
-                FAQs About Title Case Converters
-              </h2>
-              <p className="mt-2 mb-6 text-ink-mute">
-                Quick answers about style guides, sentence case, SEO titles, privacy, and free use.
-              </p>
-              <FaqAccordion faqs={HOME_FAQS} />
-            </FadeIn>
-
-            <FadeIn delay={0.08}>
-              <div className="overflow-hidden border-2 border-navy-900 bg-white hard-shadow">
-                <Image
-                  src={IMAGES.benefits}
-                  alt="Benefits of title case converter"
-                  width={imageDims(IMAGES.benefits).width}
-                  height={imageDims(IMAGES.benefits).height}
-                  unoptimized
-              className="block h-auto w-full border-0"
-                  sizes="(max-width:768px) 100vw, 560px"
-                />
-                <div className="p-6 md:p-8">
-                  <p className="section-kicker">Ready to capitalize?</p>
-                  <h2 className="font-display text-2xl font-bold text-ink md:text-3xl">
-                    Use the free title case converter now
-                  </h2>
-                  <p className="mt-3 text-ink-mute">
-                    Paste a headline at the top of this page, pick your style guide, and copy a
-                    clean title in seconds on {BRAND.domain}.
+      {/* Stats */}
+      <section className="py-14 md:py-20">
+        <div className="mx-auto max-w-7xl px-4 md:px-8">
+          <FadeIn className="mx-auto max-w-2xl text-center">
+            <h2 className="font-display text-3xl font-bold tracking-tight text-ink md:text-4xl">
+              More gets solved when the modes work together
+            </h2>
+          </FadeIn>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {STATS.map((s) => (
+              <FadeIn key={s.value}>
+                <div className="rounded-3xl border border-black/5 bg-white px-6 py-8 text-center shadow-sm">
+                  <p className="font-display text-4xl font-extrabold tracking-tight text-ink md:text-5xl">
+                    {s.value}
                   </p>
-                  <a
-                    href="#converter"
-                    className="mt-6 inline-flex border-2 border-navy-900 bg-brand px-6 py-3 text-sm font-bold uppercase tracking-wide text-white hard-shadow-ink transition hover:bg-brand-dark focus-ring"
-                  >
-                    Go to converter
-                  </a>
+                  <p className="mt-3 text-sm leading-relaxed text-ink-mute">{s.label}</p>
                 </div>
-              </div>
-            </FadeIn>
+              </FadeIn>
+            ))}
           </div>
         </div>
       </section>
+
     </>
   );
 }

@@ -1,11 +1,11 @@
 {
-  "name": "Title Case Converter",
-  "short_name": "TitleCase",
-  "description": "Free title case converter for APA, Chicago, AP, and MLA. Convert headlines to title case, sentence case, UPPERCASE, or lowercase on titlecaseconverter.tech.",
+  "name": "Anagram Generator",
+  "short_name": "Anagram",
+  "description": "Free anagram generator and solver. Rearrange words, names, and phrases into real dictionary anagrams on anagramgenerator.tech.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#D8DFE9",
-  "theme_color": "#E85D04",
+  "background_color": "#E8EFE6",
+  "theme_color": "#3F6B4B",
   "icons": [
     {
       "src": "/favicon-512.png",

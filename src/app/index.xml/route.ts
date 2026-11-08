@@ -1,19 +1,6 @@
-import { SITEMAP_PAGES, XML_HEADERS, absoluteUrl, escapeXml } from "@/lib/sitemapData";
+import { SITEMAP_ALL_URLS, XML_HEADERS, renderUrlSet } from "@/lib/sitemapData";
 
+/** Combined URL list kept for older crawlers / bookmarks */
 export function GET() {
-  const urls = SITEMAP_PAGES.map(
-    (page) => `  <url>
-    <loc>${escapeXml(absoluteUrl(page.path))}</loc>
-    <lastmod>${escapeXml(page.lastmod)}</lastmod>
-    <changefreq>${page.changefreq}</changefreq>
-    <priority>${page.priority}</priority>
-  </url>`
-  ).join("\n");
-
-  const body = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls}
-</urlset>`;
-
-  return new Response(body, { headers: XML_HEADERS });
+  return new Response(renderUrlSet(SITEMAP_ALL_URLS), { headers: XML_HEADERS });
 }

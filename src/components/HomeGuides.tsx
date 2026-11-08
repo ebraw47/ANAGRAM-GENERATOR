@@ -1,63 +1,79 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FadeIn, Stagger, StaggerItem } from "@/components/motion/Motion";
-import { ARTICLES, imageDims } from "@/lib/siteConfig";
+import { ARTICLES, ROUTES } from "@/lib/siteConfig";
 
 export default function HomeGuides() {
   return (
-    <section className="border-y-2 border-navy-900/10 py-14 md:py-16">
-      <div className="mx-auto max-w-6xl px-4 md:px-6">
-        <FadeIn className="max-w-2xl">
+    <section className="py-14 md:py-20">
+      <div className="mx-auto max-w-7xl px-4 md:px-8">
+        <FadeIn className="mx-auto max-w-2xl text-center">
           <p className="section-kicker">Guides & tips</p>
-          <h2 className="font-display text-2xl font-bold text-ink md:text-3xl">
-            Title case guides
+          <h2 className="font-display text-3xl font-bold tracking-tight text-ink md:text-4xl">
+            Anagram guides
           </h2>
-          <p className="mt-2 text-ink-mute">
-            Seven SERP-backed articles on style guides, sentence case, and words to capitalize.
+          <p className="mt-3 text-ink-mute">
+            Clear, SERP-backed reading for definitions, examples, solve tips, and name play.
           </p>
         </FadeIn>
-        <Stagger className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {ARTICLES.map((a) => (
-            <StaggerItem key={a.slug}>
-              <motion.div
-                whileHover={{ y: -4 }}
-                transition={{ type: "spring", stiffness: 320, damping: 24 }}
-              >
-                <Link
-                  href={`/${a.slug}`}
-                  className="group block overflow-hidden border-2 border-navy-900 bg-white hard-shadow transition hover:hard-shadow-ink"
-                >
-                  <Image
-                    src={a.image}
-                    alt={a.title}
-                    width={imageDims(a.image).width}
-                    height={imageDims(a.image).height}
-                    unoptimized
-              className="block h-auto w-full border-0"
-                    sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
-                  />
-                  <div className="p-5">
-                    <h3 className="font-display text-lg font-semibold text-ink group-hover:text-brand line-clamp-2">
-                      {a.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-ink-mute line-clamp-2">
-                      {a.description}
-                    </p>
-                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand">
-                      Read guide
-                      <span aria-hidden className="transition group-hover:translate-x-0.5">
-                        →
+
+        <FadeIn delay={0.08} className="mt-10 overflow-hidden rounded-[2rem] border border-black/5 bg-white/90 shadow-lift backdrop-blur-sm">
+          <Stagger className="grid sm:grid-cols-2 lg:grid-cols-3">
+            {ARTICLES.map((a, i) => {
+              const num = String(i + 1).padStart(2, "0");
+              const date = new Date(a.date).toLocaleDateString("en-US", {
+                month: "short",
+                day: "numeric",
+              });
+              return (
+                <StaggerItem key={a.slug}>
+                  <motion.div
+                    whileHover={{ backgroundColor: "rgba(231, 240, 233, 0.55)" }}
+                    transition={{ duration: 0.2 }}
+                    className="h-full border-b border-black/5 sm:odd:border-r lg:[&:nth-child(3n)]:border-r-0 lg:border-r"
+                  >
+                    <Link href={`/${a.slug}`} className="group flex h-full flex-col p-6 md:p-8">
+                      <div className="flex items-start justify-between gap-3">
+                        <span className="font-display text-4xl font-extrabold tracking-tight text-ink/15 transition group-hover:text-brand/35 md:text-5xl">
+                          {num}
+                        </span>
+                        <span className="rounded-full bg-paper px-2.5 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-ink-mute">
+                          {date}
+                        </span>
+                      </div>
+                      <h3 className="mt-6 font-display text-lg font-bold leading-snug tracking-tight text-ink transition group-hover:text-brand md:text-xl">
+                        {a.title}
+                      </h3>
+                      <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-mute line-clamp-3">
+                        {a.description}
+                      </p>
+                      <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-ink">
+                        Read guide
+                        <span
+                          aria-hidden
+                          className="flex h-7 w-7 items-center justify-center rounded-full bg-ink text-white transition group-hover:translate-x-0.5 group-hover:bg-brand"
+                        >
+                          →
+                        </span>
                       </span>
-                    </span>
-                  </div>
-                </Link>
-              </motion.div>
-            </StaggerItem>
-          ))}
-        </Stagger>
+                    </Link>
+                  </motion.div>
+                </StaggerItem>
+              );
+            })}
+          </Stagger>
+        </FadeIn>
+
+        <FadeIn delay={0.12} className="mt-8 flex justify-center">
+          <Link
+            href={ROUTES.blog}
+            className="inline-flex rounded-full border border-black/10 bg-white/80 px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-white"
+          >
+            View all guides
+          </Link>
+        </FadeIn>
       </div>
     </section>
   );

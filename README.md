@@ -1,12 +1,12 @@
-# Title Case Converter
+# Anagram Generator
 
-Next.js site for **[titlecaseconverter.tech](https://titlecaseconverter.tech)** — free title capitalization tool with AMA, AP, APA, Bluebook, Chicago, MLA, NY Times, and Wikipedia support, plus SERP-focused capitalization guides.
+Next.js site for **[anagramgenerator.tech](https://anagramgenerator.tech)** — free anagram generator and solver with exact, subset, and multi-word modes, plus SERP-focused anagram guides.
 
 ## Features
 
-- Live title case converter (8 style guides + sentence / upper / lower)
-- SEO character / word counts, explanations, multi-line batch
-- 7 SERP-validated guides (rules, words to capitalize, sentence case, and more)
+- Live anagram generator (exact / all words / multi-word phrases)
+- Blank-tile wildcards, min length filters, Scrabble scores, one-click copy
+- 7 SERP-validated guides (definition, examples, solve tips, name anagrams, and more)
 - Sitemap index, image sitemap, robots, and structured data
 
 ## Develop

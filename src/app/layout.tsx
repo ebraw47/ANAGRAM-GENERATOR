@@ -4,6 +4,7 @@ import "./globals.css";
 import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FixedSideActions from "@/components/FixedSideActions";
 import ScrollToTopWrapper from "@/components/ScrollToTopWrapper";
 import WebVitalsTracker from "@/components/WebVitalsTracker";
 import { BRAND, IMAGES, SITE_ORIGIN } from "@/lib/siteConfig";
@@ -29,27 +30,28 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
-  themeColor: "#E85D04",
+  themeColor: "#3F6B4B",
   viewportFit: "cover",
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_ORIGIN),
   title: {
-    default: "Title Case Converter | Free AMA, AP, APA, Chicago & MLA Tool",
+    default: "Anagram Generator | Free Anagram Solver & Maker Online",
     template: `%s | ${BRAND.name}`,
   },
   description: BRAND.description,
   keywords: [
-    "title case converter",
-    "title capitalization",
-    "title case",
-    "sentence case",
-    "APA title case",
-    "Chicago title case",
-    "AP style titles",
-    "MLA title case",
-    "capitalize title",
+    "anagram generator",
+    "anagram solver",
+    "anagram maker",
+    "anagram finder",
+    "word unscrambler",
+    "anagram of a name",
+    "multi word anagram",
+    "letter rearranger",
+    "anagram decoder",
+    "free anagram tool",
   ],
   authors: [{ name: BRAND.name }],
   creator: BRAND.name,
@@ -67,11 +69,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico?v=10", sizes: "any" },
-      { url: "/favicon.png?v=10", type: "image/png", sizes: "64x64" },
-      { url: "/favicon-512.png?v=10", type: "image/png", sizes: "512x512" },
+      { url: "/favicon.ico?v=20", sizes: "any" },
+      { url: "/favicon.png?v=20", type: "image/png", sizes: "64x64" },
+      { url: "/favicon-512.png?v=20", type: "image/png", sizes: "512x512" },
     ],
-    apple: [{ url: "/apple-icon.png?v=10", sizes: "180x180" }],
+    apple: [{ url: "/apple-icon.png?v=20", sizes: "180x180" }],
   },
   verification: {
     google: "8a7c21f6e90a89ef",
@@ -80,7 +82,7 @@ export const metadata: Metadata = {
     canonical: SITE_ORIGIN,
   },
   openGraph: {
-    title: "Title Case Converter | Free AMA, AP, APA, Chicago & MLA Tool",
+    title: "Anagram Generator | Free Anagram Solver & Maker Online",
     description: BRAND.description,
     url: SITE_ORIGIN,
     siteName: BRAND.name,
@@ -91,20 +93,20 @@ export const metadata: Metadata = {
         url: `${SITE_ORIGIN}${IMAGES.og}`,
         width: 1200,
         height: 630,
-        alt: `${BRAND.name} — free title capitalization tool`,
+        alt: `${BRAND.name} — free anagram solver and maker`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Title Case Converter | Free AMA, AP, APA, Chicago & MLA Tool",
+    title: "Anagram Generator | Free Anagram Solver & Maker Online",
     description: BRAND.description,
     creator: BRAND.twitter,
     images: [`${SITE_ORIGIN}${IMAGES.twitter}`],
   },
   applicationName: BRAND.name,
   category: "Utilities",
-  classification: "Title Case Converter & Capitalization Tool",
+  classification: "Anagram Generator & Word Unscrambler",
 };
 
 export default function RootLayout({
@@ -118,9 +120,9 @@ export default function RootLayout({
     <html lang="en" className={`${display.variable} ${body.variable}`} suppressHydrationWarning>
       <head>
         <meta name="mobile-web-app-capable" content="yes" />
-        <link rel="icon" href="/favicon.ico?v=10" sizes="any" />
-        <link rel="icon" href="/favicon.png?v=10" type="image/png" sizes="64x64" />
-        <link rel="apple-touch-icon" href="/apple-icon.png?v=10" sizes="180x180" />
+        <link rel="icon" href="/favicon.ico?v=20" sizes="any" />
+        <link rel="icon" href="/favicon.png?v=20" type="image/png" sizes="64x64" />
+        <link rel="apple-touch-icon" href="/apple-icon.png?v=20" sizes="180x180" />
         <link rel="manifest" href="/manifest.json" />
         {adsenseClient && (
           <>
@@ -157,10 +159,11 @@ export default function RootLayout({
             </>
           )}
       </head>
-      <body className={`${body.className} site-canvas antialiased min-h-screen flex flex-col overflow-x-hidden text-[#14161C]`} suppressHydrationWarning>
+      <body className={`${body.className} site-canvas antialiased min-h-screen flex flex-col overflow-x-clip text-[#14161C]`} suppressHydrationWarning>
         <Header />
-        <main className="relative z-[1] w-full max-w-[100vw] flex-1 overflow-x-hidden">{children}</main>
+        <main className="relative z-[1] w-full max-w-[100vw] flex-1">{children}</main>
         <Footer />
+        <FixedSideActions />
         <ScrollToTopWrapper />
         <WebVitalsTracker />
 

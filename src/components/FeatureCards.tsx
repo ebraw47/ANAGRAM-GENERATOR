@@ -10,7 +10,7 @@ type CardItem = {
   icon: ReactNode;
 };
 
-const iconClass = "h-7 w-7";
+const iconClass = "h-6 w-6";
 
 export const FEATURE_ICONS = {
   styles: (
@@ -66,51 +66,51 @@ export const FEATURE_ICONS = {
 
 export const HOME_FEATURES: CardItem[] = [
   {
-    title: "Eight Style Guides",
-    description: "AMA, AP, APA, Bluebook, Chicago, MLA, NY Times, and Wikipedia — plus sentence, upper, and lower case.",
+    title: "Exact & subset modes",
+    description: "True full-letter anagrams or every shorter word hiding in your tiles.",
     icon: FEATURE_ICONS.styles,
   },
   {
-    title: "Pro Converter Options",
-    description: "Explanations, highlight changes, multi-line input, paste-to-convert, and straight quotes — like top SERP tools.",
+    title: "Multi-word phrases",
+    description: "Build 2–3 word anagrams like dormitory → dirty room for names and clues.",
     icon: FEATURE_ICONS.bolt,
   },
   {
-    title: "One-Click Copy",
-    description: "Copy the converted headline straight to your clipboard for docs, CMS fields, or social posts.",
+    title: "6 languages",
+    description: "English, Spanish, French, German, Italian, and Portuguese — dictionary + UI.",
+    icon: FEATURE_ICONS.book,
+  },
+  {
+    title: "Voice playback",
+    description: "Tap speak on any result to hear it in the selected language.",
+    icon: FEATURE_ICONS.spark,
+  },
+  {
+    title: "Copy & Scrabble scores",
+    description: "Copy one word or the full list; sort by length, points, or A–Z.",
     icon: FEATURE_ICONS.copy,
   },
   {
-    title: "SEO Character Count",
-    description: "See live character and word counts so meta titles stay inside the 50–60 character sweet spot.",
-    icon: FEATURE_ICONS.chart,
-  },
-  {
-    title: "Private by Design",
-    description: "Capitalization runs locally in your browser. Headlines never leave your device.",
+    title: "Private by design",
+    description: "Search runs locally in your browser. Letters never leave your device.",
     icon: FEATURE_ICONS.shield,
-  },
-  {
-    title: "Guides That Match Search Intent",
-    description: "Learn title vs sentence case, style-guide rules, and which words to capitalize — from our blog.",
-    icon: FEATURE_ICONS.book,
   },
 ];
 
 export const HOME_STEPS: CardItem[] = [
   {
-    title: "Paste Your Title",
-    description: "Drop a headline, book title, H1, or SEO meta title into the converter.",
+    title: "Enter your letters",
+    description: "Paste a jumble, word, name, or phrase. Use ? for a blank tile.",
     icon: FEATURE_ICONS.paste,
   },
   {
-    title: "Pick a Style",
-    description: "Choose APA, Chicago, AP, MLA, sentence case, UPPERCASE, or lowercase.",
+    title: "Pick language & mode",
+    description: "Choose a dictionary language, then exact, all words, or multi-word.",
     icon: FEATURE_ICONS.spark,
   },
   {
-    title: "Copy & Publish",
-    description: "Copy the result, check the character count, and paste it wherever you publish.",
+    title: "Copy or speak",
+    description: "Browse by length, hear words aloud, and copy what you need.",
     icon: FEATURE_ICONS.check,
   },
 ];
@@ -118,28 +118,14 @@ export const HOME_STEPS: CardItem[] = [
 function IconCard({ item }: { item: CardItem }) {
   return (
     <motion.article
-      className="group relative border-2 border-navy-900 bg-white px-5 pb-6 pt-10 hard-shadow"
-      whileHover={{
-        y: -4,
-      }}
+      className="group rounded-3xl border border-black/5 bg-white p-6 shadow-sm transition"
+      whileHover={{ y: -4 }}
       transition={{ type: "spring", stiffness: 320, damping: 24 }}
     >
-      <motion.div
-        className="absolute -top-5 left-4 flex h-11 w-11 items-center justify-center border-2 border-navy-900 bg-brand text-white"
-        aria-hidden
-        variants={{
-          rest: { scale: 1, rotate: 0 },
-          hover: { scale: 1.08, rotate: -4 },
-        }}
-        initial="rest"
-        whileHover="hover"
-        transition={{ type: "spring", stiffness: 400, damping: 16 }}
-      >
+      <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-soft text-brand">
         {item.icon}
-      </motion.div>
-      <h3 className="font-display text-lg font-bold tracking-tight text-ink md:text-[1.15rem]">
-        {item.title}
-      </h3>
+      </div>
+      <h3 className="font-display text-lg font-bold tracking-tight text-ink">{item.title}</h3>
       <p className="mt-2 text-[0.95rem] leading-relaxed text-ink-mute">{item.description}</p>
     </motion.article>
   );
@@ -147,7 +133,7 @@ function IconCard({ item }: { item: CardItem }) {
 
 export function FeatureCards({ items = HOME_FEATURES }: { items?: CardItem[] }) {
   return (
-    <Stagger className="grid gap-x-5 gap-y-10 pt-2 sm:grid-cols-2 lg:grid-cols-3">
+    <Stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {items.map((item) => (
         <StaggerItem key={item.title}>
           <IconCard item={item} />
@@ -159,7 +145,7 @@ export function FeatureCards({ items = HOME_FEATURES }: { items?: CardItem[] }) 
 
 export function StepCards({
   items = HOME_STEPS,
-  className = "grid gap-x-5 gap-y-10 sm:grid-cols-2 lg:grid-cols-3",
+  className = "grid gap-4 sm:grid-cols-2 lg:grid-cols-3",
 }: {
   items?: CardItem[];
   className?: string;

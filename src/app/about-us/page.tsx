@@ -5,9 +5,9 @@ import { getMarkdown, stripLeadingH1 } from "@/lib/content";
 import { BRAND, ROUTES, SITE_ORIGIN } from "@/lib/siteConfig";
 
 const PAGE_URL = `${SITE_ORIGIN}${ROUTES.about}`;
-const PAGE_TITLE = "About Us | Title Case Converter";
+const PAGE_TITLE = "About Us | Anagram Generator";
 const PAGE_DESCRIPTION =
-  "Learn about Title Case Converter — a free title capitalization tool for AMA, AP, APA, Bluebook, Chicago, MLA, NY Times, and Wikipedia.";
+  "Learn about Anagram Generator — a free anagram solver and maker for words, names, and multi-word phrases.";
 
 export const metadata: Metadata = {
   title: { absolute: PAGE_TITLE },

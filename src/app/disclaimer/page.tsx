@@ -5,9 +5,9 @@ import { getMarkdown, stripLeadingH1 } from "@/lib/content";
 import { BRAND, ROUTES, SITE_ORIGIN } from "@/lib/siteConfig";
 
 const PAGE_URL = `${SITE_ORIGIN}${ROUTES.disclaimer}`;
-const PAGE_TITLE = "Disclaimer - Title Case Converter";
+const PAGE_TITLE = "Disclaimer - Anagram Generator";
 const PAGE_DESCRIPTION =
-  "Disclaimer for Title Case Converter — style-guide output is a helper, not official editorial advice.";
+  "Disclaimer for Anagram Generator — dictionary results are a helper, not an official tournament word list.";
 
 export const metadata: Metadata = {
   title: { absolute: PAGE_TITLE },

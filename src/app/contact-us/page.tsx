@@ -6,9 +6,9 @@ import { getMarkdown, stripLeadingH1 } from "@/lib/content";
 import { BRAND, ROUTES, SITE_ORIGIN } from "@/lib/siteConfig";
 
 const PAGE_URL = `${SITE_ORIGIN}${ROUTES.contact}`;
-const PAGE_TITLE = "Contact Us - Title Case Converter";
+const PAGE_TITLE = "Contact Us - Anagram Generator";
 const PAGE_DESCRIPTION =
-  "Contact Title Case Converter with questions or feedback about our title case converter and guides.";
+  "Contact Anagram Generator with questions or feedback about our anagram solver, maker, and guides.";
 
 export const metadata: Metadata = {
   title: { absolute: PAGE_TITLE },

@@ -3,17 +3,18 @@ import type { Metadata } from "next";
 import HomeHero from "@/components/HomeHero";
 import HomeBody from "@/components/HomeBody";
 import HomeGuides from "@/components/HomeGuides";
+import HomeFaq from "@/components/HomeFaq";
 import { getMarkdown } from "@/lib/content";
 import { BRAND, HOME_FAQS, IMAGES, SITE_ORIGIN } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-    title: {
-    absolute: "Title Case Converter | Free AMA, AP, APA, Chicago & MLA Tool",
+  title: {
+    absolute: "Anagram Generator | Free Anagram Solver & Maker Online",
   },
   description: BRAND.description,
   alternates: { canonical: SITE_ORIGIN },
   openGraph: {
-    title: "Title Case Converter | Free AMA, AP, APA, Chicago & MLA Tool",
+    title: "Anagram Generator | Free Anagram Solver & Maker Online",
     description: BRAND.description,
     url: SITE_ORIGIN,
     siteName: BRAND.name,
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Title Case Converter | Free AMA, AP, APA, Chicago & MLA Tool",
+    title: "Anagram Generator | Free Anagram Solver & Maker Online",
     description: BRAND.description,
     images: [`${SITE_ORIGIN}${IMAGES.twitter}`],
   },
@@ -30,8 +31,8 @@ export const metadata: Metadata = {
 
 function prepareHomeContent(raw: string) {
   let md = raw
-    .replace(/\n## \*\*FAQs About Title Case Converters\*\*[\s\S]*$/, "")
-    .replace(/\n## FAQs About Title Case Converters[\s\S]*$/, "")
+    .replace(/\n## \*\*FAQs About Anagram Generators\*\*[\s\S]*$/, "")
+    .replace(/\n## FAQs About Anagram Generators[\s\S]*$/, "")
     .replace(/^#\s+\*?\*?[^\n]+\*?\*?\s*\n+/, "")
     .replace(/\n## Why Choose Us\?\s*(?=\n## )/, "\n")
     .replace(/\n## Explore Our Guides[\s\S]*?(?=\n## Stay Updated|\n## FAQs|\s*$)/, "\n")
@@ -39,7 +40,7 @@ function prepareHomeContent(raw: string) {
     .replace(/\n## Stay Updated\n[\s\S]*$/, "\n")
     .trim();
 
-  const stepsMarker = "## How to Use the Title Case Converter Step by Step?";
+  const stepsMarker = "## How to Use the Anagram Generator Step by Step";
   const idx = md.indexOf(stepsMarker);
   if (idx === -1) {
     return { beforeSteps: md, afterSteps: "" };
@@ -81,13 +82,14 @@ export default function HomePage() {
 
   return (
     <>
-      <div id="converter" className="scroll-mt-20">
+      <div id="generator" className="scroll-mt-20">
         <HomeHero />
       </div>
       <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Script id="app-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(appSchema) }} />
       <HomeBody beforeSteps={beforeSteps} afterSteps={afterSteps} />
       <HomeGuides />
+      <HomeFaq />
     </>
   );
 }

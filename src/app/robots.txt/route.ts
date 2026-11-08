@@ -67,6 +67,7 @@ Disallow: /api/
 Disallow: /_next/
 
 Sitemap: ${SITE_ORIGIN}/sitemap-index.xml
+Sitemap: ${SITE_ORIGIN}/sitemap.xml
 `;
 
   return new Response(body, {

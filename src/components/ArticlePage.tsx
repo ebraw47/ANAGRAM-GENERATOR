@@ -41,21 +41,6 @@ export function articleMetadata(article: ArticleMeta): Metadata {
   };
 }
 
-function GuideCardThumb({ src, alt }: { src: string; alt: string }) {
-  const { width, height } = imageDims(src);
-  return (
-    <Image
-      src={src}
-      alt={alt}
-      width={width}
-      height={height}
-      unoptimized
-      className="block h-auto w-full border-0"
-      sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
-    />
-  );
-}
-
 export default function ArticlePage({
   article,
   contentSlug,
@@ -101,8 +86,8 @@ export default function ArticlePage({
       <Script id={`breadcrumb-${article.slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
 
       <article className="text-ink">
-        <header className="page-banner relative overflow-hidden border-b-2 border-navy-900">
-          <PageBannerPattern opacity={0.15} />
+        <header className="relative overflow-hidden border-b border-black/5 bg-[#1a1d1a]">
+          <PageBannerPattern opacity={0.12} />
           <div className="relative mx-auto max-w-3xl px-4 py-10 md:px-6 md:py-14">
             <nav className="mb-5 text-sm text-white/65" aria-label="Breadcrumb">
               <ol className="flex flex-wrap items-center gap-1.5">
@@ -122,7 +107,7 @@ export default function ArticlePage({
               </ol>
             </nav>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-brand">
-              Title case guide
+              Anagram guide
             </p>
             <h1 className="font-display text-3xl font-extrabold tracking-tight text-white md:text-4xl md:leading-tight">
               {article.title}
@@ -158,28 +143,39 @@ export default function ArticlePage({
         </div>
 
         {related.length > 0 && (
-          <aside className="section-glass border-t-2 border-navy-900/10 py-12 md:py-14">
-            <div className="mx-auto max-w-6xl px-4 md:px-6">
+          <aside className="border-t border-black/5 py-12 md:py-14">
+            <div className="mx-auto max-w-7xl px-4 md:px-8">
               <FadeIn>
                 <p className="section-kicker">Keep reading</p>
-                <h2 className="font-display text-2xl font-bold text-ink">Related guides</h2>
+                <h2 className="font-display text-2xl font-bold text-ink md:text-3xl">Related guides</h2>
               </FadeIn>
-              <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {related.map((a, i) => (
-                  <FadeIn key={a.slug} delay={0.05 * i}>
-                    <Link
-                      href={`/${a.slug}`}
-                      className="group block overflow-hidden border-2 border-navy-900 bg-white hard-shadow transition hover:hard-shadow-ink"
-                    >
-                      <GuideCardThumb src={a.image} alt={a.title} />
-                      <div className="p-4">
-                        <h3 className="font-display text-base font-semibold text-ink group-hover:text-brand line-clamp-2">
+              <div className="mt-6 overflow-hidden rounded-[1.75rem] border border-black/5 bg-white shadow-lift">
+                <div className="grid sm:grid-cols-3">
+                  {related.map((a, i) => (
+                    <FadeIn key={a.slug} delay={0.05 * i}>
+                      <Link
+                        href={`/${a.slug}`}
+                        className="group flex h-full flex-col border-b border-black/5 p-6 transition hover:bg-brand-soft/50 sm:border-b-0 sm:border-r sm:last:border-r-0"
+                      >
+                        <span className="font-display text-3xl font-extrabold text-ink/15 transition group-hover:text-brand/35">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                        <h3 className="mt-4 font-display text-base font-bold leading-snug text-ink transition group-hover:text-brand line-clamp-3">
                           {a.title}
                         </h3>
-                      </div>
-                    </Link>
-                  </FadeIn>
-                ))}
+                        <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-ink">
+                          Read
+                          <span
+                            aria-hidden
+                            className="flex h-6 w-6 items-center justify-center rounded-full bg-ink text-xs text-white transition group-hover:bg-brand"
+                          >
+                            →
+                          </span>
+                        </span>
+                      </Link>
+                    </FadeIn>
+                  ))}
+                </div>
               </div>
             </div>
           </aside>

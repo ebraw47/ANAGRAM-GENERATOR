@@ -4,6 +4,9 @@ const nextConfig = {
   reactStrictMode: true,
   compress: true,
 
+  // Hostnames only — allows RSC/HMR when the tab uses 127.0.0.1 instead of localhost
+  allowedDevOrigins: ["127.0.0.1"],
+
   compiler: {
     removeConsole: process.env.NODE_ENV === "production",
   },
@@ -32,8 +35,6 @@ const nextConfig = {
     return [
       { source: "/sitemap.xml", destination: "/sitemap-index.xml" },
       { source: "/sitemap_index.xml", destination: "/sitemap-index.xml" },
-      { source: "/post-sitemap.xml", destination: "/index.xml" },
-      { source: "/page-sitemap.xml", destination: "/index.xml" },
     ];
   },
 
