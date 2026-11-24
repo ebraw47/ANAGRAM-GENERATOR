@@ -1,10 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { BRAND, ROUTES } from "@/lib/siteConfig";
+import { BRAND, IMAGES, ROUTES } from "@/lib/siteConfig";
 
 const navLinks = [
   { href: ROUTES.home, label: "Generator" },
@@ -39,9 +40,15 @@ export default function Header() {
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-2 px-3 sm:h-16 sm:gap-3 sm:px-6 md:h-[4.25rem] md:px-8">
         <Link href="/" className="min-w-0 shrink py-1" aria-label={`${BRAND.name} home`}>
           <span className="flex items-center gap-2 font-display text-sm font-extrabold tracking-tight sm:text-base">
-            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-brand text-[0.65rem] font-black text-white">
-              AG
-            </span>
+            <Image
+              src={`${IMAGES.headerLogo}?v=23`}
+              alt=""
+              width={28}
+              height={28}
+              className="h-7 w-7 object-contain"
+              unoptimized
+              priority
+            />
             <span className="text-ink">
               Anagram <span className="text-brand">Generator</span>
             </span>

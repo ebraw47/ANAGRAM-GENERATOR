@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ARTICLES, BRAND, ROUTES } from "@/lib/siteConfig";
+import { ARTICLES, BRAND, IMAGES, ROUTES } from "@/lib/siteConfig";
 
 export default function Footer() {
   return (
@@ -8,9 +9,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
           <div className="md:col-span-4">
             <Link href="/" className="inline-flex items-center gap-2" aria-label={`${BRAND.name} home`}>
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand text-xs font-black text-white">
-                AG
-              </span>
+              <Image
+                src={`${IMAGES.headerLogo}?v=23`}
+                alt=""
+                width={32}
+                height={32}
+                className="h-8 w-8 object-contain"
+                unoptimized
+              />
               <span className="font-display text-xl font-extrabold tracking-tight text-white">
                 {BRAND.name}
               </span>
